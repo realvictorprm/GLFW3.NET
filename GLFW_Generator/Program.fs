@@ -6,6 +6,9 @@ open CppSharp.Generators
 open System 
 open CppSharp.Types
 
+
+let root_directory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
 [<TypeMap("GLFWwindow")>]
 type CustomTyper() =
     inherit CppSharp.Types.TypeMap()
@@ -89,45 +92,23 @@ type GLFWTranslationPass() as this =
     
     override t.VisitMacroDefinition macro =
         printfn "Macro definition: %A" macro.Name;
-        (macro.Name.Contains("GLFW_")) 
-
-
-type PassGLFW() as this =
-    inherit Passes.TranslationUnitPass()
-    
-
-    override t.VisitDeclaration dec =
-        if t.AlreadyVisited(dec) then false
-        else 
-            let entities = dec.PreprocessedEntities
-            let excludes = dec.ExcludeFromPasses
-            entities |> Seq.iter(fun i -> printfn "%A" i)
-            excludes |> Seq.iter(fun i -> printfn "Exclude: %A" i)
-            printfn "%A" dec.Name
-            
-            true
+        (macro.Name.Contains("GLFW_"))        
 
 type Generator() =
     interface ILibrary with
         member t.Setup driver =
             let options = driver.Options;
-            options.OutputDir <- "../../generated"
+            options.OutputDir <- "../../../generated"
             options.GeneratorKind <- GeneratorKind.CSharp;
             let glfw = options.AddModule("Sample");
-            let path = Environment.CurrentDirectory;
-            glfw.Headers.Add(path + "\glfw3.h");
-            //glfw.Libraries.Add("Sample.lib");
+            
+            glfw.Headers.Add(root_directory.ToString() + "/headers/glfw3.h");
             ()
         member t.SetupPasses driver =
-            do driver.AddTranslationUnitPass(new PassGLFW())
+            do driver.AddTranslationUnitPass(new GLFWTranslationPass())
 
             ()
         member t.Preprocess (driver, ctx) =
-            ctx.SetClassAsValueType("GLFWwindow")
-            let s = ctx.FindTypedef("GLFWwindow")
-            printfn "%A" s
-            s
-            |> Seq.iter (fun o -> printfn "is gen: %A" o.IsGenerated)
             ()
         member t.Postprocess (driver, ctx) =
             
