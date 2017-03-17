@@ -4,23 +4,53 @@
 open CppSharp
 open CppSharp.Generators
 open System 
-open CppSharp.Types
+open CppSharp.Types    
 
 
 let root_directory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+//[<TypeMap("GLFWcursor")>]
+//type GLFW_Cursor_Type() =
+//    inherit CppSharp.Types.TypeMap()
+//    let name = "NativeCursor"
 
-[<TypeMap("GLFWwindow")>]
-type CustomTyper() =
+//    override t.CSharpSignature ctx =
+//        name
+    
+//    override t.CSharpMarshalToNative ctx =
+//        ctx.Return.Write(ctx.Parameter.Name + "._handle")
+    
+//    override t.CSharpMarshalToManaged ctx =
+//        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
+
+[<TypeMap("GLFWmonitor")>]
+type GLFW_Monitor_Type() =
     inherit CppSharp.Types.TypeMap()
+    let name = "NativeMonitor"
 
     override t.CSharpSignature ctx =
-        "Window"
+        name
     
     override t.CSharpMarshalToNative ctx =
-        ctx.Return.Write(ctx.Parameter.Name)
+        ctx.Return.Write(ctx.Parameter.Name + "._handle")
     
     override t.CSharpMarshalToManaged ctx =
-        ctx.Return.Write(ctx.ReturnVarName)
+        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
+
+[<TypeMap("GLFWwindow")>]
+type GLFW_Window_Type() =
+    inherit CppSharp.Types.TypeMap()
+    let name = "NativeWindow"
+
+    override t.CSharpSignature ctx =
+        name
+    
+    override t.CSharpMarshalToNative ctx =
+        ctx.Return.Write(ctx.Parameter.Name + "._handle")
+
+    
+    override t.CSharpMarshalToManaged ctx =
+        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
+
 
 type GLFWTranslationPass() as this =
     inherit Passes.TranslationUnitPass()
@@ -60,7 +90,7 @@ type GLFWTranslationPass() as this =
             | None -> let mutable res = 0uL
                       let isHexValue = UInt64.TryParse(macro.Expression.Replace("0x", ""), &res)
                       if isHexValue then
-                        printfn "Hex value: %A" res
+                        printfn "Hex value: %A" res 
                         let field = AST.Property()
                         do field.Namespace <- dec.TranslationUnit
                         do field.Name <- macro_name
@@ -77,12 +107,7 @@ type GLFWTranslationPass() as this =
     override t.VisitDeclaration dec =
         if t.AlreadyVisited(dec) then false
         else 
-            printfn "decleration name: %A" dec.Name; 
-            //printfn "preprocessed entities: %A" dec.PreprocessedEntities
-            dec.PreprocessedEntities |> Seq.iter (fun i -> printfn "%A" i; if i :? CppSharp.AST.MacroDefinition then t.processMacro dec (i :?> AST.MacroDefinition) else ()) 
-            
-            //let translationunit = dec.TranslationUnit
-            //if not (isNull(translationunit))then dec.TranslationUnit.Macros |> Seq.iter (fun o -> if o <> null then dec.PreprocessedEntities.Remove(o) |> ignore )
+            dec.PreprocessedEntities |> Seq.iter (fun i -> if i :? CppSharp.AST.MacroDefinition then t.processMacro dec (i :?> AST.MacroDefinition) else ())
 
             true 
     
@@ -91,7 +116,7 @@ type GLFWTranslationPass() as this =
         else printfn "Field: %A" dec.Name; true 
     
     override t.VisitMacroDefinition macro =
-        printfn "Macro definition: %A" macro.Name;
+        printfn "Macro definition: %A" macro.Name
         (macro.Name.Contains("GLFW_"))        
 
 type Generator() =
@@ -99,16 +124,22 @@ type Generator() =
         member t.Setup driver =
             let options = driver.Options;
             options.OutputDir <- "../../../generated"
-            options.GeneratorKind <- GeneratorKind.CSharp;
-            let glfw = options.AddModule("Sample");
-            
-            glfw.Headers.Add(root_directory.ToString() + "/headers/glfw3.h");
+            options.GeneratorKind <- GeneratorKind.CSharp
+            let glfw = options.AddModule("GLFW3")
+          // glfw.Defines.Add("GLFW_INCLUDE_VULKAN")
+          //  glfw.IncludeDirs.Add(root_directory.ToString() + "/headers")
+            glfw.Headers.Add(root_directory.ToString() + "/headers/glfw3.h")
+            Diagnostics.Level <- DiagnosticKind.Debug
             ()
         member t.SetupPasses driver =
-            do driver.AddTranslationUnitPass(new GLFWTranslationPass())
-
+            let pass = new GLFWTranslationPass()
+            do driver.AddTranslationUnitPass(pass)
+            
             ()
         member t.Preprocess (driver, ctx) =
+            //let res = ctx.GenerateEnumFromMacros("Key", "GLFW_KEY");
+            //res.Items |> Seq.iter( fun i -> printfn "%A" i)
+
             ()
         member t.Postprocess (driver, ctx) =
             
@@ -121,5 +152,6 @@ let main argv =
     printfn "%A" argv
 
     ConsoleDriver.Run(new Generator());
+    printfn "Done. Press any key to exit"
     Console.ReadKey() |> ignore
     0 // return an integer exit code

@@ -62,6 +62,9 @@
     <None Include="CppSharp.CppParser.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="glfw3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CppSharp">
@@ -71,7 +74,7 @@
       <HintPath>..\deps\CppSharp.AST.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Generator">
-      <HintPath>..\deps\CppSharp.Generator.dll</HintPath>
+      <HintPath>..\..\CppSharpDev\build\vs2017\lib\Release_x32\CppSharp.Generator.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Parser">
       <HintPath>..\deps\CppSharp.Parser.dll</HintPath>
