@@ -22,34 +22,34 @@ let root_directory = System.IO.Directory.GetParent(Environment.CurrentDirectory)
 //    override t.CSharpMarshalToManaged ctx =
 //        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
 
-[<TypeMap("GLFWmonitor")>]
-type GLFW_Monitor_Type() =
-    inherit CppSharp.Types.TypeMap()
-    let name = "NativeMonitor"
+//[<TypeMap("GLFWmonitor")>]
+//type GLFW_Monitor_Type() =
+//    inherit CppSharp.Types.TypeMap()
+//    let name = "NativeMonitor"
 
-    override t.CSharpSignature ctx =
-        name
+//    override t.CSharpSignature ctx =
+//        name
     
-    override t.CSharpMarshalToNative ctx =
-        ctx.Return.Write(ctx.Parameter.Name + "._handle")
+//    override t.CSharpMarshalToNative ctx =
+//        ctx.Return.Write(ctx.Parameter.Name + "._handle")
     
-    override t.CSharpMarshalToManaged ctx =
-        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
+//    override t.CSharpMarshalToManaged ctx =
+//        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
 
-[<TypeMap("GLFWwindow")>]
-type GLFW_Window_Type() =
-    inherit CppSharp.Types.TypeMap()
-    let name = "NativeWindow"
+//[<TypeMap("GLFWwindow")>]
+//type GLFW_Window_Type() =
+//    inherit CppSharp.Types.TypeMap()
+//    let name = "NativeWindow"
 
-    override t.CSharpSignature ctx =
-        name
+//    override t.CSharpSignature ctx =
+//        name
     
-    override t.CSharpMarshalToNative ctx =
-        ctx.Return.Write(ctx.Parameter.Name + "._handle")
+//    override t.CSharpMarshalToNative ctx =
+//        ctx.Return.Write(ctx.Parameter.Name + "._handle")
 
     
-    override t.CSharpMarshalToManaged ctx =
-        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
+//    override t.CSharpMarshalToManaged ctx =
+//        ctx.Return.Write("new "+name+"(" + ctx.ReturnVarName + ")")
 
 
 type GLFWTranslationPass() as this =
@@ -125,7 +125,7 @@ type Generator() =
             let options = driver.Options;
             options.OutputDir <- "../../../generated"
             options.GeneratorKind <- GeneratorKind.CSharp
-            let glfw = options.AddModule("GLFW3")
+            let glfw = options.AddModule("glfw3")
           // glfw.Defines.Add("GLFW_INCLUDE_VULKAN")
           //  glfw.IncludeDirs.Add(root_directory.ToString() + "/headers")
             glfw.Headers.Add(root_directory.ToString() + "/headers/glfw3.h")
@@ -150,7 +150,6 @@ type Generator() =
 [<EntryPoint>]
 let main argv = 
     printfn "%A" argv
-
     ConsoleDriver.Run(new Generator());
     printfn "Done. Press any key to exit"
     Console.ReadKey() |> ignore

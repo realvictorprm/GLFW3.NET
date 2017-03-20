@@ -59,10 +59,19 @@
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
-    <None Include="CppSharp.CppParser.dll">
+    <None Include="..\deps\CppSharp.CppParser.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>CppSharp.CppParser.dll</Link>
     </None>
     <None Include="glfw3.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\generated\GLFW3.cs">
+      <Link>GLFW3.cs</Link>
+    </None>
+    <None Include="CppSharp.CppParser.dll" />
+    <None Include="..\deps\Microsoft.VisualStudio.Setup.Configuration.Interop.dll">
+      <Link>Microsoft.VisualStudio.Setup.Configuration.Interop.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -74,7 +83,7 @@
       <HintPath>..\deps\CppSharp.AST.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Generator">
-      <HintPath>..\..\CppSharpDev\build\vs2017\lib\Release_x32\CppSharp.Generator.dll</HintPath>
+      <HintPath>..\deps\CppSharp.Generator.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Parser">
       <HintPath>..\deps\CppSharp.Parser.dll</HintPath>

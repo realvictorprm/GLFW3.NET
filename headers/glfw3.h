@@ -1274,6 +1274,10 @@ GLFWAPI int glfwInit(void);
  */
 GLFWAPI void glfwTerminate(void);
 
+struct Test{};
+
+GLFWAPI Test** getTests();
+
 /*! @brief Retrieves the version of the GLFW library.
  *
  *  This function retrieves the major, minor and revision numbers of the GLFW
