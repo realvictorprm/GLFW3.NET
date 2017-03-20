@@ -14,7 +14,8 @@ Therefore the bindings provide only names for the various unknown types, which c
 
 ## Important remarks
 ### Compatibility:
-- Currently the project is only for VS2017
+- The project is compatible with Mono. It can be opened by MonoDevelop and should be build there too
+- The current GLFW.dll is for windows. Please keep in mind to use the correct GLFW.dll!
 - There are generated bindings available in the _generated_ folder and may be compatible with every platform
 
 ### What we're using:
