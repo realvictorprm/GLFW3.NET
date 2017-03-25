@@ -10,6 +10,40 @@ using System.Security;
 
 namespace glfw3
 {
+    public enum VkResult
+    {
+        VK_SUCCESS = 0,
+        VK_NOT_READY = 1,
+        VK_TIMEOUT = 2,
+        VK_EVENT_SET = 3,
+        VK_EVENT_RESET = 4,
+        VK_INCOMPLETE = 5,
+        VK_ERROR_OUT_OF_HOST_MEMORY = -1,
+        VK_ERROR_OUT_OF_DEVICE_MEMORY = -2,
+        VK_ERROR_INITIALIZATION_FAILED = -3,
+        VK_ERROR_DEVICE_LOST = -4,
+        VK_ERROR_MEMORY_MAP_FAILED = -5,
+        VK_ERROR_LAYER_NOT_PRESENT = -6,
+        VK_ERROR_EXTENSION_NOT_PRESENT = -7,
+        VK_ERROR_FEATURE_NOT_PRESENT = -8,
+        VK_ERROR_INCOMPATIBLE_DRIVER = -9,
+        VK_ERROR_TOO_MANY_OBJECTS = -10,
+        VK_ERROR_FORMAT_NOT_SUPPORTED = -11,
+        VK_ERROR_FRAGMENTED_POOL = -12,
+        VK_ERROR_SURFACE_LOST_KHR = -1000000000,
+        VK_ERROR_NATIVE_WINDOW_IN_USE_KHR = -1000000001,
+        VK_SUBOPTIMAL_KHR = 1000001003,
+        VK_ERROR_OUT_OF_DATE_KHR = -1000001004,
+        VK_ERROR_INCOMPATIBLE_DISPLAY_KHR = -1000003001,
+        VK_ERROR_VALIDATION_FAILED_EXT = -1000011001,
+        VK_ERROR_INVALID_SHADER_NV = -1000012000,
+        VK_ERROR_OUT_OF_POOL_MEMORY_KHR = -1000069000,
+        VK_RESULT_BEGIN_RANGE = -12,
+        VK_RESULT_END_RANGE = 5,
+        VK_RESULT_RANGE_SIZE = 18,
+        VK_RESULT_MAX_ENUM = 2147483647
+    }
+
     public enum Key
     {
         Unknown = -1,
@@ -449,6 +483,194 @@ namespace glfw3
     // <param name="event">One of `GLFW_CONNECTED` or `GLFW_DISCONNECTED`.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWjoystickfun(int _0, int _1);
+
+    public unsafe partial class VkInstance
+    {
+        [StructLayout(LayoutKind.Explicit, Size = 0)]
+        public partial struct __Internal
+        {
+        }
+
+        public global::System.IntPtr __Instance { get; protected set; }
+
+        protected int __PointerAdjustment;
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkInstance> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkInstance>();
+        protected void*[] __OriginalVTables;
+
+        protected bool __ownsNativeInstance;
+
+        internal static global::glfw3.VkInstance __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        {
+            return new VkInstance(native.ToPointer(), skipVTables);
+        }
+
+        internal static global::glfw3.VkInstance __CreateInstance(global::glfw3.VkInstance.__Internal native, bool skipVTables = false)
+        {
+            return new VkInstance(native, skipVTables);
+        }
+
+        private static void* __CopyValue(global::glfw3.VkInstance.__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkInstance.__Internal));
+            *(global::glfw3.VkInstance.__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private VkInstance(global::glfw3.VkInstance.__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected VkInstance(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new global::System.IntPtr(native);
+        }
+    }
+
+    public unsafe partial class VkPhysicalDevice
+    {
+        [StructLayout(LayoutKind.Explicit, Size = 0)]
+        public partial struct __Internal
+        {
+        }
+
+        public global::System.IntPtr __Instance { get; protected set; }
+
+        protected int __PointerAdjustment;
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkPhysicalDevice> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkPhysicalDevice>();
+        protected void*[] __OriginalVTables;
+
+        protected bool __ownsNativeInstance;
+
+        internal static global::glfw3.VkPhysicalDevice __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        {
+            return new VkPhysicalDevice(native.ToPointer(), skipVTables);
+        }
+
+        internal static global::glfw3.VkPhysicalDevice __CreateInstance(global::glfw3.VkPhysicalDevice.__Internal native, bool skipVTables = false)
+        {
+            return new VkPhysicalDevice(native, skipVTables);
+        }
+
+        private static void* __CopyValue(global::glfw3.VkPhysicalDevice.__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkPhysicalDevice.__Internal));
+            *(global::glfw3.VkPhysicalDevice.__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private VkPhysicalDevice(global::glfw3.VkPhysicalDevice.__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected VkPhysicalDevice(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new global::System.IntPtr(native);
+        }
+    }
+
+    public unsafe partial class VkAllocationCallbacks
+    {
+        [StructLayout(LayoutKind.Explicit, Size = 0)]
+        public partial struct __Internal
+        {
+        }
+
+        public global::System.IntPtr __Instance { get; protected set; }
+
+        protected int __PointerAdjustment;
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkAllocationCallbacks> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkAllocationCallbacks>();
+        protected void*[] __OriginalVTables;
+
+        protected bool __ownsNativeInstance;
+
+        internal static global::glfw3.VkAllocationCallbacks __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        {
+            return new VkAllocationCallbacks(native.ToPointer(), skipVTables);
+        }
+
+        internal static global::glfw3.VkAllocationCallbacks __CreateInstance(global::glfw3.VkAllocationCallbacks.__Internal native, bool skipVTables = false)
+        {
+            return new VkAllocationCallbacks(native, skipVTables);
+        }
+
+        private static void* __CopyValue(global::glfw3.VkAllocationCallbacks.__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkAllocationCallbacks.__Internal));
+            *(global::glfw3.VkAllocationCallbacks.__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private VkAllocationCallbacks(global::glfw3.VkAllocationCallbacks.__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected VkAllocationCallbacks(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new global::System.IntPtr(native);
+        }
+    }
+
+    public unsafe partial class VkSurfaceKHR
+    {
+        [StructLayout(LayoutKind.Explicit, Size = 0)]
+        public partial struct __Internal
+        {
+        }
+
+        public global::System.IntPtr __Instance { get; protected set; }
+
+        protected int __PointerAdjustment;
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkSurfaceKHR> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkSurfaceKHR>();
+        protected void*[] __OriginalVTables;
+
+        protected bool __ownsNativeInstance;
+
+        internal static global::glfw3.VkSurfaceKHR __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        {
+            return new VkSurfaceKHR(native.ToPointer(), skipVTables);
+        }
+
+        internal static global::glfw3.VkSurfaceKHR __CreateInstance(global::glfw3.VkSurfaceKHR.__Internal native, bool skipVTables = false)
+        {
+            return new VkSurfaceKHR(native, skipVTables);
+        }
+
+        private static void* __CopyValue(global::glfw3.VkSurfaceKHR.__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkSurfaceKHR.__Internal));
+            *(global::glfw3.VkSurfaceKHR.__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private VkSurfaceKHR(global::glfw3.VkSurfaceKHR.__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected VkSurfaceKHR(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new global::System.IntPtr(native);
+        }
+    }
 
     public unsafe partial class GLFWmonitor
     {
@@ -1118,7 +1340,7 @@ namespace glfw3
         }
     }
 
-    public unsafe partial class glfw3
+    public unsafe partial class Glfw
     {
         public partial struct __Internal
         {
@@ -1586,6 +1808,21 @@ namespace glfw3
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetRequiredInstanceExtensions")]
             internal static extern sbyte** GetRequiredInstanceExtensions_0(uint* count);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="glfwGetInstanceProcAddress")]
+            internal static extern global::System.IntPtr GetInstanceProcAddress_0(global::glfw3.VkInstance.__Internal instance, [MarshalAs(UnmanagedType.LPStr)] string procname);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="glfwGetPhysicalDevicePresentationSupport")]
+            internal static extern int GetPhysicalDevicePresentationSupport_0(global::glfw3.VkInstance.__Internal instance, global::glfw3.VkPhysicalDevice.__Internal device, uint queuefamily);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="glfwCreateWindowSurface")]
+            internal static extern global::glfw3.VkResult CreateWindowSurface_0(global::glfw3.VkInstance.__Internal instance, global::System.IntPtr window, global::System.IntPtr allocator, global::System.IntPtr surface);
         }
 
         // <remarks>
@@ -4303,6 +4540,127 @@ namespace glfw3
                 var __ret = __Internal.GetRequiredInstanceExtensions_0(__arg0);
                 return __ret;
             }
+        }
+
+        // <remarks>
+        // <para>  This function returns the address of the specified Vulkan core or extension</para>
+        // <para>  function for the specified instance.  If instance is set to `NULL` it can</para>
+        // <para>  return any function exported from the Vulkan loader, including at least the</para>
+        // <para>  following functions:</para>
+        // <para>  - `vkEnumerateInstanceExtensionProperties`</para>
+        // <para>  - `vkEnumerateInstanceLayerProperties`</para>
+        // <para>  - `vkCreateInstance`</para>
+        // <para>  - `vkGetInstanceProcAddr`</para>
+        // <para>  If Vulkan is not available on the machine, this function returns `NULL` and</para>
+        // <para>  generates a </para>
+        // <para>  to check whether Vulkan is available.</para>
+        // <para>  This function is equivalent to calling `vkGetInstanceProcAddr` with</para>
+        // <para>  a platform-specific query of the Vulkan loader as a fallback.</para>
+        // </remarks>
+        // <param name="instance">
+        // <para>The Vulkan instance to query, or `NULL` to retrieve</para>
+        // <para>functions related to instance creation.</para>
+        // </param>
+        // <param name="procname">The ASCII encoded name of the function.</param>
+        // <returns>
+        // <para>The address of the function, or `NULL` if an</para>
+        // <para>[error](</para>
+        // <para></para>
+        // <para>Possible errors include</para>
+        // <para>GLFW_API_UNAVAILABLE.</para>
+        // <para></para>
+        // <para>_lifetime The returned function pointer is valid until the library</para>
+        // <para>is terminated.</para>
+        // <para></para>
+        // <para>_safety This function may be called from any thread.</para>
+        // </returns>
+        public static global::glfw3.GLFWvkproc GetInstanceProcAddress(global::glfw3.VkInstance instance, string procname)
+        {
+            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
+            var __ret = __Internal.GetInstanceProcAddress_0(__arg0, procname);
+            var __ptr0 = __ret;
+            return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWvkproc)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWvkproc));
+        }
+
+        // <remarks>
+        // <para>  This function returns whether the specified queue family of the specified</para>
+        // <para>  physical device supports presentation to the platform GLFW was built for.</para>
+        // <para>  If Vulkan or the required window surface creation instance extensions are</para>
+        // <para>  not available on the machine, or if the specified instance was not created</para>
+        // <para>  with the required extensions, this function returns `GLFW_FALSE` and</para>
+        // <para>  generates a </para>
+        // <para>  to check whether Vulkan is available and </para>
+        // <para>  glfwGetRequiredInstanceExtensions to check what instance extensions are</para>
+        // <para>  required.</para>
+        // </remarks>
+        // <param name="instance">The instance that the physical device belongs to.</param>
+        // <param name="device">The physical device that the queue family belongs to.</param>
+        // <param name="queuefamily">The index of the queue family to query.</param>
+        // <returns>
+        // <para>`GLFW_TRUE` if the queue family supports presentation, or</para>
+        // <para>`GLFW_FALSE` otherwise.</para>
+        // <para></para>
+        // <para>Possible errors include</para>
+        // <para>GLFW_API_UNAVAILABLE and</para>
+        // <para></para>
+        // <para>_safety This function may be called from any thread.  For</para>
+        // <para>synchronization details of Vulkan objects, see the Vulkan specification.</para>
+        // </returns>
+        public static int GetPhysicalDevicePresentationSupport(global::glfw3.VkInstance instance, global::glfw3.VkPhysicalDevice device, uint queuefamily)
+        {
+            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
+            var __arg1 = ReferenceEquals(device, null) ? new global::glfw3.VkPhysicalDevice.__Internal() : *(global::glfw3.VkPhysicalDevice.__Internal*) device.__Instance;
+            var __ret = __Internal.GetPhysicalDevicePresentationSupport_0(__arg0, __arg1, queuefamily);
+            return __ret;
+        }
+
+        // <remarks>
+        // <para>  This function creates a Vulkan surface for the specified window.</para>
+        // <para>  If the Vulkan loader was not found at initialization, this function returns</para>
+        // <para>  `VK_ERROR_INITIALIZATION_FAILED` and generates a </para>
+        // <para>  error.  Call </para>
+        // <para>  found.</para>
+        // <para>  If the required window surface creation instance extensions are not</para>
+        // <para>  available or if the specified instance was not created with these extensions</para>
+        // <para>  enabled, this function returns `VK_ERROR_EXTENSION_NOT_PRESENT` and</para>
+        // <para>  generates a </para>
+        // <para>  glfwGetRequiredInstanceExtensions to check what instance extensions are</para>
+        // <para>  required.</para>
+        // <para>  The window surface must be destroyed before the specified Vulkan instance.</para>
+        // <para>  It is the responsibility of the caller to destroy the window surface.  GLFW</para>
+        // <para>  does not destroy it for you.  Call `vkDestroySurfaceKHR` to destroy the</para>
+        // <para>  surface.</para>
+        // </remarks>
+        // <param name="instance">The Vulkan instance to create the surface in.</param>
+        // <param name="window">The window to create the surface for.</param>
+        // <param name="allocator">
+        // <para>The allocator to use, or `NULL` to use the default</para>
+        // <para>allocator.</para>
+        // </param>
+        // <param name="surface">
+        // <para>Where to store the handle of the surface.  This is set</para>
+        // <para>to `VK_NULL_HANDLE` if an error occurred.</para>
+        // </param>
+        // <returns>
+        // <para>`VK_SUCCESS` if successful, or a Vulkan error code if an</para>
+        // <para>[error](</para>
+        // <para></para>
+        // <para>Possible errors include</para>
+        // <para>GLFW_API_UNAVAILABLE and</para>
+        // <para></para>
+        // <para>eliminate almost all occurrences of these errors.</para>
+        // <para></para>
+        // <para>_safety This function may be called from any thread.  For</para>
+        // <para>synchronization details of Vulkan objects, see the Vulkan specification.</para>
+        // </returns>
+        public static global::glfw3.VkResult CreateWindowSurface(global::glfw3.VkInstance instance, global::glfw3.GLFWwindow window, global::glfw3.VkAllocationCallbacks allocator, global::glfw3.VkSurfaceKHR surface)
+        {
+            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
+            var __arg1 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
+            var __arg2 = ReferenceEquals(allocator, null) ? global::System.IntPtr.Zero : allocator.__Instance;
+            var __arg3 = ReferenceEquals(surface, null) ? global::System.IntPtr.Zero : surface.__Instance;
+            var __ret = __Internal.CreateWindowSurface_0(__arg0, __arg1, __arg2, __arg3);
+            return __ret;
         }
     }
 }

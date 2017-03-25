@@ -9,6 +9,8 @@ open CppSharp.Types
 
 let root_directory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
+let tempFilePath = System.IO.Path.GetTempPath() + "\Glfw"
+
 /// <summary>
 /// Converts the input data to enum names. The text file contains the complete define section of the original glfw header.
 /// </summary>
@@ -36,44 +38,6 @@ type GLFWTranslationPass() as this =
     inherit Passes.TranslationUnitPass()
     let mutable once = false
 
-    //let createEnum (dec:AST.Declaration) (macro_name:string) (enum_type:string) (macro_value:string)= 
-    //    let enum = new AST.Enumeration()
-    //    do enum.Name <- ToTitleCase (enum_type.ToLower())
-    //    do enum.Namespace <- dec.TranslationUnit
-    //    let name = ToTitleCase(macro_name.Replace(enum_type + "_", "").ToLower()).Replace("_", "")
-    //    printfn "enum name: %A" enum.Name
-    //    let value = try 
-    //                    System.Convert.ToUInt64(macro_value)
-    //                with
-    //                | _ -> 0x0uL
-    //    let item = AST.Enumeration.Item(Name = name, Value = value)
-    //    do item.Namespace <- enum 
-                
-    //    do enum.Items.Add(item)
-                
-    //    if dec.TranslationUnit.Declarations.Exists((fun i -> i.Name = enum.Name )) then 
-    //        let correct_enum = dec.TranslationUnit.Declarations.Find((fun i-> i.Name = enum.Name)) :?> AST.Enumeration
-    //        do item.Namespace <- correct_enum
-    //        do correct_enum.Items.Add(item)
-
-    //    else dec.TranslationUnit.Declarations.Add(enum)
-        
-    //    ()
-
-    //member t.processMacro (dec:AST.Declaration) (macro:AST.MacroDefinition)=
-    //    let allowed_enums = [ "JOYSTICK"; "KEY"; "MOUSE"]
-          
-    //    if macro.Name.StartsWith("GLFW_") then
-    //        let macro_name = macro.Name.Substring(5)
-    //        let isEnum = allowed_enums |> List.tryFind (fun s -> macro.Name.StartsWith("GLFW_" + s))
-    //        match isEnum with
-    //        | Some enum_type -> createEnum dec macro_name enum_type macro.Expression
-    //        | None ->
-    //                 ()
-
-        
-    //    ()
-
     override t.VisitDeclaration dec =
         if t.AlreadyVisited(dec) then false
         else 
@@ -81,14 +45,6 @@ type GLFWTranslationPass() as this =
             if dec.Name.Contains("glfw") then
                 dec.Name <- dec.Name.Replace("glfw", "");
             true 
-
-    override t.VisitFieldDecl dec =
-        if t.AlreadyVisited(dec) then false
-        else printfn "Field: %A" dec.Name; true 
-    
-    override t.VisitMacroDefinition macro =
-        printfn "Macro definition: %A" macro.Name
-        (macro.Name.Contains("GLFW_"))        
 
 type Generator() =
     let AdjustMouseEnums (mouse:CppSharp.AST.Enumeration) =
@@ -101,7 +57,6 @@ type Generator() =
         mouse.Items |> Seq.iter mouseAdjustfun
     
     ///<summary> Adds all missing enums from the defines in the glfw header</summary>
-    ///
     let AddMissingEnums (ctx:CppSharp.AST.ASTContext) =
         let beautify (o:CppSharp.AST.Enumeration.Item) s =
                 o.Name <- o.Name.ToLower().Replace(s, "")
@@ -148,9 +103,8 @@ type Generator() =
             options.OutputDir <- "../../../generated"
             options.GeneratorKind <- GeneratorKind.CSharp
             let glfw = options.AddModule("glfw3")
-          // glfw.Defines.Add("GLFW_INCLUDE_VULKAN")
-          //  glfw.IncludeDirs.Add(root_directory.ToString() + "/headers")
-            glfw.Headers.Add(root_directory.ToString() + "/headers/glfw3.h")
+            glfw.Defines.Add("VK_VERSION_1_0")
+            glfw.Headers.Add(tempFilePath)
             Diagnostics.Level <- DiagnosticKind.Debug
             ()
         member t.SetupPasses driver =
@@ -170,12 +124,23 @@ type Generator() =
 
             
         
-
+let FillTempFile (file:System.IO.StreamWriter) =
+    let glfw = (root_directory + "/headers/glfw3.h")
+    let dummies = (root_directory + "/headers/dummies.h")
+    let dummiesLines = System.IO.File.ReadLines(dummies)
+    dummiesLines |> Seq.iter (fun s -> file.WriteLine(s))
+    let glfwLines = System.IO.File.ReadLines(glfw)
+    glfwLines |> Seq.iter(fun s -> file.WriteLine(s))
+    file.Flush()
 
 [<EntryPoint>]
 let main argv = 
     printfn "%A" argv
-    ConsoleDriver.Run(new Generator());
+    let file = System.IO.File.CreateText(tempFilePath)
+    do FillTempFile file
+    ConsoleDriver.Run(new Generator())
     printfn "Done. Press any key to exit"
     Console.ReadKey() |> ignore
+    file.Close()
+    System.IO.File.Delete(tempFilePath)
     0 // return an integer exit code
