@@ -10,15 +10,15 @@ using System.Security;
 
 namespace glfw3
 {
-    public enum KEY
+    public enum Key
     {
-        UNKNOWN = 0,
-        SPACE = 32,
-        APOSTROPHE = 39,
-        COMMA = 44,
-        MINUS = 45,
-        PERIOD = 46,
-        SLASH = 47,
+        Unknown = -1,
+        Space = 32,
+        Apostrophe = 39,
+        Comma = 44,
+        Minus = 45,
+        Period = 46,
+        Slash = 47,
         _0 = 48,
         _1 = 49,
         _2 = 50,
@@ -29,8 +29,8 @@ namespace glfw3
         _7 = 55,
         _8 = 56,
         _9 = 57,
-        SEMICOLON = 59,
-        EQUAL = 61,
+        Semicolon = 59,
+        Equal = 61,
         A = 65,
         B = 66,
         C = 67,
@@ -57,31 +57,31 @@ namespace glfw3
         X = 88,
         Y = 89,
         Z = 90,
-        LEFT_BRACKET = 91,
-        BACKSLASH = 92,
-        RIGHT_BRACKET = 93,
-        GRAVE_ACCENT = 96,
-        WORLD_1 = 161,
-        WORLD_2 = 162,
-        ESCAPE = 256,
-        ENTER = 257,
-        TAB = 258,
-        BACKSPACE = 259,
-        INSERT = 260,
-        DELETE = 261,
-        RIGHT = 262,
-        LEFT = 263,
-        DOWN = 264,
-        UP = 265,
-        PAGE_UP = 266,
-        PAGE_DOWN = 267,
-        HOME = 268,
-        END = 269,
-        CAPS_LOCK = 280,
-        SCROLL_LOCK = 281,
-        NUM_LOCK = 282,
-        PRINT_SCREEN = 283,
-        PAUSE = 284,
+        LeftBracket = 91,
+        Backslash = 92,
+        RightBracket = 93,
+        GraveAccent = 96,
+        World1 = 161,
+        World2 = 162,
+        Escape = 256,
+        Enter = 257,
+        Tab = 258,
+        Backspace = 259,
+        Insert = 260,
+        Delete = 261,
+        Right = 262,
+        Left = 263,
+        Down = 264,
+        Up = 265,
+        PageUp = 266,
+        PageDown = 267,
+        Home = 268,
+        End = 269,
+        CapsLock = 280,
+        ScrollLock = 281,
+        NumLock = 282,
+        PrintScreen = 283,
+        Pause = 284,
         F1 = 290,
         F2 = 291,
         F3 = 292,
@@ -107,54 +107,52 @@ namespace glfw3
         F23 = 312,
         F24 = 313,
         F25 = 314,
-        KP_0 = 320,
-        KP_1 = 321,
-        KP_2 = 322,
-        KP_3 = 323,
-        KP_4 = 324,
-        KP_5 = 325,
-        KP_6 = 326,
-        KP_7 = 327,
-        KP_8 = 328,
-        KP_9 = 329,
-        KP_DECIMAL = 330,
-        KP_DIVIDE = 331,
-        KP_MULTIPLY = 332,
-        KP_SUBTRACT = 333,
-        KP_ADD = 334,
-        KP_ENTER = 335,
-        KP_EQUAL = 336,
-        LEFT_SHIFT = 340,
-        LEFT_CONTROL = 341,
-        LEFT_ALT = 342,
-        LEFT_SUPER = 343,
-        RIGHT_SHIFT = 344,
-        RIGHT_CONTROL = 345,
-        RIGHT_ALT = 346,
-        RIGHT_SUPER = 347,
-        MENU = 348,
-        LAST = 0,
-        KY_KEYS = 0
+        Kp0 = 320,
+        Kp1 = 321,
+        Kp2 = 322,
+        Kp3 = 323,
+        Kp4 = 324,
+        Kp5 = 325,
+        Kp6 = 326,
+        Kp7 = 327,
+        Kp8 = 328,
+        Kp9 = 329,
+        KpDecimal = 330,
+        KpDivide = 331,
+        KpMultiply = 332,
+        KpSubtract = 333,
+        KpAdd = 334,
+        KpEnter = 335,
+        KpEqual = 336,
+        LeftShift = 340,
+        LeftControl = 341,
+        LeftAlt = 342,
+        LeftSuper = 343,
+        RightShift = 344,
+        RightControl = 345,
+        RightAlt = 346,
+        RightSuper = 347,
+        Menu = 348,
+        Last = 348
     }
 
-    public enum MOUSE
+    public enum Mouse
     {
-        BUTTON_1 = 0,
-        BUTTON_2 = 1,
-        BUTTON_3 = 2,
-        BUTTON_4 = 3,
-        BUTTON_5 = 4,
-        BUTTON_6 = 5,
-        BUTTON_7 = 6,
-        BUTTON_8 = 7,
-        BUTTON_LAST = 0,
-        BUTTON_LEFT = 0,
-        BUTTON_RIGHT = 0,
-        BUTTON_MIDDLE = 0,
-        MOUSE_BUTTONS = 0
+        _1 = 0,
+        _2 = 1,
+        _3 = 2,
+        _4 = 3,
+        _5 = 4,
+        _6 = 5,
+        _7 = 6,
+        _8 = 7,
+        _Last = 7,
+        _Left = 0,
+        _Right = 1,
+        _Middle = 2
     }
 
-    public enum JOYSTICK
+    public enum Joystick
     {
         _1 = 0,
         _2 = 1,
@@ -172,7 +170,103 @@ namespace glfw3
         _14 = 13,
         _15 = 14,
         _16 = 15,
-        LAST = 0
+        Last = 15
+    }
+
+    public enum KeyModifier
+    {
+        ModShift = 1,
+        ModControl = 2,
+        ModAlt = 4,
+        ModSuper = 8
+    }
+
+    public enum Error
+    {
+        NotInitialized = 65537,
+        NoCurrentContext = 65538,
+        InvalidEnum = 65539,
+        InvalidValue = 65540,
+        OutOfMemory = 65541,
+        ApiUnavailable = 65542,
+        VersionUnavailable = 65543,
+        PlatformError = 65544,
+        FormatUnavailable = 65545,
+        NoWindowContext = 65546
+    }
+
+    public enum State
+    {
+        True = 1,
+        False = 0,
+        Release = 0,
+        Press = 1,
+        Repeat = 2,
+        Focused = 131073,
+        Iconified = 131074,
+        Resizable = 131075,
+        Visible = 131076,
+        Decorated = 131077,
+        AutoIconify = 131078,
+        Floating = 131079,
+        Maximized = 131080,
+        RedBits = 135169,
+        GreenBits = 135170,
+        BlueBits = 135171,
+        AlphaBits = 135172,
+        DepthBits = 135173,
+        StencilBits = 135174,
+        AccumRedBits = 135175,
+        AccumGreenBits = 135176,
+        AccumBlueBits = 135177,
+        AccumAlphaBits = 135178,
+        AuxBuffers = 135179,
+        Stereo = 135180,
+        Samples = 135181,
+        SrgbCapable = 135182,
+        RefreshRate = 135183,
+        Doublebuffer = 135184,
+        ClientApi = 139265,
+        ContextVersionMajor = 139266,
+        ContextVersionMinor = 139267,
+        ContextRevision = 139268,
+        ContextRobustness = 139269,
+        OpenglForwardCompat = 139270,
+        OpenglDebugContext = 139271,
+        OpenglProfile = 139272,
+        ContextReleaseBehavior = 139273,
+        ContextNoError = 139274,
+        ContextCreationApi = 139275,
+        NoApi = 0,
+        OpenglApi = 196609,
+        OpenglEsApi = 196610,
+        NoRobustness = 0,
+        NoResetNotification = 200705,
+        LoseContextOnReset = 200706,
+        OpenglAnyProfile = 0,
+        OpenglCoreProfile = 204801,
+        OpenglCompatProfile = 204802,
+        Cursor = 208897,
+        StickyKeys = 208898,
+        StickyMouseButtons = 208899,
+        CursorNormal = 212993,
+        CursorHidden = 212994,
+        CursorDisabled = 212995,
+        AnyReleaseBehavior = 0,
+        ReleaseBehaviorFlush = 217089,
+        ReleaseBehaviorNone = 217090,
+        NativeContextApi = 221185,
+        EglContextApi = 221186,
+        Connected = 262145,
+        Disconnected = 262146,
+        DontCare = -1
+    }
+
+    public enum Version
+    {
+        VersionMajor = 3,
+        VersionMinor = 2,
+        VersionRevision = 1
     }
 
     // <remarks>
@@ -1031,12 +1125,12 @@ namespace glfw3
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwInit")]
-            internal static extern int GlfwInit_0();
+            internal static extern int Init_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwTerminate")]
-            internal static extern void GlfwTerminate_0();
+            internal static extern void Terminate_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -1046,452 +1140,452 @@ namespace glfw3
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetVersion")]
-            internal static extern void GlfwGetVersion_0(int* major, int* minor, int* rev);
+            internal static extern void GetVersion_0(int* major, int* minor, int* rev);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetVersionString")]
-            internal static extern global::System.IntPtr GlfwGetVersionString_0();
+            internal static extern global::System.IntPtr GetVersionString_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetErrorCallback")]
-            internal static extern global::System.IntPtr GlfwSetErrorCallback_0(global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetErrorCallback_0(global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetMonitors")]
-            internal static extern global::System.IntPtr GlfwGetMonitors_0(int* count);
+            internal static extern global::System.IntPtr GetMonitors_0(int* count);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetPrimaryMonitor")]
-            internal static extern global::System.IntPtr GlfwGetPrimaryMonitor_0();
+            internal static extern global::System.IntPtr GetPrimaryMonitor_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetMonitorPos")]
-            internal static extern void GlfwGetMonitorPos_0(global::System.IntPtr monitor, int* xpos, int* ypos);
+            internal static extern void GetMonitorPos_0(global::System.IntPtr monitor, int* xpos, int* ypos);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetMonitorPhysicalSize")]
-            internal static extern void GlfwGetMonitorPhysicalSize_0(global::System.IntPtr monitor, int* widthMM, int* heightMM);
+            internal static extern void GetMonitorPhysicalSize_0(global::System.IntPtr monitor, int* widthMM, int* heightMM);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetMonitorName")]
-            internal static extern global::System.IntPtr GlfwGetMonitorName_0(global::System.IntPtr monitor);
+            internal static extern global::System.IntPtr GetMonitorName_0(global::System.IntPtr monitor);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetMonitorCallback")]
-            internal static extern global::System.IntPtr GlfwSetMonitorCallback_0(global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetMonitorCallback_0(global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetVideoModes")]
-            internal static extern global::System.IntPtr GlfwGetVideoModes_0(global::System.IntPtr monitor, int* count);
+            internal static extern global::System.IntPtr GetVideoModes_0(global::System.IntPtr monitor, int* count);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetVideoMode")]
-            internal static extern global::System.IntPtr GlfwGetVideoMode_0(global::System.IntPtr monitor);
+            internal static extern global::System.IntPtr GetVideoMode_0(global::System.IntPtr monitor);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetGamma")]
-            internal static extern void GlfwSetGamma_0(global::System.IntPtr monitor, float gamma);
+            internal static extern void SetGamma_0(global::System.IntPtr monitor, float gamma);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetGammaRamp")]
-            internal static extern global::System.IntPtr GlfwGetGammaRamp_0(global::System.IntPtr monitor);
+            internal static extern global::System.IntPtr GetGammaRamp_0(global::System.IntPtr monitor);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetGammaRamp")]
-            internal static extern void GlfwSetGammaRamp_0(global::System.IntPtr monitor, global::System.IntPtr ramp);
+            internal static extern void SetGammaRamp_0(global::System.IntPtr monitor, global::System.IntPtr ramp);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwDefaultWindowHints")]
-            internal static extern void GlfwDefaultWindowHints_0();
+            internal static extern void DefaultWindowHints_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwWindowHint")]
-            internal static extern void GlfwWindowHint_0(int hint, int value);
+            internal static extern void WindowHint_0(int hint, int value);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwCreateWindow")]
-            internal static extern global::System.IntPtr GlfwCreateWindow_0(int width, int height, [MarshalAs(UnmanagedType.LPStr)] string title, global::System.IntPtr monitor, global::System.IntPtr share);
+            internal static extern global::System.IntPtr CreateWindow_0(int width, int height, [MarshalAs(UnmanagedType.LPStr)] string title, global::System.IntPtr monitor, global::System.IntPtr share);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwDestroyWindow")]
-            internal static extern void GlfwDestroyWindow_0(global::System.IntPtr window);
+            internal static extern void DestroyWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwWindowShouldClose")]
-            internal static extern int GlfwWindowShouldClose_0(global::System.IntPtr window);
+            internal static extern int WindowShouldClose_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowShouldClose")]
-            internal static extern void GlfwSetWindowShouldClose_0(global::System.IntPtr window, int value);
+            internal static extern void SetWindowShouldClose_0(global::System.IntPtr window, int value);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowTitle")]
-            internal static extern void GlfwSetWindowTitle_0(global::System.IntPtr window, [MarshalAs(UnmanagedType.LPStr)] string title);
+            internal static extern void SetWindowTitle_0(global::System.IntPtr window, [MarshalAs(UnmanagedType.LPStr)] string title);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowIcon")]
-            internal static extern void GlfwSetWindowIcon_0(global::System.IntPtr window, int count, global::System.IntPtr images);
+            internal static extern void SetWindowIcon_0(global::System.IntPtr window, int count, global::System.IntPtr images);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowPos")]
-            internal static extern void GlfwGetWindowPos_0(global::System.IntPtr window, int* xpos, int* ypos);
+            internal static extern void GetWindowPos_0(global::System.IntPtr window, int* xpos, int* ypos);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowPos")]
-            internal static extern void GlfwSetWindowPos_0(global::System.IntPtr window, int xpos, int ypos);
+            internal static extern void SetWindowPos_0(global::System.IntPtr window, int xpos, int ypos);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowSize")]
-            internal static extern void GlfwGetWindowSize_0(global::System.IntPtr window, int* width, int* height);
+            internal static extern void GetWindowSize_0(global::System.IntPtr window, int* width, int* height);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowSizeLimits")]
-            internal static extern void GlfwSetWindowSizeLimits_0(global::System.IntPtr window, int minwidth, int minheight, int maxwidth, int maxheight);
+            internal static extern void SetWindowSizeLimits_0(global::System.IntPtr window, int minwidth, int minheight, int maxwidth, int maxheight);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowAspectRatio")]
-            internal static extern void GlfwSetWindowAspectRatio_0(global::System.IntPtr window, int numer, int denom);
+            internal static extern void SetWindowAspectRatio_0(global::System.IntPtr window, int numer, int denom);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowSize")]
-            internal static extern void GlfwSetWindowSize_0(global::System.IntPtr window, int width, int height);
+            internal static extern void SetWindowSize_0(global::System.IntPtr window, int width, int height);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetFramebufferSize")]
-            internal static extern void GlfwGetFramebufferSize_0(global::System.IntPtr window, int* width, int* height);
+            internal static extern void GetFramebufferSize_0(global::System.IntPtr window, int* width, int* height);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowFrameSize")]
-            internal static extern void GlfwGetWindowFrameSize_0(global::System.IntPtr window, int* left, int* top, int* right, int* bottom);
+            internal static extern void GetWindowFrameSize_0(global::System.IntPtr window, int* left, int* top, int* right, int* bottom);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwIconifyWindow")]
-            internal static extern void GlfwIconifyWindow_0(global::System.IntPtr window);
+            internal static extern void IconifyWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwRestoreWindow")]
-            internal static extern void GlfwRestoreWindow_0(global::System.IntPtr window);
+            internal static extern void RestoreWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwMaximizeWindow")]
-            internal static extern void GlfwMaximizeWindow_0(global::System.IntPtr window);
+            internal static extern void MaximizeWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwShowWindow")]
-            internal static extern void GlfwShowWindow_0(global::System.IntPtr window);
+            internal static extern void ShowWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwHideWindow")]
-            internal static extern void GlfwHideWindow_0(global::System.IntPtr window);
+            internal static extern void HideWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwFocusWindow")]
-            internal static extern void GlfwFocusWindow_0(global::System.IntPtr window);
+            internal static extern void FocusWindow_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowMonitor")]
-            internal static extern global::System.IntPtr GlfwGetWindowMonitor_0(global::System.IntPtr window);
+            internal static extern global::System.IntPtr GetWindowMonitor_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowMonitor")]
-            internal static extern void GlfwSetWindowMonitor_0(global::System.IntPtr window, global::System.IntPtr monitor, int xpos, int ypos, int width, int height, int refreshRate);
+            internal static extern void SetWindowMonitor_0(global::System.IntPtr window, global::System.IntPtr monitor, int xpos, int ypos, int width, int height, int refreshRate);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowAttrib")]
-            internal static extern int GlfwGetWindowAttrib_0(global::System.IntPtr window, int attrib);
+            internal static extern int GetWindowAttrib_0(global::System.IntPtr window, int attrib);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowUserPointer")]
-            internal static extern void GlfwSetWindowUserPointer_0(global::System.IntPtr window, global::System.IntPtr pointer);
+            internal static extern void SetWindowUserPointer_0(global::System.IntPtr window, global::System.IntPtr pointer);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetWindowUserPointer")]
-            internal static extern global::System.IntPtr GlfwGetWindowUserPointer_0(global::System.IntPtr window);
+            internal static extern global::System.IntPtr GetWindowUserPointer_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowPosCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowPosCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowPosCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowSizeCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowSizeCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowSizeCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowCloseCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowCloseCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowCloseCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowRefreshCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowRefreshCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowRefreshCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowFocusCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowFocusCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowFocusCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetWindowIconifyCallback")]
-            internal static extern global::System.IntPtr GlfwSetWindowIconifyCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetWindowIconifyCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetFramebufferSizeCallback")]
-            internal static extern global::System.IntPtr GlfwSetFramebufferSizeCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetFramebufferSizeCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwPollEvents")]
-            internal static extern void GlfwPollEvents_0();
+            internal static extern void PollEvents_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwWaitEvents")]
-            internal static extern void GlfwWaitEvents_0();
+            internal static extern void WaitEvents_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwWaitEventsTimeout")]
-            internal static extern void GlfwWaitEventsTimeout_0(double timeout);
+            internal static extern void WaitEventsTimeout_0(double timeout);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwPostEmptyEvent")]
-            internal static extern void GlfwPostEmptyEvent_0();
+            internal static extern void PostEmptyEvent_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetInputMode")]
-            internal static extern int GlfwGetInputMode_0(global::System.IntPtr window, int mode);
+            internal static extern int GetInputMode_0(global::System.IntPtr window, int mode);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetInputMode")]
-            internal static extern void GlfwSetInputMode_0(global::System.IntPtr window, int mode, int value);
+            internal static extern void SetInputMode_0(global::System.IntPtr window, int mode, int value);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetKeyName")]
-            internal static extern global::System.IntPtr GlfwGetKeyName_0(int key, int scancode);
+            internal static extern global::System.IntPtr GetKeyName_0(int key, int scancode);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetKey")]
-            internal static extern int GlfwGetKey_0(global::System.IntPtr window, int key);
+            internal static extern int GetKey_0(global::System.IntPtr window, int key);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetMouseButton")]
-            internal static extern int GlfwGetMouseButton_0(global::System.IntPtr window, int button);
+            internal static extern int GetMouseButton_0(global::System.IntPtr window, int button);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetCursorPos")]
-            internal static extern void GlfwGetCursorPos_0(global::System.IntPtr window, double* xpos, double* ypos);
+            internal static extern void GetCursorPos_0(global::System.IntPtr window, double* xpos, double* ypos);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCursorPos")]
-            internal static extern void GlfwSetCursorPos_0(global::System.IntPtr window, double xpos, double ypos);
+            internal static extern void SetCursorPos_0(global::System.IntPtr window, double xpos, double ypos);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwCreateCursor")]
-            internal static extern global::System.IntPtr GlfwCreateCursor_0(global::System.IntPtr image, int xhot, int yhot);
+            internal static extern global::System.IntPtr CreateCursor_0(global::System.IntPtr image, int xhot, int yhot);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwCreateStandardCursor")]
-            internal static extern global::System.IntPtr GlfwCreateStandardCursor_0(int shape);
+            internal static extern global::System.IntPtr CreateStandardCursor_0(int shape);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwDestroyCursor")]
-            internal static extern void GlfwDestroyCursor_0(global::System.IntPtr cursor);
+            internal static extern void DestroyCursor_0(global::System.IntPtr cursor);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCursor")]
-            internal static extern void GlfwSetCursor_0(global::System.IntPtr window, global::System.IntPtr cursor);
+            internal static extern void SetCursor_0(global::System.IntPtr window, global::System.IntPtr cursor);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetKeyCallback")]
-            internal static extern global::System.IntPtr GlfwSetKeyCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetKeyCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCharCallback")]
-            internal static extern global::System.IntPtr GlfwSetCharCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetCharCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCharModsCallback")]
-            internal static extern global::System.IntPtr GlfwSetCharModsCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetCharModsCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetMouseButtonCallback")]
-            internal static extern global::System.IntPtr GlfwSetMouseButtonCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetMouseButtonCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCursorPosCallback")]
-            internal static extern global::System.IntPtr GlfwSetCursorPosCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetCursorPosCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetCursorEnterCallback")]
-            internal static extern global::System.IntPtr GlfwSetCursorEnterCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetCursorEnterCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetScrollCallback")]
-            internal static extern global::System.IntPtr GlfwSetScrollCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetScrollCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetDropCallback")]
-            internal static extern global::System.IntPtr GlfwSetDropCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetDropCallback_0(global::System.IntPtr window, global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwJoystickPresent")]
-            internal static extern int GlfwJoystickPresent_0(int joy);
+            internal static extern int JoystickPresent_0(int joy);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetJoystickAxes")]
-            internal static extern float* GlfwGetJoystickAxes_0(int joy, int* count);
+            internal static extern float* GetJoystickAxes_0(int joy, int* count);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetJoystickButtons")]
-            internal static extern byte* GlfwGetJoystickButtons_0(int joy, int* count);
+            internal static extern byte* GetJoystickButtons_0(int joy, int* count);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetJoystickName")]
-            internal static extern global::System.IntPtr GlfwGetJoystickName_0(int joy);
+            internal static extern global::System.IntPtr GetJoystickName_0(int joy);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetJoystickCallback")]
-            internal static extern global::System.IntPtr GlfwSetJoystickCallback_0(global::System.IntPtr cbfun);
+            internal static extern global::System.IntPtr SetJoystickCallback_0(global::System.IntPtr cbfun);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetClipboardString")]
-            internal static extern void GlfwSetClipboardString_0(global::System.IntPtr window, [MarshalAs(UnmanagedType.LPStr)] string @string);
+            internal static extern void SetClipboardString_0(global::System.IntPtr window, [MarshalAs(UnmanagedType.LPStr)] string @string);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetClipboardString")]
-            internal static extern global::System.IntPtr GlfwGetClipboardString_0(global::System.IntPtr window);
+            internal static extern global::System.IntPtr GetClipboardString_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetTime")]
-            internal static extern double GlfwGetTime_0();
+            internal static extern double GetTime_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSetTime")]
-            internal static extern void GlfwSetTime_0(double time);
+            internal static extern void SetTime_0(double time);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetTimerValue")]
-            internal static extern ulong GlfwGetTimerValue_0();
+            internal static extern ulong GetTimerValue_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetTimerFrequency")]
-            internal static extern ulong GlfwGetTimerFrequency_0();
+            internal static extern ulong GetTimerFrequency_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwMakeContextCurrent")]
-            internal static extern void GlfwMakeContextCurrent_0(global::System.IntPtr window);
+            internal static extern void MakeContextCurrent_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetCurrentContext")]
-            internal static extern global::System.IntPtr GlfwGetCurrentContext_0();
+            internal static extern global::System.IntPtr GetCurrentContext_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSwapBuffers")]
-            internal static extern void GlfwSwapBuffers_0(global::System.IntPtr window);
+            internal static extern void SwapBuffers_0(global::System.IntPtr window);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwSwapInterval")]
-            internal static extern void GlfwSwapInterval_0(int interval);
+            internal static extern void SwapInterval_0(int interval);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwExtensionSupported")]
-            internal static extern int GlfwExtensionSupported_0([MarshalAs(UnmanagedType.LPStr)] string extension);
+            internal static extern int ExtensionSupported_0([MarshalAs(UnmanagedType.LPStr)] string extension);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetProcAddress")]
-            internal static extern global::System.IntPtr GlfwGetProcAddress_0([MarshalAs(UnmanagedType.LPStr)] string procname);
+            internal static extern global::System.IntPtr GetProcAddress_0([MarshalAs(UnmanagedType.LPStr)] string procname);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwVulkanSupported")]
-            internal static extern int GlfwVulkanSupported_0();
+            internal static extern int VulkanSupported_0();
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="glfwGetRequiredInstanceExtensions")]
-            internal static extern sbyte** GlfwGetRequiredInstanceExtensions_0(uint* count);
+            internal static extern sbyte** GetRequiredInstanceExtensions_0(uint* count);
         }
 
         // <remarks>
@@ -1513,9 +1607,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static int GlfwInit()
+        public static int Init()
         {
-            var __ret = __Internal.GlfwInit_0();
+            var __ret = __Internal.Init_0();
             return __ret;
         }
 
@@ -1537,9 +1631,9 @@ namespace glfw3
         // <para>  </para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </remarks>
-        public static void GlfwTerminate()
+        public static void Terminate()
         {
-            __Internal.GlfwTerminate_0();
+            __Internal.Terminate_0();
         }
 
         public static global::glfw3.Test GetTests()
@@ -1569,7 +1663,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </param>
-        public static void GlfwGetVersion(ref int major, ref int minor, ref int rev)
+        public static void GetVersion(ref int major, ref int minor, ref int rev)
         {
             fixed (int* __refParamPtr0 = &major)
             {
@@ -1580,7 +1674,7 @@ namespace glfw3
                     fixed (int* __refParamPtr2 = &rev)
                     {
                         var __arg2 = __refParamPtr2;
-                        __Internal.GlfwGetVersion_0(__arg0, __arg1, __arg2);
+                        __Internal.GetVersion_0(__arg0, __arg1, __arg2);
                     }
                 }
             }
@@ -1606,9 +1700,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static string GlfwGetVersionString()
+        public static string GetVersionString()
         {
-            var __ret = __Internal.GlfwGetVersionString_0();
+            var __ret = __Internal.GetVersionString_0();
             return Marshal.PtrToStringAnsi(__ret);
         }
 
@@ -1636,10 +1730,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWerrorfun GlfwSetErrorCallback(global::glfw3.GLFWerrorfun cbfun)
+        public static global::glfw3.GLFWerrorfun SetErrorCallback(global::glfw3.GLFWerrorfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetErrorCallback_0(__arg0);
+            var __ret = __Internal.SetErrorCallback_0(__arg0);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWerrorfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWerrorfun));
         }
@@ -1665,12 +1759,12 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWmonitor GlfwGetMonitors(ref int count)
+        public static global::glfw3.GLFWmonitor GetMonitors(ref int count)
         {
             fixed (int* __refParamPtr0 = &count)
             {
                 var __arg0 = __refParamPtr0;
-                var __ret = __Internal.GlfwGetMonitors_0(__arg0);
+                var __ret = __Internal.GetMonitors_0(__arg0);
                 global::glfw3.GLFWmonitor __result0;
                 if (__ret == IntPtr.Zero) __result0 = null;
                 else if (global::glfw3.GLFWmonitor.NativeToManagedMap.ContainsKey(__ret))
@@ -1694,9 +1788,9 @@ namespace glfw3
         // <para></para>
         // <para>glfwGetMonitors.</para>
         // </returns>
-        public static global::glfw3.GLFWmonitor GlfwGetPrimaryMonitor()
+        public static global::glfw3.GLFWmonitor GetPrimaryMonitor()
         {
-            var __ret = __Internal.GlfwGetPrimaryMonitor_0();
+            var __ret = __Internal.GetPrimaryMonitor_0();
             global::glfw3.GLFWmonitor __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWmonitor.NativeToManagedMap.ContainsKey(__ret))
@@ -1721,7 +1815,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetMonitorPos(global::glfw3.GLFWmonitor monitor, ref int xpos, ref int ypos)
+        public static void GetMonitorPos(global::glfw3.GLFWmonitor monitor, ref int xpos, ref int ypos)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             fixed (int* __refParamPtr1 = &xpos)
@@ -1730,7 +1824,7 @@ namespace glfw3
                 fixed (int* __refParamPtr2 = &ypos)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetMonitorPos_0(__arg0, __arg1, __arg2);
+                    __Internal.GetMonitorPos_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -1759,7 +1853,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetMonitorPhysicalSize(global::glfw3.GLFWmonitor monitor, ref int widthMM, ref int heightMM)
+        public static void GetMonitorPhysicalSize(global::glfw3.GLFWmonitor monitor, ref int widthMM, ref int heightMM)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             fixed (int* __refParamPtr1 = &widthMM)
@@ -1768,7 +1862,7 @@ namespace glfw3
                 fixed (int* __refParamPtr2 = &heightMM)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetMonitorPhysicalSize_0(__arg0, __arg1, __arg2);
+                    __Internal.GetMonitorPhysicalSize_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -1791,10 +1885,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static string GlfwGetMonitorName(global::glfw3.GLFWmonitor monitor)
+        public static string GetMonitorName(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
-            var __ret = __Internal.GlfwGetMonitorName_0(__arg0);
+            var __ret = __Internal.GetMonitorName_0(__arg0);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
@@ -1815,10 +1909,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWmonitorfun GlfwSetMonitorCallback(global::glfw3.GLFWmonitorfun cbfun)
+        public static global::glfw3.GLFWmonitorfun SetMonitorCallback(global::glfw3.GLFWmonitorfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetMonitorCallback_0(__arg0);
+            var __ret = __Internal.SetMonitorCallback_0(__arg0);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWmonitorfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWmonitorfun));
         }
@@ -1848,13 +1942,13 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWvidmode GlfwGetVideoModes(global::glfw3.GLFWmonitor monitor, ref int count)
+        public static global::glfw3.GLFWvidmode GetVideoModes(global::glfw3.GLFWmonitor monitor, ref int count)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             fixed (int* __refParamPtr1 = &count)
             {
                 var __arg1 = __refParamPtr1;
-                var __ret = __Internal.GlfwGetVideoModes_0(__arg0, __arg1);
+                var __ret = __Internal.GetVideoModes_0(__arg0, __arg1);
                 global::glfw3.GLFWvidmode __result0;
                 if (__ret == IntPtr.Zero) __result0 = null;
                 else if (global::glfw3.GLFWvidmode.NativeToManagedMap.ContainsKey(__ret))
@@ -1883,10 +1977,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWvidmode GlfwGetVideoMode(global::glfw3.GLFWmonitor monitor)
+        public static global::glfw3.GLFWvidmode GetVideoMode(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
-            var __ret = __Internal.GlfwGetVideoMode_0(__arg0);
+            var __ret = __Internal.GetVideoMode_0(__arg0);
             global::glfw3.GLFWvidmode __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWvidmode.NativeToManagedMap.ContainsKey(__ret))
@@ -1909,10 +2003,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetGamma(global::glfw3.GLFWmonitor monitor, float gamma)
+        public static void SetGamma(global::glfw3.GLFWmonitor monitor, float gamma)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
-            __Internal.GlfwSetGamma_0(__arg0, gamma);
+            __Internal.SetGamma_0(__arg0, gamma);
         }
 
         // <remarks>  This function returns the current gamma ramp of the specified monitor.</remarks>
@@ -1931,10 +2025,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWgammaramp GlfwGetGammaRamp(global::glfw3.GLFWmonitor monitor)
+        public static global::glfw3.GLFWgammaramp GetGammaRamp(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
-            var __ret = __Internal.GlfwGetGammaRamp_0(__arg0);
+            var __ret = __Internal.GetGammaRamp_0(__arg0);
             global::glfw3.GLFWgammaramp __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWgammaramp.NativeToManagedMap.ContainsKey(__ret))
@@ -1962,11 +2056,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetGammaRamp(global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWgammaramp ramp)
+        public static void SetGammaRamp(global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWgammaramp ramp)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             var __arg1 = ReferenceEquals(ramp, null) ? global::System.IntPtr.Zero : ramp.__Instance;
-            __Internal.GlfwSetGammaRamp_0(__arg0, __arg1);
+            __Internal.SetGammaRamp_0(__arg0, __arg1);
         }
 
         // <remarks>
@@ -1977,9 +2071,9 @@ namespace glfw3
         // <para>  </para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </remarks>
-        public static void GlfwDefaultWindowHints()
+        public static void DefaultWindowHints()
         {
-            __Internal.GlfwDefaultWindowHints_0();
+            __Internal.DefaultWindowHints_0();
         }
 
         // <remarks>
@@ -2000,9 +2094,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwWindowHint(int hint, int value)
+        public static void WindowHint(int hint, int value)
         {
-            __Internal.GlfwWindowHint_0(hint, value);
+            __Internal.WindowHint_0(hint, value);
         }
 
         // <remarks>
@@ -2084,11 +2178,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindow GlfwCreateWindow(int width, int height, string title, global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWwindow share)
+        public static global::glfw3.GLFWwindow CreateWindow(int width, int height, string title, global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWwindow share)
         {
             var __arg3 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             var __arg4 = ReferenceEquals(share, null) ? global::System.IntPtr.Zero : share.__Instance;
-            var __ret = __Internal.GlfwCreateWindow_0(width, height, title, __arg3, __arg4);
+            var __ret = __Internal.CreateWindow_0(width, height, title, __arg3, __arg4);
             global::glfw3.GLFWwindow __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWwindow.NativeToManagedMap.ContainsKey(__ret))
@@ -2114,10 +2208,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwDestroyWindow(global::glfw3.GLFWwindow window)
+        public static void DestroyWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwDestroyWindow_0(__arg0);
+            __Internal.DestroyWindow_0(__arg0);
         }
 
         // <remarks>  This function returns the value of the close flag of the specified window.</remarks>
@@ -2130,10 +2224,10 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  Access is not</para>
         // <para>synchronized.</para>
         // </returns>
-        public static int GlfwWindowShouldClose(global::glfw3.GLFWwindow window)
+        public static int WindowShouldClose(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwWindowShouldClose_0(__arg0);
+            var __ret = __Internal.WindowShouldClose_0(__arg0);
             return __ret;
         }
 
@@ -2151,10 +2245,10 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  Access is not</para>
         // <para>synchronized.</para>
         // </param>
-        public static void GlfwSetWindowShouldClose(global::glfw3.GLFWwindow window, int value)
+        public static void SetWindowShouldClose(global::glfw3.GLFWwindow window, int value)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowShouldClose_0(__arg0, value);
+            __Internal.SetWindowShouldClose_0(__arg0, value);
         }
 
         // <remarks>
@@ -2171,10 +2265,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowTitle(global::glfw3.GLFWwindow window, string title)
+        public static void SetWindowTitle(global::glfw3.GLFWwindow window, string title)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowTitle_0(__arg0, title);
+            __Internal.SetWindowTitle_0(__arg0, title);
         }
 
         // <remarks>
@@ -2204,11 +2298,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowIcon(global::glfw3.GLFWwindow window, int count, global::glfw3.GLFWimage images)
+        public static void SetWindowIcon(global::glfw3.GLFWwindow window, int count, global::glfw3.GLFWimage images)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg2 = ReferenceEquals(images, null) ? global::System.IntPtr.Zero : images.__Instance;
-            __Internal.GlfwSetWindowIcon_0(__arg0, count, __arg2);
+            __Internal.SetWindowIcon_0(__arg0, count, __arg2);
         }
 
         // <remarks>
@@ -2231,7 +2325,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetWindowPos(global::glfw3.GLFWwindow window, ref int xpos, ref int ypos)
+        public static void GetWindowPos(global::glfw3.GLFWwindow window, ref int xpos, ref int ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             fixed (int* __refParamPtr1 = &xpos)
@@ -2240,7 +2334,7 @@ namespace glfw3
                 fixed (int* __refParamPtr2 = &ypos)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetWindowPos_0(__arg0, __arg1, __arg2);
+                    __Internal.GetWindowPos_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -2264,10 +2358,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowPos(global::glfw3.GLFWwindow window, int xpos, int ypos)
+        public static void SetWindowPos(global::glfw3.GLFWwindow window, int xpos, int ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowPos_0(__arg0, xpos, ypos);
+            __Internal.SetWindowPos_0(__arg0, xpos, ypos);
         }
 
         // <remarks>
@@ -2291,7 +2385,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetWindowSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
+        public static void GetWindowSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             fixed (int* __refParamPtr1 = &width)
@@ -2300,7 +2394,7 @@ namespace glfw3
                 fixed (int* __refParamPtr2 = &height)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetWindowSize_0(__arg0, __arg1, __arg2);
+                    __Internal.GetWindowSize_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -2338,10 +2432,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowSizeLimits(global::glfw3.GLFWwindow window, int minwidth, int minheight, int maxwidth, int maxheight)
+        public static void SetWindowSizeLimits(global::glfw3.GLFWwindow window, int minwidth, int minheight, int maxwidth, int maxheight)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowSizeLimits_0(__arg0, minwidth, minheight, maxwidth, maxheight);
+            __Internal.SetWindowSizeLimits_0(__arg0, minwidth, minheight, maxwidth, maxheight);
         }
 
         // <remarks>
@@ -2372,10 +2466,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowAspectRatio(global::glfw3.GLFWwindow window, int numer, int denom)
+        public static void SetWindowAspectRatio(global::glfw3.GLFWwindow window, int numer, int denom)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowAspectRatio_0(__arg0, numer, denom);
+            __Internal.SetWindowAspectRatio_0(__arg0, numer, denom);
         }
 
         // <remarks>
@@ -2404,10 +2498,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowSize(global::glfw3.GLFWwindow window, int width, int height)
+        public static void SetWindowSize(global::glfw3.GLFWwindow window, int width, int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowSize_0(__arg0, width, height);
+            __Internal.SetWindowSize_0(__arg0, width, height);
         }
 
         // <remarks>
@@ -2431,7 +2525,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetFramebufferSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
+        public static void GetFramebufferSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             fixed (int* __refParamPtr1 = &width)
@@ -2440,7 +2534,7 @@ namespace glfw3
                 fixed (int* __refParamPtr2 = &height)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetFramebufferSize_0(__arg0, __arg1, __arg2);
+                    __Internal.GetFramebufferSize_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -2478,7 +2572,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetWindowFrameSize(global::glfw3.GLFWwindow window, ref int left, ref int top, ref int right, ref int bottom)
+        public static void GetWindowFrameSize(global::glfw3.GLFWwindow window, ref int left, ref int top, ref int right, ref int bottom)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             fixed (int* __refParamPtr1 = &left)
@@ -2493,7 +2587,7 @@ namespace glfw3
                         fixed (int* __refParamPtr4 = &bottom)
                         {
                             var __arg4 = __refParamPtr4;
-                            __Internal.GlfwGetWindowFrameSize_0(__arg0, __arg1, __arg2, __arg3, __arg4);
+                            __Internal.GetWindowFrameSize_0(__arg0, __arg1, __arg2, __arg3, __arg4);
                         }
                     }
                 }
@@ -2515,10 +2609,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwIconifyWindow(global::glfw3.GLFWwindow window)
+        public static void IconifyWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwIconifyWindow_0(__arg0);
+            __Internal.IconifyWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2536,10 +2630,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwRestoreWindow(global::glfw3.GLFWwindow window)
+        public static void RestoreWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwRestoreWindow_0(__arg0);
+            __Internal.RestoreWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2553,10 +2647,10 @@ namespace glfw3
         // <para>Possible errors include</para>
         // <para>GLFW_PLATFORM_ERROR.</para>
         // </param>
-        public static void GlfwMaximizeWindow(global::glfw3.GLFWwindow window)
+        public static void MaximizeWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwMaximizeWindow_0(__arg0);
+            __Internal.MaximizeWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2572,10 +2666,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwShowWindow(global::glfw3.GLFWwindow window)
+        public static void ShowWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwShowWindow_0(__arg0);
+            __Internal.ShowWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2591,10 +2685,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwHideWindow(global::glfw3.GLFWwindow window)
+        public static void HideWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwHideWindow_0(__arg0);
+            __Internal.HideWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2615,10 +2709,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwFocusWindow(global::glfw3.GLFWwindow window)
+        public static void FocusWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwFocusWindow_0(__arg0);
+            __Internal.FocusWindow_0(__arg0);
         }
 
         // <remarks>
@@ -2634,10 +2728,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWmonitor GlfwGetWindowMonitor(global::glfw3.GLFWwindow window)
+        public static global::glfw3.GLFWmonitor GetWindowMonitor(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetWindowMonitor_0(__arg0);
+            var __ret = __Internal.GetWindowMonitor_0(__arg0);
             global::glfw3.GLFWmonitor __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWmonitor.NativeToManagedMap.ContainsKey(__ret))
@@ -2688,11 +2782,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetWindowMonitor(global::glfw3.GLFWwindow window, global::glfw3.GLFWmonitor monitor, int xpos, int ypos, int width, int height, int refreshRate)
+        public static void SetWindowMonitor(global::glfw3.GLFWwindow window, global::glfw3.GLFWmonitor monitor, int xpos, int ypos, int width, int height, int refreshRate)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
-            __Internal.GlfwSetWindowMonitor_0(__arg0, __arg1, xpos, ypos, width, height, refreshRate);
+            __Internal.SetWindowMonitor_0(__arg0, __arg1, xpos, ypos, width, height, refreshRate);
         }
 
         // <remarks>
@@ -2716,10 +2810,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static int GlfwGetWindowAttrib(global::glfw3.GLFWwindow window, int attrib)
+        public static int GetWindowAttrib(global::glfw3.GLFWwindow window, int attrib)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetWindowAttrib_0(__arg0, attrib);
+            var __ret = __Internal.GetWindowAttrib_0(__arg0, attrib);
             return __ret;
         }
 
@@ -2737,10 +2831,10 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  Access is not</para>
         // <para>synchronized.</para>
         // </param>
-        public static void GlfwSetWindowUserPointer(global::glfw3.GLFWwindow window, global::System.IntPtr pointer)
+        public static void SetWindowUserPointer(global::glfw3.GLFWwindow window, global::System.IntPtr pointer)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetWindowUserPointer_0(__arg0, pointer);
+            __Internal.SetWindowUserPointer_0(__arg0, pointer);
         }
 
         // <remarks>
@@ -2755,10 +2849,10 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  Access is not</para>
         // <para>synchronized.</para>
         // </param>
-        public static global::System.IntPtr GlfwGetWindowUserPointer(global::glfw3.GLFWwindow window)
+        public static global::System.IntPtr GetWindowUserPointer(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetWindowUserPointer_0(__arg0);
+            var __ret = __Internal.GetWindowUserPointer_0(__arg0);
             return __ret;
         }
 
@@ -2780,11 +2874,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowposfun GlfwSetWindowPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowposfun cbfun)
+        public static global::glfw3.GLFWwindowposfun SetWindowPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowposfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowPosCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowPosCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowposfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowposfun));
         }
@@ -2807,11 +2901,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowsizefun GlfwSetWindowSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowsizefun cbfun)
+        public static global::glfw3.GLFWwindowsizefun SetWindowSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowsizefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowSizeCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowSizeCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowsizefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowsizefun));
         }
@@ -2838,11 +2932,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowclosefun GlfwSetWindowCloseCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowclosefun cbfun)
+        public static global::glfw3.GLFWwindowclosefun SetWindowCloseCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowclosefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowCloseCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowCloseCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowclosefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowclosefun));
         }
@@ -2868,11 +2962,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowrefreshfun GlfwSetWindowRefreshCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowrefreshfun cbfun)
+        public static global::glfw3.GLFWwindowrefreshfun SetWindowRefreshCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowrefreshfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowRefreshCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowRefreshCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowrefreshfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowrefreshfun));
         }
@@ -2898,11 +2992,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowfocusfun GlfwSetWindowFocusCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowfocusfun cbfun)
+        public static global::glfw3.GLFWwindowfocusfun SetWindowFocusCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowfocusfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowFocusCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowFocusCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowfocusfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowfocusfun));
         }
@@ -2924,11 +3018,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindowiconifyfun GlfwSetWindowIconifyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowiconifyfun cbfun)
+        public static global::glfw3.GLFWwindowiconifyfun SetWindowIconifyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowiconifyfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetWindowIconifyCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetWindowIconifyCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowiconifyfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowiconifyfun));
         }
@@ -2950,11 +3044,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWframebuffersizefun GlfwSetFramebufferSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWframebuffersizefun cbfun)
+        public static global::glfw3.GLFWframebuffersizefun SetFramebufferSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWframebuffersizefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetFramebufferSizeCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetFramebufferSizeCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWframebuffersizefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWframebuffersizefun));
         }
@@ -2980,9 +3074,9 @@ namespace glfw3
         // <para>  </para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </remarks>
-        public static void GlfwPollEvents()
+        public static void PollEvents()
         {
-            __Internal.GlfwPollEvents_0();
+            __Internal.PollEvents_0();
         }
 
         // <remarks>
@@ -3014,9 +3108,9 @@ namespace glfw3
         // <para>  </para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </remarks>
-        public static void GlfwWaitEvents()
+        public static void WaitEvents()
         {
-            __Internal.GlfwWaitEvents_0();
+            __Internal.WaitEvents_0();
         }
 
         // <remarks>
@@ -3049,9 +3143,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwWaitEventsTimeout(double timeout)
+        public static void WaitEventsTimeout(double timeout)
         {
-            __Internal.GlfwWaitEventsTimeout_0(timeout);
+            __Internal.WaitEventsTimeout_0(timeout);
         }
 
         // <remarks>
@@ -3066,9 +3160,9 @@ namespace glfw3
         // <para>  </para>
         // <para>_safety This function may be called from any thread.</para>
         // </remarks>
-        public static void GlfwPostEmptyEvent()
+        public static void PostEmptyEvent()
         {
-            __Internal.GlfwPostEmptyEvent_0();
+            __Internal.PostEmptyEvent_0();
         }
 
         // <remarks>
@@ -3086,10 +3180,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static int GlfwGetInputMode(global::glfw3.GLFWwindow window, int mode)
+        public static int GetInputMode(global::glfw3.GLFWwindow window, int mode)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetInputMode_0(__arg0, mode);
+            var __ret = __Internal.GetInputMode_0(__arg0, mode);
             return __ret;
         }
 
@@ -3132,10 +3226,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetInputMode(global::glfw3.GLFWwindow window, int mode, int value)
+        public static void SetInputMode(global::glfw3.GLFWwindow window, int mode, int value)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetInputMode_0(__arg0, mode, value);
+            __Internal.SetInputMode_0(__arg0, mode, value);
         }
 
         // <remarks>
@@ -3184,9 +3278,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static string GlfwGetKeyName(int key, int scancode)
+        public static string GetKeyName(int key, int scancode)
         {
-            var __ret = __Internal.GlfwGetKeyName_0(key, scancode);
+            var __ret = __Internal.GetKeyName_0(key, scancode);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
@@ -3218,10 +3312,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static int GlfwGetKey(global::glfw3.GLFWwindow window, int key)
+        public static int GetKey(global::glfw3.GLFWwindow window, int key)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetKey_0(__arg0, key);
+            var __ret = __Internal.GetKey_0(__arg0, key);
             return __ret;
         }
 
@@ -3243,10 +3337,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static int GlfwGetMouseButton(global::glfw3.GLFWwindow window, int button)
+        public static int GetMouseButton(global::glfw3.GLFWwindow window, int button)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetMouseButton_0(__arg0, button);
+            var __ret = __Internal.GetMouseButton_0(__arg0, button);
             return __ret;
         }
 
@@ -3277,7 +3371,7 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwGetCursorPos(global::glfw3.GLFWwindow window, ref double xpos, ref double ypos)
+        public static void GetCursorPos(global::glfw3.GLFWwindow window, ref double xpos, ref double ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             fixed (double* __refParamPtr1 = &xpos)
@@ -3286,7 +3380,7 @@ namespace glfw3
                 fixed (double* __refParamPtr2 = &ypos)
                 {
                     var __arg2 = __refParamPtr2;
-                    __Internal.GlfwGetCursorPos_0(__arg0, __arg1, __arg2);
+                    __Internal.GetCursorPos_0(__arg0, __arg1, __arg2);
                 }
             }
         }
@@ -3318,10 +3412,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetCursorPos(global::glfw3.GLFWwindow window, double xpos, double ypos)
+        public static void SetCursorPos(global::glfw3.GLFWwindow window, double xpos, double ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetCursorPos_0(__arg0, xpos, ypos);
+            __Internal.SetCursorPos_0(__arg0, xpos, ypos);
         }
 
         // <remarks>
@@ -3352,10 +3446,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcursor GlfwCreateCursor(global::glfw3.GLFWimage image, int xhot, int yhot)
+        public static global::glfw3.GLFWcursor CreateCursor(global::glfw3.GLFWimage image, int xhot, int yhot)
         {
             var __arg0 = ReferenceEquals(image, null) ? global::System.IntPtr.Zero : image.__Instance;
-            var __ret = __Internal.GlfwCreateCursor_0(__arg0, xhot, yhot);
+            var __ret = __Internal.CreateCursor_0(__arg0, xhot, yhot);
             global::glfw3.GLFWcursor __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWcursor.NativeToManagedMap.ContainsKey(__ret))
@@ -3380,9 +3474,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcursor GlfwCreateStandardCursor(int shape)
+        public static global::glfw3.GLFWcursor CreateStandardCursor(int shape)
         {
-            var __ret = __Internal.GlfwCreateStandardCursor_0(shape);
+            var __ret = __Internal.CreateStandardCursor_0(shape);
             global::glfw3.GLFWcursor __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWcursor.NativeToManagedMap.ContainsKey(__ret))
@@ -3406,10 +3500,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwDestroyCursor(global::glfw3.GLFWcursor cursor)
+        public static void DestroyCursor(global::glfw3.GLFWcursor cursor)
         {
             var __arg0 = ReferenceEquals(cursor, null) ? global::System.IntPtr.Zero : cursor.__Instance;
-            __Internal.GlfwDestroyCursor_0(__arg0);
+            __Internal.DestroyCursor_0(__arg0);
         }
 
         // <remarks>
@@ -3430,11 +3524,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetCursor(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursor cursor)
+        public static void SetCursor(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursor cursor)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = ReferenceEquals(cursor, null) ? global::System.IntPtr.Zero : cursor.__Instance;
-            __Internal.GlfwSetCursor_0(__arg0, __arg1);
+            __Internal.SetCursor_0(__arg0, __arg1);
         }
 
         // <remarks>
@@ -3469,11 +3563,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWkeyfun GlfwSetKeyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWkeyfun cbfun)
+        public static global::glfw3.GLFWkeyfun SetKeyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWkeyfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetKeyCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetKeyCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWkeyfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWkeyfun));
         }
@@ -3507,11 +3601,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcharfun GlfwSetCharCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharfun cbfun)
+        public static global::glfw3.GLFWcharfun SetCharCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetCharCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetCharCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcharfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcharfun));
         }
@@ -3542,11 +3636,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcharmodsfun GlfwSetCharModsCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharmodsfun cbfun)
+        public static global::glfw3.GLFWcharmodsfun SetCharModsCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharmodsfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetCharModsCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetCharModsCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcharmodsfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcharmodsfun));
         }
@@ -3573,11 +3667,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWmousebuttonfun GlfwSetMouseButtonCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWmousebuttonfun cbfun)
+        public static global::glfw3.GLFWmousebuttonfun SetMouseButtonCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWmousebuttonfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetMouseButtonCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetMouseButtonCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWmousebuttonfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWmousebuttonfun));
         }
@@ -3601,11 +3695,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcursorposfun GlfwSetCursorPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorposfun cbfun)
+        public static global::glfw3.GLFWcursorposfun SetCursorPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorposfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetCursorPosCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetCursorPosCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcursorposfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcursorposfun));
         }
@@ -3628,11 +3722,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWcursorenterfun GlfwSetCursorEnterCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorenterfun cbfun)
+        public static global::glfw3.GLFWcursorenterfun SetCursorEnterCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorenterfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetCursorEnterCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetCursorEnterCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcursorenterfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcursorenterfun));
         }
@@ -3657,11 +3751,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWscrollfun GlfwSetScrollCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWscrollfun cbfun)
+        public static global::glfw3.GLFWscrollfun SetScrollCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWscrollfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetScrollCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetScrollCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWscrollfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWscrollfun));
         }
@@ -3687,11 +3781,11 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWdropfun GlfwSetDropCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWdropfun cbfun)
+        public static global::glfw3.GLFWdropfun SetDropCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWdropfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             var __arg1 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetDropCallback_0(__arg0, __arg1);
+            var __ret = __Internal.SetDropCallback_0(__arg0, __arg1);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWdropfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWdropfun));
         }
@@ -3706,9 +3800,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static int GlfwJoystickPresent(int joy)
+        public static int JoystickPresent(int joy)
         {
-            var __ret = __Internal.GlfwJoystickPresent_0(joy);
+            var __ret = __Internal.JoystickPresent_0(joy);
             return __ret;
         }
 
@@ -3739,12 +3833,12 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static float* GlfwGetJoystickAxes(int joy, ref int count)
+        public static float* GetJoystickAxes(int joy, ref int count)
         {
             fixed (int* __refParamPtr1 = &count)
             {
                 var __arg1 = __refParamPtr1;
-                var __ret = __Internal.GlfwGetJoystickAxes_0(joy, __arg1);
+                var __ret = __Internal.GetJoystickAxes_0(joy, __arg1);
                 return __ret;
             }
         }
@@ -3776,12 +3870,12 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static byte* GlfwGetJoystickButtons(int joy, ref int count)
+        public static byte* GetJoystickButtons(int joy, ref int count)
         {
             fixed (int* __refParamPtr1 = &count)
             {
                 var __arg1 = __refParamPtr1;
-                var __ret = __Internal.GlfwGetJoystickButtons_0(joy, __arg1);
+                var __ret = __Internal.GetJoystickButtons_0(joy, __arg1);
                 return __ret;
             }
         }
@@ -3809,9 +3903,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static string GlfwGetJoystickName(int joy)
+        public static string GetJoystickName(int joy)
         {
-            var __ret = __Internal.GlfwGetJoystickName_0(joy);
+            var __ret = __Internal.GetJoystickName_0(joy);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
@@ -3832,10 +3926,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static global::glfw3.GLFWjoystickfun GlfwSetJoystickCallback(global::glfw3.GLFWjoystickfun cbfun)
+        public static global::glfw3.GLFWjoystickfun SetJoystickCallback(global::glfw3.GLFWjoystickfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
-            var __ret = __Internal.GlfwSetJoystickCallback_0(__arg0);
+            var __ret = __Internal.SetJoystickCallback_0(__arg0);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWjoystickfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWjoystickfun));
         }
@@ -3856,10 +3950,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </param>
-        public static void GlfwSetClipboardString(global::glfw3.GLFWwindow window, string @string)
+        public static void SetClipboardString(global::glfw3.GLFWwindow window, string @string)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSetClipboardString_0(__arg0, @string);
+            __Internal.SetClipboardString_0(__arg0, @string);
         }
 
         // <remarks>
@@ -3883,10 +3977,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function must only be called from the main thread.</para>
         // </returns>
-        public static string GlfwGetClipboardString(global::glfw3.GLFWwindow window)
+        public static string GetClipboardString(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __ret = __Internal.GlfwGetClipboardString_0(__arg0);
+            var __ret = __Internal.GetClipboardString_0(__arg0);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
@@ -3908,9 +4002,9 @@ namespace glfw3
         // <para>writing of the internal timer offset is not atomic, so it needs to be</para>
         // <para>externally synchronized with calls to</para>
         // </returns>
-        public static double GlfwGetTime()
+        public static double GetTime()
         {
-            var __ret = __Internal.GlfwGetTime_0();
+            var __ret = __Internal.GetTime_0();
             return __ret;
         }
 
@@ -3930,9 +4024,9 @@ namespace glfw3
         // <para>writing of the internal timer offset is not atomic, so it needs to be</para>
         // <para>externally synchronized with calls to</para>
         // </param>
-        public static void GlfwSetTime(double time)
+        public static void SetTime(double time)
         {
-            __Internal.GlfwSetTime_0(time);
+            __Internal.SetTime_0(time);
         }
 
         // <remarks>
@@ -3952,9 +4046,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static ulong GlfwGetTimerValue()
+        public static ulong GetTimerValue()
         {
-            var __ret = __Internal.GlfwGetTimerValue_0();
+            var __ret = __Internal.GetTimerValue_0();
             return __ret;
         }
 
@@ -3967,9 +4061,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static ulong GlfwGetTimerFrequency()
+        public static ulong GetTimerFrequency()
         {
-            var __ret = __Internal.GlfwGetTimerFrequency_0();
+            var __ret = __Internal.GetTimerFrequency_0();
             return __ret;
         }
 
@@ -3995,10 +4089,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </param>
-        public static void GlfwMakeContextCurrent(global::glfw3.GLFWwindow window)
+        public static void MakeContextCurrent(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwMakeContextCurrent_0(__arg0);
+            __Internal.MakeContextCurrent_0(__arg0);
         }
 
         // <remarks>
@@ -4013,9 +4107,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static global::glfw3.GLFWwindow GlfwGetCurrentContext()
+        public static global::glfw3.GLFWwindow GetCurrentContext()
         {
-            var __ret = __Internal.GlfwGetCurrentContext_0();
+            var __ret = __Internal.GetCurrentContext_0();
             global::glfw3.GLFWwindow __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
             else if (global::glfw3.GLFWwindow.NativeToManagedMap.ContainsKey(__ret))
@@ -4044,10 +4138,10 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </param>
-        public static void GlfwSwapBuffers(global::glfw3.GLFWwindow window)
+        public static void SwapBuffers(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            __Internal.GlfwSwapBuffers_0(__arg0);
+            __Internal.SwapBuffers_0(__arg0);
         }
 
         // <remarks>
@@ -4078,9 +4172,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </param>
-        public static void GlfwSwapInterval(int interval)
+        public static void SwapInterval(int interval)
         {
-            __Internal.GlfwSwapInterval_0(interval);
+            __Internal.SwapInterval_0(interval);
         }
 
         // <remarks>
@@ -4109,9 +4203,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static int GlfwExtensionSupported(string extension)
+        public static int ExtensionSupported(string extension)
         {
-            var __ret = __Internal.GlfwExtensionSupported_0(extension);
+            var __ret = __Internal.ExtensionSupported_0(extension);
             return __ret;
         }
 
@@ -4140,9 +4234,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static global::glfw3.GLFWglproc GlfwGetProcAddress(string procname)
+        public static global::glfw3.GLFWglproc GetProcAddress(string procname)
         {
-            var __ret = __Internal.GlfwGetProcAddress_0(procname);
+            var __ret = __Internal.GetProcAddress_0(procname);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWglproc)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWglproc));
         }
@@ -4164,9 +4258,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static int GlfwVulkanSupported()
+        public static int VulkanSupported()
         {
-            var __ret = __Internal.GlfwVulkanSupported_0();
+            var __ret = __Internal.VulkanSupported_0();
             return __ret;
         }
 
@@ -4201,12 +4295,12 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static sbyte** GlfwGetRequiredInstanceExtensions(ref uint count)
+        public static sbyte** GetRequiredInstanceExtensions(ref uint count)
         {
             fixed (uint* __refParamPtr0 = &count)
             {
                 var __arg0 = __refParamPtr0;
-                var __ret = __Internal.GlfwGetRequiredInstanceExtensions_0(__arg0);
+                var __ret = __Internal.GetRequiredInstanceExtensions_0(__arg0);
                 return __ret;
             }
         }

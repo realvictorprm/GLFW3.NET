@@ -9,6 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		headers\glfw3.h = headers\glfw3.h
 		headers\glfw3native.h = headers\glfw3native.h
+		misc\JoystickMacros.txt = misc\JoystickMacros.txt
+		misc\KeyMacros.txt = misc\KeyMacros.txt
+		misc\MouseMacros.txt = misc\MouseMacros.txt
+		misc\State.txt = misc\State.txt
+		misc\Version.txt = misc\Version.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLFW", "GLFW\GLFW.csproj", "{9F09464A-5152-4054-90EC-68D1A7C17618}"

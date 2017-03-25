@@ -74,6 +74,13 @@
       <Link>Microsoft.VisualStudio.Setup.Configuration.Interop.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Helper.fsx" />
+    <Content Include="out.txt">
+      <Link>out.txt</Link>
+    </Content>
+    <Content Include="..\misc\State.txt">
+      <Link>State.txt</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CppSharp">

@@ -9,7 +9,10 @@ namespace glfw3
 {
     public partial class glfw3
     {
-        static glfw3() { GlfwInit(); }
+        static glfw3() {
+            Init();
+
+        }
 
     }
 
@@ -29,7 +32,7 @@ namespace glfw3
                 {
 
                 }
-                glfw3.GlfwDestroyWindow(this);
+                glfw3.DestroyWindow(this);
                 disposedValue = true;
             }
         }
@@ -56,7 +59,7 @@ namespace glfw3
                 {
 
                 }
-                glfw3.GlfwDestroyCursor(this);
+                glfw3.DestroyCursor(this);
                 disposedValue = true;
             }
         }
@@ -83,7 +86,7 @@ namespace glfw3
 
         public Monitor(Window window)
         {
-            Handle = glfw3.GlfwGetWindowMonitor(window.Handle);
+            Handle = glfw3.GetWindowMonitor(window.Handle);
         }
 
         public Monitor(GLFWmonitor monitor)
@@ -94,7 +97,8 @@ namespace glfw3
         public unsafe Monitor[] getMonitors()
         {
             int count = 0;
-            IntPtr raw = glfw3.__Internal.GlfwGetMonitors_0((int*)count);
+            var ptr = new System.IntPtr((int*)count);
+            IntPtr raw = glfw3.__Internal.GetWindowMonitor_0(ptr);
             Monitor[] monitors = new Monitor[count];
             for (int i = 0; i < count; i++)
             {
@@ -108,10 +112,12 @@ namespace glfw3
 
     public partial class Window
     {
-        public struct SizeChangedEventArgs { public Window source; public int width; public int height; };
-        public event EventHandler<SizeChangedEventArgs> SizeChanged;
-
+        
         protected GLFWwindowsizefun SizeChangedCallback = null;
+        protected GLFWkeyfun KeyPressedCallback = null;
+
+
+        protected string title = String.Empty;
 
         public GLFWwindow Handle
         {
@@ -119,7 +125,6 @@ namespace glfw3
             protected set;
         }
 
-        protected string title = String.Empty;
 
         public string Title
         {
@@ -130,10 +135,55 @@ namespace glfw3
             set
             {
                 title = value;
-                glfw3.GlfwSetWindowTitle(Handle, value);
+                glfw3.SetWindowTitle(Handle, value);
             }
         }
 
+        /// <summary>
+        /// Event args for the size changed event. 
+        /// </summary>
+        public struct SizeChangedEventArgs { public Window source; public int width; public int height; };
+
+        /// <summary>  This is the event args for the keyboard key event.</summary>
+        public struct KeyPressedEventArgs {
+
+            /// <summary>
+            /// The window that received the event.
+            /// </summary>
+            public Window source;
+
+            /// <summary>
+            /// The keyboard key
+            /// </summary>
+            public Key key;
+
+            /// <summary>
+            /// The system-specific scancode of the key
+            /// </summary>
+            public int scancode;
+
+            /// <summary>
+            /// `GLFW_PRESS`, `GLFW_RELEASE` or `GLFW_REPEAT`.
+            /// </summary>
+            public State action;
+
+            /// <summary>
+            /// Bit field describing which modifier keys. Use KeyModifiers for extracting the bits.
+            /// </summary>
+            public int mods;
+        };
+
+        /// <summary>
+        /// Will be called if the Size of the window has been changed
+        /// </summary>
+        public event EventHandler<SizeChangedEventArgs> SizeChanged;
+
+        /// <summary>
+        /// Will be called if a key has been pressed
+        /// </summary>
+        public event EventHandler<KeyPressedEventArgs> KeyPressed;
+
+        #region Constructors
         protected Window()
         {
             Init();
@@ -141,21 +191,21 @@ namespace glfw3
 
         public Window(int width, int height, string title)
         {
-            Handle = glfw3.GlfwCreateWindow(width, height, title, null, null);
+            Handle = glfw3.CreateWindow(width, height, title, null, null);
             this.title = title;
             Init();
         }
 
         public Window(int width, int height, string title, Monitor m)
         {
-            Handle = glfw3.GlfwCreateWindow(width, height, title, m.Handle, null);
+            Handle = glfw3.CreateWindow(width, height, title, m.Handle, null);
             this.title = title;
             Init();
         }
 
         public Window(int width, int height, string title, Monitor m, Window w)
         {
-            Handle = glfw3.GlfwCreateWindow(width, height, title, m.Handle, w.Handle);
+            Handle = glfw3.CreateWindow(width, height, title, m.Handle, w.Handle);
             this.title = title;
             Init();
         }
@@ -165,25 +215,26 @@ namespace glfw3
             Handle = w;
             Init();
         }
+#endregion
 
         public bool ShouldClose()
         {
-            return System.Convert.ToBoolean(glfw3.GlfwWindowShouldClose(Handle));
+            return System.Convert.ToBoolean(glfw3.WindowShouldClose(Handle));
         }
 
         public void Show()
         {
-            glfw3.GlfwShowWindow(Handle);
+            glfw3.ShowWindow(Handle);
         }
 
         public void Hide()
         {
-            glfw3.GlfwHideWindow(Handle);
+            glfw3.HideWindow(Handle);
         }
 
         public void SwapBuffers()
         {
-            glfw3.GlfwSwapBuffers(Handle);
+            glfw3.SwapBuffers(Handle);
         }
 
         private void Init()
@@ -191,7 +242,17 @@ namespace glfw3
             SizeChangedCallback = (IntPtr _handle, int width, int height) => {
                 SizeChanged.Invoke(this, new SizeChangedEventArgs { source = this, width = width, height = height });
             };
-            glfw3.GlfwSetWindowSizeCallback(Handle, SizeChangedCallback);
+            glfw3.SetWindowSizeCallback(Handle, SizeChangedCallback);
+            KeyPressedCallback = (IntPtr _handle, int key, int scancode, int action, int mods) =>
+            {
+                var args = new KeyPressedEventArgs {
+                    source = this,
+                    key = (Key)System.Enum.Parse(typeof(Key), key.ToString()),
+                    action = (State)System.Enum.Parse(typeof(State), action.ToString()),
+                    mods = mods};            
+                KeyPressed.Invoke(this, args);
+            };
+            glfw3.SetKeyCallback(Handle, KeyPressedCallback);
         }
     } 
     #endregion

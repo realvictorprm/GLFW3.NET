@@ -1,0 +1,111 @@
+﻿#define GLFW_FOCUSED                0x00020001
+#define GLFW_ICONIFIED              0x00020002
+#define GLFW_RESIZABLE              0x00020003
+#define GLFW_VISIBLE                0x00020004
+#define GLFW_DECORATED              0x00020005
+#define GLFW_AUTO_ICONIFY           0x00020006
+#define GLFW_FLOATING               0x00020007
+#define GLFW_MAXIMIZED              0x00020008
+
+#define GLFW_RED_BITS               0x00021001
+#define GLFW_GREEN_BITS             0x00021002
+#define GLFW_BLUE_BITS              0x00021003
+#define GLFW_ALPHA_BITS             0x00021004
+#define GLFW_DEPTH_BITS             0x00021005
+#define GLFW_STENCIL_BITS           0x00021006
+#define GLFW_ACCUM_RED_BITS         0x00021007
+#define GLFW_ACCUM_GREEN_BITS       0x00021008
+#define GLFW_ACCUM_BLUE_BITS        0x00021009
+#define GLFW_ACCUM_ALPHA_BITS       0x0002100A
+#define GLFW_AUX_BUFFERS            0x0002100B
+#define GLFW_STEREO                 0x0002100C
+#define GLFW_SAMPLES                0x0002100D
+#define GLFW_SRGB_CAPABLE           0x0002100E
+#define GLFW_REFRESH_RATE           0x0002100F
+#define GLFW_DOUBLEBUFFER           0x00021010
+
+#define GLFW_CLIENT_API             0x00022001
+#define GLFW_CONTEXT_VERSION_MAJOR  0x00022002
+#define GLFW_CONTEXT_VERSION_MINOR  0x00022003
+#define GLFW_CONTEXT_REVISION       0x00022004
+#define GLFW_CONTEXT_ROBUSTNESS     0x00022005
+#define GLFW_OPENGL_FORWARD_COMPAT  0x00022006
+#define GLFW_OPENGL_DEBUG_CONTEXT   0x00022007
+#define GLFW_OPENGL_PROFILE         0x00022008
+#define GLFW_CONTEXT_RELEASE_BEHAVIOR 0x00022009
+#define GLFW_CONTEXT_NO_ERROR       0x0002200A
+#define GLFW_CONTEXT_CREATION_API   0x0002200B
+
+#define GLFW_NO_API                          0
+#define GLFW_OPENGL_API             0x00030001
+#define GLFW_OPENGL_ES_API          0x00030002
+
+#define GLFW_NO_ROBUSTNESS                   0
+#define GLFW_NO_RESET_NOTIFICATION  0x00031001
+#define GLFW_LOSE_CONTEXT_ON_RESET  0x00031002
+
+#define GLFW_OPENGL_ANY_PROFILE              0
+#define GLFW_OPENGL_CORE_PROFILE    0x00032001
+#define GLFW_OPENGL_COMPAT_PROFILE  0x00032002
+
+#define GLFW_CURSOR                 0x00033001
+#define GLFW_STICKY_KEYS            0x00033002
+#define GLFW_STICKY_MOUSE_BUTTONS   0x00033003
+
+#define GLFW_CURSOR_NORMAL          0x00034001
+#define GLFW_CURSOR_HIDDEN          0x00034002
+#define GLFW_CURSOR_DISABLED        0x00034003
+
+#define GLFW_ANY_RELEASE_BEHAVIOR            0
+#define GLFW_RELEASE_BEHAVIOR_FLUSH 0x00035001
+#define GLFW_RELEASE_BEHAVIOR_NONE  0x00035002
+
+#define GLFW_NATIVE_CONTEXT_API     0x00036001
+#define GLFW_EGL_CONTEXT_API        0x00036002
+
+#define GLFW_CONNECTED              0x00040001
+#define GLFW_DISCONNECTED           0x00040002
+
+#define GLFW_DONT_CARE              -1
+
+/*! @name Boolean values
+ *  @{ */
+/*! @brief One.
+ *
+ *  One.  Seriously.  You don't _need_ to use this symbol in your code.  It's
+ *  just semantic sugar for the number 1.  You can use `1` or `true` or `_True`
+ *  or `GL_TRUE` or whatever you want.
+ */
+#define GLFW_TRUE                   1
+/*! @brief Zero.
+ *
+ *  Zero.  Seriously.  You don't _need_ to use this symbol in your code.  It's
+ *  just just semantic sugar for the number 0.  You can use `0` or `false` or
+ *  `_False` or `GL_FALSE` or whatever you want.
+ */
+#define GLFW_FALSE                  0
+/*! @} */
+
+/*! @name Key and button actions
+ *  @{ */
+/*! @brief The key or mouse button was released.
+ *
+ *  The key or mouse button was released.
+ *
+ *  @ingroup input
+ */
+#define GLFW_RELEASE                0
+/*! @brief The key or mouse button was pressed.
+ *
+ *  The key or mouse button was pressed.
+ *
+ *  @ingroup input
+ */
+#define GLFW_PRESS                  1
+/*! @brief The key was held down until it repeated.
+ *
+ *  The key was held down until it repeated.
+ *
+ *  @ingroup input
+ */
+#define GLFW_REPEAT                 2
