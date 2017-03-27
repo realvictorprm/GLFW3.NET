@@ -1,4 +1,5 @@
 # GLFW3.NET
+[![Join us on Gitter!](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/glfw3dotnet/Lobby)
 Automatic generated bindings of GLFW3 for .NET
 
 ## Introduction
@@ -29,4 +30,3 @@ Feel free to send PR's and open issues if there are any!
 We're having a gitter chat for discussing binding generation and or additional features!
 Feel free to join us!
 
-![https://gitter.im/glfw3dotnet/Lobby](https://badges.gitter.im/gitterHQ/gitter.png)
