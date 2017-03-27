@@ -1,5 +1,5 @@
-GLFW_Generator/bin
-GLFW_Generator/obj
+GLFW_Generator/src/bin
+GLFW_Generator/src/obj
 .vs
 GLFW/bin/
 
@@ -10,3 +10,7 @@ GLFW_Test/bin/
 GLFW_Test/obj/
 
 packages/
+src/GLFW_Generator/bin/
+src/GLFW/obj/
+src/GLFW_Generator/obj/
+src/GLFW/bin/

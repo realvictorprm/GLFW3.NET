@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GLFW_Generator", "GLFW_Generator\GLFW_Generator.fsproj", "{4EC8610A-2CC4-43B3-9BD1-36EF1E3EC6F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E114F861-AB92-4507-8DD6-09DFDCDA5D22}"
+	ProjectSection(SolutionItems) = preProject
+		..\headers\dummies.h = ..\headers\dummies.h
+		..\headers\glfw3.h = ..\headers\glfw3.h
+		..\misc\JoystickMacros.txt = ..\misc\JoystickMacros.txt
+		..\misc\KeyMacros.txt = ..\misc\KeyMacros.txt
+		..\misc\MouseMacros.txt = ..\misc\MouseMacros.txt
+		..\misc\State.txt = ..\misc\State.txt
+		..\misc\Version.txt = ..\misc\Version.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLFW", "GLFW\GLFW.csproj", "{9F09464A-5152-4054-90EC-68D1A7C17618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EC8610A-2CC4-43B3-9BD1-36EF1E3EC6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC8610A-2CC4-43B3-9BD1-36EF1E3EC6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC8610A-2CC4-43B3-9BD1-36EF1E3EC6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC8610A-2CC4-43B3-9BD1-36EF1E3EC6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F09464A-5152-4054-90EC-68D1A7C17618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F09464A-5152-4054-90EC-68D1A7C17618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F09464A-5152-4054-90EC-68D1A7C17618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F09464A-5152-4054-90EC-68D1A7C17618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

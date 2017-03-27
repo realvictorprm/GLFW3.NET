@@ -4502,47 +4502,6 @@ namespace glfw3
         }
 
         // <remarks>
-        // <para>  This function returns an array of names of Vulkan instance extensions required</para>
-        // <para>  by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the</para>
-        // <para>  list will always contains `VK_KHR_surface`, so if you don't require any</para>
-        // <para>  additional extensions you can pass this list directly to the</para>
-        // <para>  `VkInstanceCreateInfo` struct.</para>
-        // <para>  If Vulkan is not available on the machine, this function returns `NULL` and</para>
-        // <para>  generates a </para>
-        // <para>  to check whether Vulkan is available.</para>
-        // <para>  If Vulkan is available but no set of extensions allowing window surface</para>
-        // <para>  creation was found, this function returns `NULL`.  You may still use Vulkan</para>
-        // <para>  for off-screen rendering and compute work.</para>
-        // </remarks>
-        // <param name="count">
-        // <para>Where to store the number of extensions in the returned</para>
-        // <para>array.  This is set to zero if an error occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of ASCII encoded extension names, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_API_UNAVAILABLE.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is guaranteed to be valid only until the</para>
-        // <para>library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
-        public static sbyte** GetRequiredInstanceExtensions(ref uint count)
-        {
-            fixed (uint* __refParamPtr0 = &count)
-            {
-                var __arg0 = __refParamPtr0;
-                var __ret = __Internal.GetRequiredInstanceExtensions_0(__arg0);
-                return __ret;
-            }
-        }
-
-        // <remarks>
         // <para>  This function returns the address of the specified Vulkan core or extension</para>
         // <para>  function for the specified instance.  If instance is set to `NULL` it can</para>
         // <para>  return any function exported from the Vulkan loader, including at least the</para>
