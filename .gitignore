@@ -14,3 +14,6 @@ src/GLFW_Generator/bin/
 src/GLFW/obj/
 src/GLFW_Generator/obj/
 src/GLFW/bin/
+examples/SharpVk/TestVulkan/obj/Release/FSharp.Core.dll
+examples/SharpVk/TestVulkan/obj/
+examples/SharpVk/TestVulkan/bin/

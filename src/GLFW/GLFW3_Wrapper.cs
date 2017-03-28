@@ -11,14 +11,14 @@ namespace glfw3
     public partial class Native
     {
         /// <summary>
-        /// Unsafe cast an object from a specific type to another type. 
+        /// Unsafe cast an object to a different type. 
         /// </summary>
         /// <remarks>Use it only if you know what you're doing.</remarks>
         /// <typeparam name="TSource"></typeparam>
         /// <typeparam name="TDest"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static unsafe TDest ReinterpretCast<TSource, TDest>(TSource source)
+        public static unsafe TDest ReinterpretCast<TDest, TSource>(TSource source)
         {
             System.Diagnostics.Debug.Print($"WARNING: REINTERPRET CAST USED FROM TYPE {typeof(TSource)} TO {typeof(TDest)}");
             var sourceRef = __makeref(source);
@@ -30,29 +30,14 @@ namespace glfw3
 
     }
 
-    public partial class VkInstance
-    {
-        public VkInstance(IntPtr ptr)
-        {
-            this.__Instance = ptr;
-        }
-    }
-
-    public partial class VkSurfaceKHR
-    {
-        public VkSurfaceKHR()
-        {
-            this.__Instance = new IntPtr();
-        }
-    }
-
-    public partial class VkAllocationCallbacks
-    {
-        public VkAllocationCallbacks()
-        {
-            this.__Instance = new IntPtr();
-        }
-    }
+    [Obsolete("Use your handles as IntPtrs")]
+    public partial class VkAllocationCallbacks { }
+    [Obsolete("Use your handles as IntPtrs")]
+    public partial class VkInstance { }
+    [Obsolete("Use your handles as IntPtrs")]
+    public partial class VkPhysicalDevice { }
+    [Obsolete("Use your handles as IntPtrs")]
+    public partial class VkSurfaceKHR { }
 
     public partial class Glfw
     {
@@ -70,17 +55,21 @@ namespace glfw3
                 if ((mods & (int)key) == (int)key) modifiers.Add(key);
             return modifiers;
         }
-        
+
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwCreateWindowSurface")]
-        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator, IntPtr surface);
+        public static extern VkResult CreateWindowSurface(UIntPtr instance, UIntPtr window, UIntPtr allocator, out ulong surface);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl, EntryPoint = "glfwCreateWindowSurface")]
+        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator, out long surface);
 
         public unsafe static string[] GetRequiredInstanceExtensions()
         {
             uint count = 0u;
             var s = __Internal.GetRequiredInstanceExtensions_0(&count);
             var res = new string[count];
-            for(int i = 0; i<res.Length; i++)
+            for (int i = 0; i < res.Length; i++)
             {
                 res[i] = new String(s[i]);
             }
@@ -149,33 +138,23 @@ namespace glfw3
 
     #region ObjectOrientedWrapper
 
-    public partial class Monitor
+    public partial class GLFWmonitor
     {
-        public GLFWmonitor Handle
+
+        public GLFWmonitor(GLFWwindow window)
         {
-            get;
-            protected set;
+            this.__Instance = Glfw.__Internal.GetWindowMonitor_0(window.__Instance);
         }
 
-        public Monitor(Window window)
-        {
-            Handle = Glfw.GetWindowMonitor(window.Handle);
-        }
-
-        public Monitor(GLFWmonitor monitor)
-        {
-            Handle = monitor;
-        }
-
-        public unsafe Monitor[] getMonitors()
+        public unsafe GLFWmonitor[] getMonitors()
         {
             int count = 0;
             var ptr = new System.IntPtr((int*)count);
             IntPtr raw = Glfw.__Internal.GetWindowMonitor_0(ptr);
-            Monitor[] monitors = new Monitor[count];
+            GLFWmonitor[] monitors = new GLFWmonitor[count];
             for (int i = 0; i < count; i++)
             {
-                monitors[i] = new Monitor(GLFWmonitor.__CreateInstance(raw));
+                monitors[i] = __CreateInstance(raw);
                 raw = IntPtr.Add(raw, IntPtr.Size);
             }
             return monitors;
@@ -183,21 +162,16 @@ namespace glfw3
 
     }
 
-    public partial class Window
+    public partial class GLFWwindow
     {
+        #region Internal
 
         protected GLFWwindowsizefun SizeChangedCallback = null;
         protected GLFWkeyfun KeyPressedCallback = null;
 
 
+
         protected string title = String.Empty;
-
-        public GLFWwindow Handle
-        {
-            get;
-            protected set;
-        }
-
 
         public string Title
         {
@@ -208,14 +182,37 @@ namespace glfw3
             set
             {
                 title = value;
-                Glfw.SetWindowTitle(Handle, value);
+                Glfw.SetWindowTitle(this, value);
             }
         }
+
+        private void Init()
+        {
+            SizeChangedCallback = (IntPtr _handle, int width, int height) => {
+                SizeChanged.Invoke(this, new SizeChangedEventArgs { source = this, width = width, height = height });
+            };
+            Glfw.SetWindowSizeCallback(this, SizeChangedCallback);
+            KeyPressedCallback = (IntPtr _handle, int key, int scancode, int action, int mods) =>
+            {
+                var args = new KeyEventArgs
+                {
+                    source = this,
+                    key = (Key)System.Enum.Parse(typeof(Key), key.ToString()),
+                    action = (State)System.Enum.Parse(typeof(State), action.ToString()),
+                    scancode = scancode,
+                    mods = mods
+                };
+                KeyChanged.Invoke(this, args);
+            };
+            Glfw.SetKeyCallback(this, KeyPressedCallback);
+        }
+
+        #endregion
 
         /// <summary>
         /// Event args for the size changed event. 
         /// </summary>
-        public struct SizeChangedEventArgs { public Window source; public int width; public int height; };
+        public struct SizeChangedEventArgs { public GLFWwindow source; public int width; public int height; };
 
         /// <summary>  This is the event args for the keyboard key event.</summary>
         public struct KeyEventArgs {
@@ -223,7 +220,7 @@ namespace glfw3
             /// <summary>
             /// The window that received the event.
             /// </summary>
-            public Window source;
+            public GLFWwindow source;
 
             /// <summary>
             /// The keyboard key
@@ -257,77 +254,74 @@ namespace glfw3
         public event EventHandler<KeyEventArgs> KeyChanged;
 
         #region Constructors
-        protected Window()
+        protected GLFWwindow()
         {
             Init();
         }
 
-        public Window(int width, int height, string title)
+        public GLFWwindow(int width, int height, string title)
         {
-            Handle = Glfw.CreateWindow(width, height, title, null, null);
+            __Instance = Glfw.__Internal.CreateWindow_0(width, height, title, IntPtr.Zero, __Instance);
             this.title = title;
             Init();
         }
 
-        public Window(int width, int height, string title, Monitor m)
+        public GLFWwindow(int width, int height, string title, GLFWmonitor m)
         {
-            Handle = Glfw.CreateWindow(width, height, title, m.Handle, null);
+            __Instance = Glfw.__Internal.CreateWindow_0(width, height, title, m.__Instance, IntPtr.Zero);
             this.title = title;
             Init();
         }
 
-        public Window(int width, int height, string title, Monitor m, Window w)
+        public GLFWwindow(int width, int height, string title, GLFWmonitor m, GLFWwindow w)
         {
-            Handle = Glfw.CreateWindow(width, height, title, m.Handle, w.Handle);
+            __Instance = Glfw.__Internal.CreateWindow_0(width, height, title, m.__Instance, w.__Instance);
             this.title = title;
             Init();
         }
 
-        public Window(GLFWwindow w)
+        public GLFWwindow(GLFWwindow w)
         {
-            Handle = w;
+            __Instance = w.__Instance;
             Init();
         }
-#endregion
+        #endregion
 
+        #region Object Oriented Methods
         public bool ShouldClose()
         {
-            return System.Convert.ToBoolean(Glfw.WindowShouldClose(Handle));
+            return System.Convert.ToBoolean(Glfw.WindowShouldClose(this));
         }
 
         public void Show()
         {
-            Glfw.ShowWindow(Handle);
+            Glfw.ShowWindow(this);
         }
 
         public void Hide()
         {
-            Glfw.HideWindow(Handle);
+            Glfw.HideWindow(this);
         }
 
         public void SwapBuffers()
         {
-            Glfw.SwapBuffers(Handle);
+            Glfw.__Internal.SwapBuffers_0(__Instance);
         }
+        #endregion
 
-        private void Init()
-        {
-            SizeChangedCallback = (IntPtr _handle, int width, int height) => {
-                SizeChanged.Invoke(this, new SizeChangedEventArgs { source = this, width = width, height = height });
-            };
-            Glfw.SetWindowSizeCallback(Handle, SizeChangedCallback);
-            KeyPressedCallback = (IntPtr _handle, int key, int scancode, int action, int mods) =>
-            {
-                var args = new KeyEventArgs {
-                    source = this,
-                    key = (Key)System.Enum.Parse(typeof(Key), key.ToString()),
-                    action = (State)System.Enum.Parse(typeof(State), action.ToString()),
-                    scancode = scancode,
-                    mods = mods};            
-                KeyChanged.Invoke(this, args);
-            };
-            Glfw.SetKeyCallback(Handle, KeyPressedCallback);
-        }
-    } 
+
+    }
+
+    public partial class Window : GLFWwindow
+    {
+        public Window(int width, int height, string title) : base(width, height, title) { }
+        public Window(int width, int height, string title, Monitor m) : base(width, height, title, m) { }
+        public Window(int width, int height, string title, Monitor m, Window w) : base(width, height, title, m, w) { }
+        public Window(Window w) : base(w) { }
+
+    }
+    public partial class Monitor : GLFWmonitor {
+        public Monitor(Window window) : base(window) { }
+    }
     #endregion
 }
