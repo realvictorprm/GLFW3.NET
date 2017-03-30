@@ -484,194 +484,6 @@ namespace glfw3
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWjoystickfun(int _0, int _1);
 
-    public unsafe partial class VkInstance
-    {
-        [StructLayout(LayoutKind.Explicit, Size = 0)]
-        public partial struct __Internal
-        {
-        }
-
-        public global::System.IntPtr __Instance { get; protected set; }
-
-        protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkInstance> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkInstance>();
-        protected void*[] __OriginalVTables;
-
-        protected bool __ownsNativeInstance;
-
-        internal static global::glfw3.VkInstance __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
-        {
-            return new VkInstance(native.ToPointer(), skipVTables);
-        }
-
-        internal static global::glfw3.VkInstance __CreateInstance(global::glfw3.VkInstance.__Internal native, bool skipVTables = false)
-        {
-            return new VkInstance(native, skipVTables);
-        }
-
-        private static void* __CopyValue(global::glfw3.VkInstance.__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkInstance.__Internal));
-            *(global::glfw3.VkInstance.__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private VkInstance(global::glfw3.VkInstance.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected VkInstance(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new global::System.IntPtr(native);
-        }
-    }
-
-    public unsafe partial class VkPhysicalDevice
-    {
-        [StructLayout(LayoutKind.Explicit, Size = 0)]
-        public partial struct __Internal
-        {
-        }
-
-        public global::System.IntPtr __Instance { get; protected set; }
-
-        protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkPhysicalDevice> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkPhysicalDevice>();
-        protected void*[] __OriginalVTables;
-
-        protected bool __ownsNativeInstance;
-
-        internal static global::glfw3.VkPhysicalDevice __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
-        {
-            return new VkPhysicalDevice(native.ToPointer(), skipVTables);
-        }
-
-        internal static global::glfw3.VkPhysicalDevice __CreateInstance(global::glfw3.VkPhysicalDevice.__Internal native, bool skipVTables = false)
-        {
-            return new VkPhysicalDevice(native, skipVTables);
-        }
-
-        private static void* __CopyValue(global::glfw3.VkPhysicalDevice.__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkPhysicalDevice.__Internal));
-            *(global::glfw3.VkPhysicalDevice.__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private VkPhysicalDevice(global::glfw3.VkPhysicalDevice.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected VkPhysicalDevice(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new global::System.IntPtr(native);
-        }
-    }
-
-    public unsafe partial class VkAllocationCallbacks
-    {
-        [StructLayout(LayoutKind.Explicit, Size = 0)]
-        public partial struct __Internal
-        {
-        }
-
-        public global::System.IntPtr __Instance { get; protected set; }
-
-        protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkAllocationCallbacks> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkAllocationCallbacks>();
-        protected void*[] __OriginalVTables;
-
-        protected bool __ownsNativeInstance;
-
-        internal static global::glfw3.VkAllocationCallbacks __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
-        {
-            return new VkAllocationCallbacks(native.ToPointer(), skipVTables);
-        }
-
-        internal static global::glfw3.VkAllocationCallbacks __CreateInstance(global::glfw3.VkAllocationCallbacks.__Internal native, bool skipVTables = false)
-        {
-            return new VkAllocationCallbacks(native, skipVTables);
-        }
-
-        private static void* __CopyValue(global::glfw3.VkAllocationCallbacks.__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkAllocationCallbacks.__Internal));
-            *(global::glfw3.VkAllocationCallbacks.__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private VkAllocationCallbacks(global::glfw3.VkAllocationCallbacks.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected VkAllocationCallbacks(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new global::System.IntPtr(native);
-        }
-    }
-
-    public unsafe partial class VkSurfaceKHR
-    {
-        [StructLayout(LayoutKind.Explicit, Size = 0)]
-        public partial struct __Internal
-        {
-        }
-
-        public global::System.IntPtr __Instance { get; protected set; }
-
-        protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkSurfaceKHR> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::glfw3.VkSurfaceKHR>();
-        protected void*[] __OriginalVTables;
-
-        protected bool __ownsNativeInstance;
-
-        internal static global::glfw3.VkSurfaceKHR __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
-        {
-            return new VkSurfaceKHR(native.ToPointer(), skipVTables);
-        }
-
-        internal static global::glfw3.VkSurfaceKHR __CreateInstance(global::glfw3.VkSurfaceKHR.__Internal native, bool skipVTables = false)
-        {
-            return new VkSurfaceKHR(native, skipVTables);
-        }
-
-        private static void* __CopyValue(global::glfw3.VkSurfaceKHR.__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(global::glfw3.VkSurfaceKHR.__Internal));
-            *(global::glfw3.VkSurfaceKHR.__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private VkSurfaceKHR(global::glfw3.VkSurfaceKHR.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected VkSurfaceKHR(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new global::System.IntPtr(native);
-        }
-    }
-
     public unsafe partial class GLFWmonitor
     {
         [StructLayout(LayoutKind.Explicit, Size = 0)]
@@ -1811,18 +1623,18 @@ namespace glfw3
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="glfwGetInstanceProcAddress")]
-            internal static extern global::System.IntPtr GetInstanceProcAddress_0(global::glfw3.VkInstance.__Internal instance, [MarshalAs(UnmanagedType.LPStr)] string procname);
+                EntryPoint="?glfwGetInstanceProcAddress@@YAP6AXXZPAXPBD@Z")]
+            internal static extern global::System.IntPtr GetInstanceProcAddress_0(global::System.IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string procname);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="glfwGetPhysicalDevicePresentationSupport")]
-            internal static extern int GetPhysicalDevicePresentationSupport_0(global::glfw3.VkInstance.__Internal instance, global::glfw3.VkPhysicalDevice.__Internal device, uint queuefamily);
+                EntryPoint="?glfwGetPhysicalDevicePresentationSupport@@YAHPAX0I@Z")]
+            internal static extern int GetPhysicalDevicePresentationSupport_0(global::System.IntPtr instance, global::System.IntPtr device, uint queuefamily);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="glfwCreateWindowSurface")]
-            internal static extern global::glfw3.VkResult CreateWindowSurface_0(global::glfw3.VkInstance.__Internal instance, global::System.IntPtr window, global::System.IntPtr allocator, global::System.IntPtr surface);
+                EntryPoint="?glfwCreateWindowSurface@@YA?AW4VkResult@@PAXPAUGLFWwindow@@PBXPAH@Z")]
+            internal static extern global::glfw3.VkResult CreateWindowSurface_0(global::System.IntPtr instance, global::System.IntPtr window, global::System.IntPtr allocator, int* surface);
         }
 
         // <remarks>
@@ -4502,6 +4314,47 @@ namespace glfw3
         }
 
         // <remarks>
+        // <para>  This function returns an array of names of Vulkan instance extensions required</para>
+        // <para>  by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the</para>
+        // <para>  list will always contains `VK_KHR_surface`, so if you don't require any</para>
+        // <para>  additional extensions you can pass this list directly to the</para>
+        // <para>  `VkInstanceCreateInfo` struct.</para>
+        // <para>  If Vulkan is not available on the machine, this function returns `NULL` and</para>
+        // <para>  generates a </para>
+        // <para>  to check whether Vulkan is available.</para>
+        // <para>  If Vulkan is available but no set of extensions allowing window surface</para>
+        // <para>  creation was found, this function returns `NULL`.  You may still use Vulkan</para>
+        // <para>  for off-screen rendering and compute work.</para>
+        // </remarks>
+        // <param name="count">
+        // <para>Where to store the number of extensions in the returned</para>
+        // <para>array.  This is set to zero if an error occurred.</para>
+        // </param>
+        // <returns>
+        // <para>An array of ASCII encoded extension names, or `NULL` if an</para>
+        // <para>[error](</para>
+        // <para></para>
+        // <para>Possible errors include</para>
+        // <para>GLFW_API_UNAVAILABLE.</para>
+        // <para></para>
+        // <para></para>
+        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
+        // <para>should not free it yourself.  It is guaranteed to be valid only until the</para>
+        // <para>library is terminated.</para>
+        // <para></para>
+        // <para>_safety This function may be called from any thread.</para>
+        // </returns>
+        public static sbyte** GetRequiredInstanceExtensions(ref uint count)
+        {
+            fixed (uint* __refParamPtr0 = &count)
+            {
+                var __arg0 = __refParamPtr0;
+                var __ret = __Internal.GetRequiredInstanceExtensions_0(__arg0);
+                return __ret;
+            }
+        }
+
+        // <remarks>
         // <para>  This function returns the address of the specified Vulkan core or extension</para>
         // <para>  function for the specified instance.  If instance is set to `NULL` it can</para>
         // <para>  return any function exported from the Vulkan loader, including at least the</para>
@@ -4533,10 +4386,9 @@ namespace glfw3
         // <para></para>
         // <para>_safety This function may be called from any thread.</para>
         // </returns>
-        public static global::glfw3.GLFWvkproc GetInstanceProcAddress(global::glfw3.VkInstance instance, string procname)
+        public static global::glfw3.GLFWvkproc GetInstanceProcAddress(global::System.IntPtr instance, string procname)
         {
-            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
-            var __ret = __Internal.GetInstanceProcAddress_0(__arg0, procname);
+            var __ret = __Internal.GetInstanceProcAddress_0(instance, procname);
             var __ptr0 = __ret;
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWvkproc)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWvkproc));
         }
@@ -4565,11 +4417,9 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  For</para>
         // <para>synchronization details of Vulkan objects, see the Vulkan specification.</para>
         // </returns>
-        public static int GetPhysicalDevicePresentationSupport(global::glfw3.VkInstance instance, global::glfw3.VkPhysicalDevice device, uint queuefamily)
+        public static int GetPhysicalDevicePresentationSupport(global::System.IntPtr instance, global::System.IntPtr device, uint queuefamily)
         {
-            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
-            var __arg1 = ReferenceEquals(device, null) ? new global::glfw3.VkPhysicalDevice.__Internal() : *(global::glfw3.VkPhysicalDevice.__Internal*) device.__Instance;
-            var __ret = __Internal.GetPhysicalDevicePresentationSupport_0(__arg0, __arg1, queuefamily);
+            var __ret = __Internal.GetPhysicalDevicePresentationSupport_0(instance, device, queuefamily);
             return __ret;
         }
 
@@ -4612,14 +4462,15 @@ namespace glfw3
         // <para>_safety This function may be called from any thread.  For</para>
         // <para>synchronization details of Vulkan objects, see the Vulkan specification.</para>
         // </returns>
-        public static global::glfw3.VkResult CreateWindowSurface(global::glfw3.VkInstance instance, global::glfw3.GLFWwindow window, global::glfw3.VkAllocationCallbacks allocator, global::glfw3.VkSurfaceKHR surface)
+        public static global::glfw3.VkResult CreateWindowSurface(global::System.IntPtr instance, global::glfw3.GLFWwindow window, global::System.IntPtr allocator, ref int surface)
         {
-            var __arg0 = ReferenceEquals(instance, null) ? new global::glfw3.VkInstance.__Internal() : *(global::glfw3.VkInstance.__Internal*) instance.__Instance;
             var __arg1 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
-            var __arg2 = ReferenceEquals(allocator, null) ? global::System.IntPtr.Zero : allocator.__Instance;
-            var __arg3 = ReferenceEquals(surface, null) ? global::System.IntPtr.Zero : surface.__Instance;
-            var __ret = __Internal.CreateWindowSurface_0(__arg0, __arg1, __arg2, __arg3);
-            return __ret;
+            fixed (int* __refParamPtr3 = &surface)
+            {
+                var __arg3 = __refParamPtr3;
+                var __ret = __Internal.CreateWindowSurface_0(instance, __arg1, allocator, __arg3);
+                return __ret;
+            }
         }
     }
 }
