@@ -1,2 +1,16 @@
 language: csharp
-solution: \src\WrapperGLFW\Binding.sln
+cache: 
+  - mono
+  
+os:
+  - linux
+  - osx
+script:
+  - cd src/WrapperGLFW/
+  - sudo sh build.sh
+
+# install:
+    # - mono
+    
+# script:
+    # - sudo sh src/WrapperGLFW/build.sh

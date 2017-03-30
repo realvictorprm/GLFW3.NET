@@ -1,6 +1,12 @@
 # GLFW3.NET
 [![Join us on Gitter!](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/glfw3dotnet/Lobby)
+
 Automatic generated bindings of GLFW3 for .NET
+
+## Build Status
+| Windows (.NET)| Linux and Mac (Mono)
+|---------------------------|---------------------------|
+| AutoBuild not yet available | [![Linux and Mac build](https://travis-ci.org/realvictorprm/GLFW3.NET.svg?branch=master)](https://travis-ci.org/realvictorprm/GLFW3.NET)
 
 ## Introduction
 The projects generates the bindings which are only half usable.

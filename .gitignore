@@ -17,3 +17,5 @@ src/GLFW/bin/
 examples/SharpVk/TestVulkan/obj/Release/FSharp.Core.dll
 examples/SharpVk/TestVulkan/obj/
 examples/SharpVk/TestVulkan/bin/
+!paket.bootstrapper.exe
+!paket.targets
