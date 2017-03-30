@@ -1,0 +1,8 @@
+#load @"system.diagnostics.debug.fsx" 
+#load @"system.globalization.fsx" 
+#load @"system.io.fsx" 
+#load @"system.resources.resourcemanager.fsx" 
+#load @"system.runtime.fsx" 
+#load @"system.threading.fsx" 
+#load @"system.threading.tasks.fsx" 
+#r "../../packages/System.Security.Cryptography.Primitives/lib/net46/System.Security.Cryptography.Primitives.dll" 

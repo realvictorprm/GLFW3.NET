@@ -1,0 +1,7 @@
+#load @"system.collections.fsx" 
+#load @"system.globalization.fsx" 
+#load @"system.resources.resourcemanager.fsx" 
+#load @"system.runtime.fsx" 
+#load @"system.runtime.extensions.fsx" 
+#load @"system.threading.fsx" 
+#r "System" 

@@ -1,0 +1,4 @@
+﻿#Visual studio
+bin/
+obj/
+*.user

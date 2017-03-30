@@ -1,0 +1,7 @@
+#load "system.globalization.csx" 
+#load "system.resources.resourcemanager.csx" 
+#load "system.runtime.csx" 
+#load "system.runtime.extensions.csx" 
+#load "system.runtime.interopservices.csx" 
+#r "mscorlib" 
+#r "../../packages/System.Globalization.Extensions/lib/net46/System.Globalization.Extensions.dll" 

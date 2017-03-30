@@ -1,0 +1,8 @@
+#load "system.io.csx" 
+#load "system.io.filesystem.primitives.csx" 
+#load "system.runtime.csx" 
+#load "system.runtime.handles.csx" 
+#load "system.text.encoding.csx" 
+#load "system.threading.tasks.csx" 
+#r "mscorlib" 
+#r "../../packages/System.IO.FileSystem/lib/net46/System.IO.FileSystem.dll" 

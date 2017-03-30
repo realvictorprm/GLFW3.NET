@@ -1,0 +1,6 @@
+#r "../../packages/CppSharp/lib/CppSharp.dll" 
+#r "../../packages/CppSharp/lib/CppSharp.Runtime.dll" 
+#r "../../packages/CppSharp/lib/CppSharp.Parser.CSharp.dll" 
+#r "../../packages/CppSharp/lib/CppSharp.AST.dll" 
+#r "../../packages/CppSharp/lib/CppSharp.Parser.dll" 
+#r "../../packages/CppSharp/lib/CppSharp.Generator.dll" 

@@ -1,0 +1,6 @@
+#load "system.collections.csx" 
+#load "system.diagnostics.debug.csx" 
+#load "system.resources.resourcemanager.csx" 
+#load "system.runtime.csx" 
+#load "system.threading.csx" 
+#r "System" 

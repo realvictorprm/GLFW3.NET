@@ -1,0 +1,6 @@
+#load "system.collections.csx" 
+#load "system.diagnostics.tracing.csx" 
+#load "system.reflection.csx" 
+#load "system.runtime.csx" 
+#load "system.threading.csx" 
+#r "../../packages/System.Diagnostics.DiagnosticSource/lib/net46/System.Diagnostics.DiagnosticSource.dll" 

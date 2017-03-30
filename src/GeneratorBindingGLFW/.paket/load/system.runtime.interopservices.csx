@@ -1,0 +1,7 @@
+#load "system.reflection.csx" 
+#load "system.reflection.primitives.csx" 
+#load "system.runtime.csx" 
+#load "system.runtime.handles.csx" 
+#r "System" 
+#r "System.Core" 
+#r "mscorlib" 

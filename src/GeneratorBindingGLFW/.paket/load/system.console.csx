@@ -1,0 +1,5 @@
+#load "system.io.csx" 
+#load "system.runtime.csx" 
+#load "system.text.encoding.csx" 
+#r "mscorlib" 
+#r "../../packages/System.Console/lib/net46/System.Console.dll" 

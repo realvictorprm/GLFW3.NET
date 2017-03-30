@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{B89AA8F4-7FBB-451E-83D5-ED3302687DEB}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Generator PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WrapperGLFW\GLFW3_Wrapper.cs">
+    <Files>
+      <File FileName="GeneratorBindingGLFW\Generator\Generator.fs" Line="35" Column="50" />
+      <File FileName="WrapperGLFW\GLFW3_Wrapper.cs" Line="253" Column="34" />
+      <File FileName="..\generated\GLFW3.cs" Line="1838" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+</Properties>

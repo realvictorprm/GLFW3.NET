@@ -1,0 +1,6 @@
+#load @"system.collections.fsx" 
+#load @"system.diagnostics.debug.fsx" 
+#load @"system.resources.resourcemanager.fsx" 
+#load @"system.runtime.fsx" 
+#load @"system.threading.fsx" 
+#r "System" 
