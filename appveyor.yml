@@ -1,0 +1,3 @@
+build_script:
+    - cd src\WrapperGLFW
+    - build.cmd
