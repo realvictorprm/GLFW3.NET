@@ -33,14 +33,18 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\generated\GLFW3_Wrapper.cs">
+      <Link>GLFW3_Wrapper.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GLFW3_Wrapper.cs" />
     <Compile Include="..\..\generated\GLFW3.cs">
       <Link>GLFW3.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WrapperGLFW.dll.config" />
+    <EmbeddedResource Include="WrapperGLFW.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
