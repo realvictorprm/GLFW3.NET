@@ -64,9 +64,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GLFW">
-      <HintPath>C:\Users\Victor\Documents\GLFW3.NET\src\GLFW\bin\Release\GLFW.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core">
       <Name>FSharp.Core</Name>
@@ -81,6 +78,9 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="WrapperGLFW">
+      <HintPath>..\..\..\src\WrapperGLFW\bin\Release\WrapperGLFW.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

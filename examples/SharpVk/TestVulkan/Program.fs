@@ -15,7 +15,7 @@ let createSurface (instance:byref<SharpVk.Instance>) (window:glfw3.Window) =
     let mutable surface = 0L;
     // A reinterpret cast is needed to acquire the IntPtr from the structure
     let instancePtr = IntPtr(int64(instance.RawHandle.ToUInt64()))
-    let res = Glfw.CreateWindowSurface(instancePtr, window.__Instance, nullptr, &surface)
+    let res = Glfw.CreateWindowSurface(instancePtr, window, nullptr, &surface)
     SharpVk.Surface.CreateFromHandle(instance, System.Convert.ToUInt64(surface))
 
 

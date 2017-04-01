@@ -7,8 +7,6 @@ open System
 open CppSharp.Types    
 open System.IO
 
-
-
 let root_dir = let rec getParentOfSrc (currDir:System.IO.DirectoryInfo) = 
                 if currDir.Name = "src" then Directory.GetParent(currDir.FullName).FullName
                 else getParentOfSrc (Directory.GetParent(currDir.FullName))
@@ -142,15 +140,15 @@ type Generator() =
             DeprecateGeneratedMethods ctx
             ()
 
-            
+
         
 let FillTempFile (file:System.IO.StreamWriter) =
     let glfw = (root_dir + "/headers/glfw3.h")
     let dummies = (root_dir + "/headers/dummies.h")
-    let glfwLines = System.IO.File.ReadLines(glfw)
-    glfwLines |> Seq.iter(fun s -> file.WriteLine(s))
     let dummiesLines = System.IO.File.ReadLines(dummies)
     dummiesLines |> Seq.iter (fun s -> file.WriteLine(s))
+    let glfwLines = System.IO.File.ReadLines(glfw)
+    glfwLines |> Seq.iter(fun s -> file.WriteLine(s))
     file.Flush()
 
 [<EntryPoint>]

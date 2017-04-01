@@ -40,7 +40,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.dll.config" />
+    <EmbeddedResource Include="WrapperGLFW.dll.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

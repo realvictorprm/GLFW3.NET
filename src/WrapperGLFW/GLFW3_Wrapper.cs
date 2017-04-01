@@ -49,6 +49,22 @@ namespace glfw3
 
         }
 
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+                EntryPoint = "glfwGetInstanceProcAddress")]
+        public static extern System.IntPtr GetInstanceProcAddress(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string procname);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "glfwGetPhysicalDevicePresentationSupport")]
+        public static extern int GetPhysicalDevicePresentationSupport(IntPtr instance, IntPtr device, uint queuefamily);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "glfwCreateWindowSurface")]
+        public static extern VkResult CreateWindowSurface(IntPtr instance, GLFWwindow window, IntPtr allocator, out long surface);
+
+
         public static KeyModifier[] keyModifiers = new KeyModifier[] { KeyModifier.ModAlt, KeyModifier.ModControl, KeyModifier.ModShift, KeyModifier.ModSuper };
 
         public static List<KeyModifier> GetKeyModifiers(int mods)
@@ -257,7 +273,7 @@ namespace glfw3
 
         public GLFWwindow(int width, int height, string title)
         {
-            __Instance = Glfw.__Internal.CreateWindow_0(width, height, title, IntPtr.Zero, __Instance);
+            __Instance = Glfw.__Internal.CreateWindow_0(width, height, title, IntPtr.Zero, IntPtr.Zero);
             this.title = title;
             Init();
         }
