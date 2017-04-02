@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>GLFW.NET</id>
+    <version>0.9.4.4</version>
+    <title>GLFW.NET</title>
+    <authors>realvictorprm</authors>
+    <owners>realvictorprm</owners>
+    <licenseUrl>https://github.com/realvictorprm/GLFW3.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/realvictorprm/GLFW3.NET</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/3905364?v=3&amp;s=200</iconUrl>
+    <description>Object oriented wrapper binding for GLFW 3.2.1</description>
+    <summary>Modern object oriented bindings for GLFW 3.2.1</summary>
+    <releaseNotes>Added the dll.config file to the solution. You always have to set the option "Copy to output" MANUALLY to TRUE.</releaseNotes>
+    <copyright></copyright>
+    <language></language>
+    <tags>glfw</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+      <file src="bin/Release/WrapperGLFW.dll" target="lib/net45"/>
+      <file src="WrapperGLFW.dll.config" target="content/WrapperGLFW.dll.config"/>
+  </files>
+</package>

@@ -38,7 +38,7 @@ Target "Build Generator" (fun _ ->
 )
 
 Target "Build all bindings" (fun _ ->
-        !! @"BindingGLFW.csproj"
+        !! @"WrapperGLFW\*.csproj"
         ++ @"WrapperGLFW.csproj"
             |> MSBuildRelease buildDir "Build"
             |> Log "Build-Output: "

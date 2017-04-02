@@ -6,9 +6,15 @@ Automatic generated bindings of GLFW3 for .NET
 ### Build Status
 | .NET | Mono |
 |---------------------------|---------------------------|
-| Windows | Linux & Mac
-|---------------------------|---------------------------|
+| **Windows** | **Linux & Mac**
 | [![Build status](https://ci.appveyor.com/api/projects/status/30o9i6m2vvwvnar7?svg=true)](https://ci.appveyor.com/project/EveResearchFoundation/glfw3-net) | [![Linux and Mac build](https://travis-ci.org/realvictorprm/GLFW3.NET.svg?branch=master)](https://travis-ci.org/realvictorprm/GLFW3.NET)
+
+### Nuget package
+[![NuGet version](https://badge.fury.io/nu/glfw.net.svg)](https://badge.fury.io/nu/glfw.net)
+
+Please keep in mind to add the file WrapperGLFW.dll.config to your project and change the option ```CopyToOutputPath``` of the file WrapperGLFW.dll.config to **Always**.
+The file can be found under ```/yoursolutionpath/packages/GLFW.NET.x.x.x/Content/WrapperGLFW.dll.config```.
+This is **required** for Linux or Mac and if you don't do it, the library _won't_ work. 
 
 ## Introduction
 This repository provides bindings for the latest GLFW3 version. It covers almost the complete API except Vulkan.

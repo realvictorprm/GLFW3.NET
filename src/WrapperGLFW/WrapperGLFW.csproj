@@ -1,14 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NuGet.Build.Packaging.0.1.227\build\NuGet.Build.Packaging.props" Condition="Exists('packages\NuGet.Build.Packaging.0.1.227\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A19719C6-7A52-4D50-B7BF-1B88577CF9D7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>WrapperGLFW</RootNamespace>
+    <RootNamespace>glfw3</RootNamespace>
     <AssemblyName>WrapperGLFW</AssemblyName>
-    <UseMSBuildEngine>false</UseMSBuildEngine>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Description>Object oriented wrapper binding for GLFW3.2.1</Description>
+    <PackageVersion>0.9.4</PackageVersion>
+    <Authors>realvictorprm</Authors>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/3905364?v=3&amp;s=200</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/realvictorprm/GLFW3.NET/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Owners>realvictorprm</Owners>
+    <PackageProjectUrl>https://github.com/realvictorprm/GLFW3.NET</PackageProjectUrl>
+    <PackageReleaseNotes>Finally fixed the location of the dll.config file.</PackageReleaseNotes>
+    <Summary>Modern object oriented bindings for GLFW 3.2.1</Summary>
+    <PackageTags>glfw</PackageTags>
+    <Title>GLFW3.NET</Title>
+    <PackageId>GLFW3.NET</PackageId>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,11 +47,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WrapperGLFW.dll.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -51,5 +60,13 @@
       <Link>GLFW3.cs</Link>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="WrapperGLFW.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\NuGet.Build.Packaging.0.1.227\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.1.227\build\NuGet.Build.Packaging.targets')" />
 </Project>
