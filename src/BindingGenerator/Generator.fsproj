@@ -9,7 +9,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b89aa8f4-7fbb-451e-83d5-ed3302687deb</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
   </PropertyGroup>
@@ -47,39 +47,35 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
   <ItemGroup>
-    <None Include="App.config" />
     <Compile Include="Generator.fs" />
-    <None Include="..\..\..\deps\CppSharp.CppParser.dll">
+    <None Include="..\deps\CppSharp.CppParser.dll">
       <Link>CppSharp.CppParser.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CppSharp">
-      <HintPath>..\..\..\deps\CppSharp.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="CppSharp.AST">
-      <HintPath>..\..\..\deps\CppSharp.AST.dll</HintPath>
+      <HintPath>..\..\deps\CppSharp.AST.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp">
+      <HintPath>..\..\deps\CppSharp.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Generator">
-      <HintPath>..\..\..\deps\CppSharp.Generator.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Parser">
-      <HintPath>..\..\..\deps\CppSharp.Parser.dll</HintPath>
+      <HintPath>..\..\deps\CppSharp.Generator.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Parser.CLI">
-      <HintPath>..\..\..\deps\CppSharp.Parser.CLI.dll</HintPath>
+      <HintPath>..\..\deps\CppSharp.Parser.CLI.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Parser.CSharp">
-      <HintPath>..\..\..\deps\CppSharp.Parser.CSharp.dll</HintPath>
+      <HintPath>..\..\deps\CppSharp.Parser.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Parser">
+      <HintPath>..\..\deps\CppSharp.Parser.dll</HintPath>
     </Reference>
     <Reference Include="CppSharp.Runtime">
-      <HintPath>..\..\..\deps\CppSharp.Runtime.dll</HintPath>
+      <HintPath>..\..\deps\CppSharp.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
   </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">

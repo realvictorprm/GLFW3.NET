@@ -1,0 +1,9 @@
+.fake/
+.vs/
+build/
+packages/
+bin/
+obj/
+*.userprefs
+*.sln
+.sln

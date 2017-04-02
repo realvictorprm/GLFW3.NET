@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A19719C6-7A52-4D50-B7BF-1B88577CF9D7}</ProjectGuid>
+    <ProjectGuid>{BF80D458-C3E9-49DF-A4A1-BAD106EE8C53}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>WrapperGLFW</RootNamespace>
-    <AssemblyName>WrapperGLFW</AssemblyName>
-    <UseMSBuildEngine>false</UseMSBuildEngine>
+    <RootNamespace>glfw3</RootNamespace>
+    <AssemblyName>BindingGLFW</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseMSBuildEngine>false</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,23 +33,15 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WrapperGLFW.dll.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\GLFW3_Manual.cs">
-      <Link>GLFW3_Manual.cs</Link>
-    </Compile>
-    <Compile Include="..\GLFW3_Wrapper.cs">
-      <Link>GLFW3_Wrapper.cs</Link>
-    </Compile>
     <Compile Include="..\..\generated\GLFW3.cs">
       <Link>GLFW3.cs</Link>
     </Compile>
+    <Compile Include="..\GLFW3_Manual.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BindingGLFW.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

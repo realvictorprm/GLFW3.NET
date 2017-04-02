@@ -9,144 +9,7 @@ using System.Threading.Tasks;
 
 namespace glfw3
 {
-    public partial class Native
-    {
-        /// <summary>
-        /// Unsafe cast an object to a different type. 
-        /// </summary>
-        /// <remarks>Use it only if you know what you're doing.</remarks>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TDest"></typeparam>
-        /// <param name="source"></param>
-        /// <returns></returns>
-        /// 
-        [Obsolete("Cast in a different, safe way.")]
-        public static unsafe TDest ReinterpretCast<TDest, TSource>(TSource source)
-        {
-            System.Diagnostics.Debug.Print($"WARNING: REINTERPRET CAST USED FROM TYPE {typeof(TSource)} TO {typeof(TDest)}");
-            var sourceRef = __makeref(source);
-            var dest = default(TDest);
-            var destRef = __makeref(dest);
-            *(IntPtr*)&destRef = *(IntPtr*)&sourceRef;
-            return __refvalue(destRef, TDest);
-        }
-
-    }
-
-    //[Obsolete("Use your handles as IntPtrs")]
-    //protected partial class VkAllocationCallbacks { }
-    //[Obsolete("Use your handles as IntPtrs")]
-    //protected partial class VkInstance { }
-    //[Obsolete("Use your handles as IntPtrs")]
-    //protected partial class VkPhysicalDevice { }
-    //[Obsolete("Use your handles as IntPtrs")]
-    //protected partial class VkSurfaceKHR { }
-
-    public partial class Glfw
-    {
-        static Glfw() {
-            Init();
-
-        }
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
-                EntryPoint = "glfwGetInstanceProcAddress")]
-        public static extern System.IntPtr GetInstanceProcAddress(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string procname);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "glfwGetPhysicalDevicePresentationSupport")]
-        public static extern int GetPhysicalDevicePresentationSupport(IntPtr instance, IntPtr device, uint queuefamily);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "glfwCreateWindowSurface")]
-        public static extern VkResult CreateWindowSurface(IntPtr instance, GLFWwindow window, IntPtr allocator, out long surface);
-
-
-        public static KeyModifier[] keyModifiers = new KeyModifier[] { KeyModifier.ModAlt, KeyModifier.ModControl, KeyModifier.ModShift, KeyModifier.ModSuper };
-
-        public static List<KeyModifier> GetKeyModifiers(int mods)
-        {
-            var modifiers = new List<KeyModifier>();
-            foreach (var key in keyModifiers)
-                if ((mods & (int)key) == (int)key) modifiers.Add(key);
-            return modifiers;
-        }
-
-        public unsafe static string[] GetRequiredInstanceExtensions()
-        {
-            uint count = 0u;
-            var s = __Internal.GetRequiredInstanceExtensions_0(&count);
-            var res = new string[count];
-            for (int i = 0; i < res.Length; i++)
-            {
-                res[i] = new String(s[i]);
-            }
-            return res;
-        }
-
-    }
-
-    #region NonGeneratableCodeExtensions
-
-    public partial class GLFWwindow : IDisposable
-    {
-
-        #region IDisposable Support
-        private bool disposedValue = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-
-                }
-                Glfw.DestroyWindow(this);
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-        }
-        #endregion
-
-    }
-
-    public partial class GLFWcursor : IDisposable
-    {
-
-        #region IDisposable Support
-        private bool disposedValue = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-
-                }
-                Glfw.DestroyCursor(this);
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-        }
-        #endregion
-
-    }
-
-    #endregion
-
+	
     #region ObjectOrientedWrapper
 
     public partial class GLFWmonitor
@@ -198,6 +61,10 @@ namespace glfw3
             }
         }
 
+		/// <summary>
+		/// Init this instance.
+		/// Callbacks are here initialized for the events.
+		/// </summary>
         private void Init()
         {
             SizeChangedCallback = (IntPtr _handle, int width, int height) => {
@@ -224,7 +91,20 @@ namespace glfw3
         /// <summary>
         /// Event args for the size changed event. 
         /// </summary>
-        public struct SizeChangedEventArgs { public GLFWwindow source; public int width; public int height; };
+        public struct SizeChangedEventArgs { 
+			/// <summary>
+			/// The event source.
+			/// </summary>
+			public GLFWwindow source; 
+			/// <summary>
+			/// The new width.
+			/// </summary>
+			public int width;
+			/// <summary>
+			/// The new height.
+			/// </summary>
+			public int height; 
+		};
 
         /// <summary>  This is the event args for the keyboard key event.</summary>
         public struct KeyEventArgs {
@@ -300,30 +180,48 @@ namespace glfw3
         #endregion
 
         #region Object Oriented Methods
+
+		/// <summary>
+		/// Returns whether the window should close.
+		/// </summary>
+		/// <returns><c>true</c>, if close was requested, <c>false</c> otherwise.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool ShouldClose()
         {
             return System.Convert.ToBoolean(Glfw.WindowShouldClose(this));
         }
 
+		/// <summary>
+		/// Show this window.
+		/// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Show()
         {
             Glfw.ShowWindow(this);
         }
 
+		/// <summary>
+		/// Hide this window.
+		/// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Hide()
         {
             Glfw.HideWindow(this);
         }
 
+		/// <summary>
+		/// Swaps the buffers.
+		/// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SwapBuffers()
         {
             Glfw.__Internal.SwapBuffers_0(__Instance);
         }
 
+		/// <summary>
+		/// Returns the current window size as tuple
+		/// </summary>
+		/// <returns>The size.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Tuple<int, int> GetSize()
         {
@@ -332,6 +230,11 @@ namespace glfw3
             return new Tuple<int, int>(width, height);
         }
 
+		/// <summary>
+		/// Sets the referenced values to the width and height values of the window
+		/// </summary>
+		/// <param name="width">Width.</param>
+		/// <param name="height">Height.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetSize(ref int width, ref int height)
         {
@@ -342,6 +245,9 @@ namespace glfw3
 
     }
 
+	/// <summary>
+	/// Analias for the type GLFWwindow. Can be used exactly the same expect the typename is <i>Window</i>
+	/// </summary>
     public partial class Window : GLFWwindow
     {
         public Window(int width, int height, string title) : base(width, height, title) { }
@@ -350,6 +256,9 @@ namespace glfw3
         public Window(Window w) : base(w) { }
 
     }
+	/// <summary>
+	/// An alias for the type GLFWmonitor. Can be used exactly the same expect the typename is <i>Monitor</i>
+	/// </summary>
     public partial class Monitor : GLFWmonitor {
         public Monitor(Window window) : base(window) { }
     }

@@ -6,11 +6,5 @@ os:
   - linux
   - osx
 script:
-  - cd src/WrapperGLFW/
-  - sudo sh build.sh
-
-# install:
-    # - mono
-    
-# script:
-    # - sudo sh src/WrapperGLFW/build.sh
+  - cd src/
+  - sudo sh build.sh "Build all bindings"
