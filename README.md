@@ -1,13 +1,11 @@
 # GLFW3.NET
 [![Join us on Gitter!](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/glfw3dotnet/Lobby)
+[![Build status](https://ci.appveyor.com/api/projects/status/30o9i6m2vvwvnar7?svg=true)](https://ci.appveyor.com/project/EveResearchFoundation/glfw3-net) [![Linux and Mac build](https://travis-ci.org/realvictorprm/GLFW3.NET.svg?branch=master)](https://travis-ci.org/realvictorprm/GLFW3.NET)
 
 Automatic generated bindings of GLFW3 for .NET
 
-### Build Status
-| .NET | Mono |
-|---------------------------|---------------------------|
-| **Windows** | **Linux & Mac**
-| [![Build status](https://ci.appveyor.com/api/projects/status/30o9i6m2vvwvnar7?svg=true)](https://ci.appveyor.com/project/EveResearchFoundation/glfw3-net) | [![Linux and Mac build](https://travis-ci.org/realvictorprm/GLFW3.NET.svg?branch=master)](https://travis-ci.org/realvictorprm/GLFW3.NET)
+### Important
+Please report any bugs and suggestions! 
 
 ### Nuget package
 [![NuGet version](https://badge.fury.io/nu/glfw.net.svg)](https://badge.fury.io/nu/glfw.net)
