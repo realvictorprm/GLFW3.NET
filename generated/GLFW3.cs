@@ -501,12 +501,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWmonitor __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWmonitor(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWmonitor(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWmonitor __CreateInstance(global::glfw3.GLFWmonitor.__Internal native, bool skipVTables = false)
         {
-            return new GLFWmonitor(native, skipVTables);
+            return new global::glfw3.GLFWmonitor(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWmonitor.__Internal native)
@@ -548,12 +548,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWwindow __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWwindow(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWwindow(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWwindow __CreateInstance(global::glfw3.GLFWwindow.__Internal native, bool skipVTables = false)
         {
-            return new GLFWwindow(native, skipVTables);
+            return new global::glfw3.GLFWwindow(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWwindow.__Internal native)
@@ -595,12 +595,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWcursor __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWcursor(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWcursor(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWcursor __CreateInstance(global::glfw3.GLFWcursor.__Internal native, bool skipVTables = false)
         {
-            return new GLFWcursor(native, skipVTables);
+            return new global::glfw3.GLFWcursor(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWcursor.__Internal native)
@@ -632,26 +632,26 @@ namespace glfw3
         public partial struct __Internal
         {
             [FieldOffset(0)]
-            public int width;
+            internal int width;
 
             [FieldOffset(4)]
-            public int height;
+            internal int height;
 
             [FieldOffset(8)]
-            public int redBits;
+            internal int redBits;
 
             [FieldOffset(12)]
-            public int greenBits;
+            internal int greenBits;
 
             [FieldOffset(16)]
-            public int blueBits;
+            internal int blueBits;
 
             [FieldOffset(20)]
-            public int refreshRate;
+            internal int refreshRate;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
-                EntryPoint="??0GLFWvidmode@@QAE@ABU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="??0GLFWvidmode@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -665,12 +665,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWvidmode __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWvidmode(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWvidmode(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWvidmode __CreateInstance(global::glfw3.GLFWvidmode.__Internal native, bool skipVTables = false)
         {
-            return new GLFWvidmode(native, skipVTables);
+            return new global::glfw3.GLFWvidmode(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWvidmode.__Internal native)
@@ -716,10 +716,13 @@ namespace glfw3
 
         public virtual void Dispose(bool disposing)
         {
+            if (__Instance == IntPtr.Zero)
+                return;
             global::glfw3.GLFWvidmode __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
 
         public int Width
@@ -804,24 +807,24 @@ namespace glfw3
     // <remarks>  This describes the gamma ramp for a monitor.</remarks>
     public unsafe partial class GLFWgammaramp : IDisposable
     {
-        [StructLayout(LayoutKind.Explicit, Size = 16)]
+        [StructLayout(LayoutKind.Explicit, Size = 32)]
         public partial struct __Internal
         {
             [FieldOffset(0)]
-            public global::System.IntPtr red;
-
-            [FieldOffset(4)]
-            public global::System.IntPtr green;
+            internal global::System.IntPtr red;
 
             [FieldOffset(8)]
-            public global::System.IntPtr blue;
+            internal global::System.IntPtr green;
 
-            [FieldOffset(12)]
-            public uint size;
+            [FieldOffset(16)]
+            internal global::System.IntPtr blue;
+
+            [FieldOffset(24)]
+            internal uint size;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
-                EntryPoint="??0GLFWgammaramp@@QAE@ABU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="??0GLFWgammaramp@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -835,12 +838,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWgammaramp __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWgammaramp(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWgammaramp(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWgammaramp __CreateInstance(global::glfw3.GLFWgammaramp.__Internal native, bool skipVTables = false)
         {
-            return new GLFWgammaramp(native, skipVTables);
+            return new global::glfw3.GLFWgammaramp(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWgammaramp.__Internal native)
@@ -886,10 +889,13 @@ namespace glfw3
 
         public virtual void Dispose(bool disposing)
         {
+            if (__Instance == IntPtr.Zero)
+                return;
             global::glfw3.GLFWgammaramp __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
 
         public ushort* Red
@@ -948,21 +954,21 @@ namespace glfw3
 
     public unsafe partial class GLFWimage : IDisposable
     {
-        [StructLayout(LayoutKind.Explicit, Size = 12)]
+        [StructLayout(LayoutKind.Explicit, Size = 16)]
         public partial struct __Internal
         {
             [FieldOffset(0)]
-            public int width;
+            internal int width;
 
             [FieldOffset(4)]
-            public int height;
+            internal int height;
 
             [FieldOffset(8)]
-            public global::System.IntPtr pixels;
+            internal global::System.IntPtr pixels;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
-                EntryPoint="??0GLFWimage@@QAE@ABU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="??0GLFWimage@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -976,12 +982,12 @@ namespace glfw3
 
         internal static global::glfw3.GLFWimage __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new GLFWimage(native.ToPointer(), skipVTables);
+            return new global::glfw3.GLFWimage(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.GLFWimage __CreateInstance(global::glfw3.GLFWimage.__Internal native, bool skipVTables = false)
         {
-            return new GLFWimage(native, skipVTables);
+            return new global::glfw3.GLFWimage(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.GLFWimage.__Internal native)
@@ -1027,10 +1033,13 @@ namespace glfw3
 
         public virtual void Dispose(bool disposing)
         {
+            if (__Instance == IntPtr.Zero)
+                return;
             global::glfw3.GLFWimage __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
 
         public int Width
@@ -1079,8 +1088,8 @@ namespace glfw3
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
-                EntryPoint="??0Test@@QAE@ABU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="??0Test@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -1094,12 +1103,12 @@ namespace glfw3
 
         internal static global::glfw3.Test __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new Test(native.ToPointer(), skipVTables);
+            return new global::glfw3.Test(native.ToPointer(), skipVTables);
         }
 
         internal static global::glfw3.Test __CreateInstance(global::glfw3.Test.__Internal native, bool skipVTables = false)
         {
-            return new Test(native, skipVTables);
+            return new global::glfw3.Test(native, skipVTables);
         }
 
         private static void* __CopyValue(global::glfw3.Test.__Internal native)
@@ -1145,10 +1154,13 @@ namespace glfw3
 
         public virtual void Dispose(bool disposing)
         {
+            if (__Instance == IntPtr.Zero)
+                return;
             global::glfw3.Test __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
     }
 
@@ -4066,9 +4078,9 @@ namespace glfw3
         // <remarks>
         // <para>  This function returns the current value of the raw timer, measured in</para>
         // <para>  1</para>
-        // <para>&#160;</para>
+        // <para>&#194;&#160;</para>
         // <para>/</para>
-        // <para>&#160;</para>
+        // <para>&#194;&#160;</para>
         // <para>frequency seconds.  To get the frequency, call </para>
         // <para>  glfwGetTimerFrequency.</para>
         // </remarks>

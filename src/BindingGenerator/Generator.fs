@@ -123,6 +123,7 @@ type Generator() =
             let glfw = options.AddModule("glfw3")
             //glfw.Defines.Add("VK_VERSION_1_0")
             glfw.Headers.Add(tempFilePath)
+            driver.ParserOptions.SetupMSVC(VisualStudioVersion.VS2015)
             Diagnostics.Level <- DiagnosticKind.Debug
             ()
         member t.SetupPasses driver =

@@ -30,7 +30,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Choose>
@@ -46,37 +46,6 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
-  <ItemGroup>
-    <Compile Include="Generator.fs" />
-    <None Include="..\deps\CppSharp.CppParser.dll">
-      <Link>CppSharp.CppParser.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="CppSharp.AST">
-      <HintPath>..\..\deps\CppSharp.AST.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp">
-      <HintPath>..\..\deps\CppSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Generator">
-      <HintPath>..\..\deps\CppSharp.Generator.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Parser.CLI">
-      <HintPath>..\..\deps\CppSharp.Parser.CLI.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Parser.CSharp">
-      <HintPath>..\..\deps\CppSharp.Parser.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Parser">
-      <HintPath>..\..\deps\CppSharp.Parser.dll</HintPath>
-    </Reference>
-    <Reference Include="CppSharp.Runtime">
-      <HintPath>..\..\deps\CppSharp.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">
       <ItemGroup>
@@ -734,4 +703,32 @@
       </ItemGroup>
     </When>
   </Choose>
+  <ItemGroup>
+    <Compile Include="Generator.fs" />
+    <None Include="..\packages\CppSharp\output\CppSharp.CppParser.dll">
+      <Link>CppSharp.CppParser.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CppSharp">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.AST">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.AST.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Generator">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Parser">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Parser.CSharp">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.Parser.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CppSharp.Runtime">
+      <HintPath>..\packages\CppSharp\lib\CppSharp.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
 </Project>
