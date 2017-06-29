@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestVulkan", "TestVulkan\TestVulkan.fsproj", "{2FB6C5A6-FBCE-4E98-9883-F5A28F8EC4AF}"
 EndProject
