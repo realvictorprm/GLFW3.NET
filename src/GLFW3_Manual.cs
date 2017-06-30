@@ -27,8 +27,14 @@ namespace glfw3{
         [SuppressUnmanagedCodeSecurity]
         [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "glfwCreateWindowSurface")]
-        public static extern VkResult CreateWindowSurface(IntPtr instance, GLFWwindow window, IntPtr allocator, out long surface);
-#endregion // VulkanRelatedCode
+        public static extern VkResult CreateWindowSurface(IntPtr instance, IntPtr window, IntPtr allocator, out Int64 surface);
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("glfw3", CallingConvention = CallingConvention.Cdecl,
+        EntryPoint = "glfwCreateWindowSurface")]
+        public static extern VkResult CreateWindowSurface(UIntPtr instance, UIntPtr window, UIntPtr allocator, out UInt64 surface);
+
+        #endregion // VulkanRelatedCode
 
         public static KeyModifier[] keyModifiers = new KeyModifier[] { KeyModifier.ModAlt, KeyModifier.ModControl, KeyModifier.ModShift, KeyModifier.ModSuper };
 

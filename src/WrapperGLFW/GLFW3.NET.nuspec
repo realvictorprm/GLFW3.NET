@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>GLFW.NET</id>
-    <version>0.9.5</version>
+    <version>0.9.6</version>
     <title>GLFW.NET</title>
     <authors>realvictorprm</authors>
     <owners>realvictorprm</owners>
@@ -11,7 +11,7 @@
     <iconUrl>https://avatars2.githubusercontent.com/u/3905364?v=3&amp;s=200</iconUrl>
     <description>Object oriented wrapper binding for GLFW 3.2.1</description>
     <summary>Modern object oriented bindings for GLFW 3.2.1</summary>
-    <releaseNotes>Updated bindings also added the dll.config file to the solution. You always have to set the option "Copy to output" MANUALLY to TRUE.</releaseNotes>
+    <releaseNotes>Critical fixes. Updated bindings also added the dll.config file to the solution. You always have to set the option "Copy to output" MANUALLY to TRUE.</releaseNotes>
     <copyright></copyright>
     <language></language>
     <tags>glfw</tags>

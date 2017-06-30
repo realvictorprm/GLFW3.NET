@@ -19,3 +19,5 @@ examples/SharpVk/TestVulkan/obj/
 examples/SharpVk/TestVulkan/bin/
 !paket.targets
 !paket.bootstrapper.exe
+/examples/SharpVk/TestVulkan/WrapperGLFW.dll.config
+/src/.paket/paket.exe

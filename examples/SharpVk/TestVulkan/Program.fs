@@ -20,13 +20,13 @@ let createSurface (instance:byref<SharpVk.Instance>) (window:glfw3.Window) =
 
 
 let TestSharpVkWithGLFW3dotNet () =
-    //Disable OpenGL
+    // Disable OpenGL
     do Glfw.WindowHint(int State.ClientApi, int State.NoApi)
     // Create the glfw window
     let window = new glfw3.Window(100, 100, "SharpVk & GLFW test");
     // Test the size callback
     do window.SizeChanged.Add((fun (args) -> printfn "title: %A, width: %A, height: %A" args.source.Title args.width args.height)) 
-    //Test the key callback
+    // Test the key callback
     do window.KeyChanged.Add(fun args -> printfn "key: %A, modifiers_ %A" (Glfw.GetKeyName((int)Key.Unknown, args.scancode)) (Glfw.GetKeyModifiers(args.mods));) 
     printfn "Created GLFW-window."
     
