@@ -44,8 +44,6 @@ namespace glfw3
         protected GLFWwindowsizefun SizeChangedCallback = null;
         protected GLFWkeyfun KeyPressedCallback = null;
 
-
-
         protected string title = String.Empty;
 
         public string Title
@@ -84,6 +82,9 @@ namespace glfw3
                 KeyChanged.Invoke(this, args);
             };
             Glfw.SetKeyCallback(this, KeyPressedCallback);
+            // Add dummy handlers to prevent any null reference exceptions
+            SizeChanged = new EventHandler<SizeChangedEventArgs>((__, _) => { });
+            KeyChanged = new EventHandler<KeyEventArgs>((__, _) => { });
         }
 
         #endregion
@@ -240,6 +241,18 @@ namespace glfw3
         {
             Glfw.GetWindowSize(this, ref width, ref height);
         }
+
+        /// <summary>
+        ///  This function destroys the specified window and its context.  On calling
+        ///  this function, no further callbacks will be called for that window.
+        ///  If the context of the specified window is current on the main thread, it is
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Close()
+        {
+            Glfw.DestroyWindow(this);
+        }
+
         #endregion
 
 
