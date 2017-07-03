@@ -122,6 +122,7 @@ type Generator() =
             options.GeneratorKind <- GeneratorKind.CSharp
             let glfw = options.AddModule("glfw3")
             //glfw.Defines.Add("VK_VERSION_1_0")
+            options.CommentKind <- Nullable CppSharp.AST.CommentKind.BCPLSlash
             glfw.Headers.Add(tempFilePath)
             driver.ParserOptions.SetupMSVC(VisualStudioVersion.VS2015)
             Diagnostics.Level <- DiagnosticKind.Debug

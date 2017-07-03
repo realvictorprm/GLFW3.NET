@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>GLFW.NET</id>
-    <version>0.9.7.0</version>
+    <version>0.9.7.1</version>
     <title>GLFW.NET</title>
     <authors>realvictorprm</authors>
     <owners>realvictorprm</owners>
@@ -15,6 +15,7 @@
 		Fixing nuget package (was not updated correctly)
 		Additions:
 		- Added delete member function to GLFWwindow
+    - Fixed documentation of the bindings which were wrong due to a bug in CppSharp (fixed by me)
 		Critical fixes:
 		- Fixing null reference exception if any callback of the window has been called without being set before.
 		- Fixing signature of the createSurface function, the out parameters were wrong.

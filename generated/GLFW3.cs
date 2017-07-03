@@ -303,184 +303,184 @@ namespace glfw3
         VersionRevision = 1
     }
 
-    // <remarks>
-    // <para>  Generic function pointer used for returning client API function pointers</para>
-    // <para>  without forcing a cast from a regular pointer.</para>
-    // </remarks>
+    /// <summary>
+    ///   Generic function pointer used for returning client API function pointers
+    ///   without forcing a cast from a regular pointer.
+    /// </summary>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWglproc();
 
-    // <remarks>
-    // <para>  Generic function pointer used for returning Vulkan API function pointers</para>
-    // <para>  without forcing a cast from a regular pointer.</para>
-    // </remarks>
+    /// <summary>
+    ///   Generic function pointer used for returning Vulkan API function pointers
+    ///   without forcing a cast from a regular pointer.
+    /// </summary>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWvkproc();
 
-    // <remarks>  Opaque monitor object.</remarks>
-    // <remarks>  Opaque window object.</remarks>
-    // <remarks>  Opaque cursor object.</remarks>
-    // <remarks>  This is the function signature for error callback functions.</remarks>
-    // <param name="error">An [error code](</param>
-    // <param name="description">A UTF-8 encoded string describing the error.</param>
+    /// <summary>  Opaque monitor object.</summary>
+    /// <summary>  Opaque window object.</summary>
+    /// <summary>  Opaque cursor object.</summary>
+    /// <summary>  This is the function signature for error callback functions.</summary>
+    /// <param name="error">An [error code](</param>
+    /// <param name="description">A UTF-8 encoded string describing the error.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWerrorfun(int _0, [MarshalAs(UnmanagedType.LPStr)] string _1);
 
-    // <remarks>  This is the function signature for window position callback functions.</remarks>
-    // <param name="window">The window that was moved.</param>
-    // <param name="xpos">
-    // <para>The new x-coordinate, in screen coordinates, of the</para>
-    // <para>upper-left corner of the client area of the window.</para>
-    // </param>
-    // <param name="ypos">
-    // <para>The new y-coordinate, in screen coordinates, of the</para>
-    // <para>upper-left corner of the client area of the window.</para>
-    // </param>
+    /// <summary>  This is the function signature for window position callback functions.</summary>
+    /// <param name="window">The window that was moved.</param>
+    /// <param name="xpos">
+    /// The new x-coordinate, in screen coordinates, of the
+    /// upper-left corner of the client area of the window.
+    /// </param>
+    /// <param name="ypos">
+    /// The new y-coordinate, in screen coordinates, of the
+    /// upper-left corner of the client area of the window.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowposfun(global::System.IntPtr _0, int _1, int _2);
 
-    // <remarks>  This is the function signature for window size callback functions.</remarks>
-    // <param name="window">The window that was resized.</param>
-    // <param name="width">The new width, in screen coordinates, of the window.</param>
-    // <param name="height">The new height, in screen coordinates, of the window.</param>
+    /// <summary>  This is the function signature for window size callback functions.</summary>
+    /// <param name="window">The window that was resized.</param>
+    /// <param name="width">The new width, in screen coordinates, of the window.</param>
+    /// <param name="height">The new height, in screen coordinates, of the window.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowsizefun(global::System.IntPtr _0, int _1, int _2);
 
-    // <remarks>  This is the function signature for window close callback functions.</remarks>
-    // <param name="window">The window that the user attempted to close.</param>
+    /// <summary>  This is the function signature for window close callback functions.</summary>
+    /// <param name="window">The window that the user attempted to close.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowclosefun(global::System.IntPtr _0);
 
-    // <remarks>  This is the function signature for window refresh callback functions.</remarks>
-    // <param name="window">The window whose content needs to be refreshed.</param>
+    /// <summary>  This is the function signature for window refresh callback functions.</summary>
+    /// <param name="window">The window whose content needs to be refreshed.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowrefreshfun(global::System.IntPtr _0);
 
-    // <remarks>  This is the function signature for window focus callback functions.</remarks>
-    // <param name="window">The window that gained or lost input focus.</param>
-    // <param name="focused">
-    // <para>`GLFW_TRUE` if the window was given input focus, or</para>
-    // <para>`GLFW_FALSE` if it lost it.</para>
-    // </param>
+    /// <summary>  This is the function signature for window focus callback functions.</summary>
+    /// <param name="window">The window that gained or lost input focus.</param>
+    /// <param name="focused">
+    /// `GLFW_TRUE` if the window was given input focus, or
+    /// `GLFW_FALSE` if it lost it.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowfocusfun(global::System.IntPtr _0, int _1);
 
-    // <remarks>
-    // <para>  This is the function signature for window iconify/restore callback</para>
-    // <para>  functions.</para>
-    // </remarks>
-    // <param name="window">The window that was iconified or restored.</param>
-    // <param name="iconified">
-    // <para>`GLFW_TRUE` if the window was iconified, or</para>
-    // <para>`GLFW_FALSE` if it was restored.</para>
-    // </param>
+    /// <summary>
+    ///   This is the function signature for window iconify/restore callback
+    ///   functions.
+    /// </summary>
+    /// <param name="window">The window that was iconified or restored.</param>
+    /// <param name="iconified">
+    /// `GLFW_TRUE` if the window was iconified, or
+    /// `GLFW_FALSE` if it was restored.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWwindowiconifyfun(global::System.IntPtr _0, int _1);
 
-    // <remarks>
-    // <para>  This is the function signature for framebuffer resize callback</para>
-    // <para>  functions.</para>
-    // </remarks>
-    // <param name="window">The window whose framebuffer was resized.</param>
-    // <param name="width">The new width, in pixels, of the framebuffer.</param>
-    // <param name="height">The new height, in pixels, of the framebuffer.</param>
+    /// <summary>
+    ///   This is the function signature for framebuffer resize callback
+    ///   functions.
+    /// </summary>
+    /// <param name="window">The window whose framebuffer was resized.</param>
+    /// <param name="width">The new width, in pixels, of the framebuffer.</param>
+    /// <param name="height">The new height, in pixels, of the framebuffer.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWframebuffersizefun(global::System.IntPtr _0, int _1, int _2);
 
-    // <remarks>  This is the function signature for mouse button callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="button">
-    // <para>The [mouse button](</para>
-    // <para>released.</para>
-    // </param>
-    // <param name="action">One of `GLFW_PRESS` or `GLFW_RELEASE`.</param>
-    // <param name="mods">
-    // <para>Bit field describing which [modifier keys](</para>
-    // <para>held down.</para>
-    // </param>
+    /// <summary>  This is the function signature for mouse button callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="button">
+    /// The [mouse button](
+    /// released.
+    /// </param>
+    /// <param name="action">One of `GLFW_PRESS` or `GLFW_RELEASE`.</param>
+    /// <param name="mods">
+    /// Bit field describing which [modifier keys](
+    /// held down.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWmousebuttonfun(global::System.IntPtr _0, int _1, int _2, int _3);
 
-    // <remarks>  This is the function signature for cursor position callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="xpos">
-    // <para>The new cursor x-coordinate, relative to the left edge of</para>
-    // <para>the client area.</para>
-    // </param>
-    // <param name="ypos">
-    // <para>The new cursor y-coordinate, relative to the top edge of the</para>
-    // <para>client area.</para>
-    // </param>
+    /// <summary>  This is the function signature for cursor position callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="xpos">
+    /// The new cursor x-coordinate, relative to the left edge of
+    /// the client area.
+    /// </param>
+    /// <param name="ypos">
+    /// The new cursor y-coordinate, relative to the top edge of the
+    /// client area.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWcursorposfun(global::System.IntPtr _0, double _1, double _2);
 
-    // <remarks>  This is the function signature for cursor enter/leave callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="entered">
-    // <para>`GLFW_TRUE` if the cursor entered the window's client</para>
-    // <para>area, or `GLFW_FALSE` if it left it.</para>
-    // </param>
+    /// <summary>  This is the function signature for cursor enter/leave callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="entered">
+    /// `GLFW_TRUE` if the cursor entered the window's client
+    /// area, or `GLFW_FALSE` if it left it.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWcursorenterfun(global::System.IntPtr _0, int _1);
 
-    // <remarks>  This is the function signature for scroll callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="xoffset">The scroll offset along the x-axis.</param>
-    // <param name="yoffset">The scroll offset along the y-axis.</param>
+    /// <summary>  This is the function signature for scroll callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="xoffset">The scroll offset along the x-axis.</param>
+    /// <param name="yoffset">The scroll offset along the y-axis.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWscrollfun(global::System.IntPtr _0, double _1, double _2);
 
-    // <remarks>  This is the function signature for keyboard key callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="key">The [keyboard key](</param>
-    // <param name="scancode">The system-specific scancode of the key.</param>
-    // <param name="action">`GLFW_PRESS`, `GLFW_RELEASE` or `GLFW_REPEAT`.</param>
-    // <param name="mods">
-    // <para>Bit field describing which [modifier keys](</para>
-    // <para>held down.</para>
-    // </param>
+    /// <summary>  This is the function signature for keyboard key callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="key">The [keyboard key](</param>
+    /// <param name="scancode">The system-specific scancode of the key.</param>
+    /// <param name="action">`GLFW_PRESS`, `GLFW_RELEASE` or `GLFW_REPEAT`.</param>
+    /// <param name="mods">
+    /// Bit field describing which [modifier keys](
+    /// held down.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWkeyfun(global::System.IntPtr _0, int _1, int _2, int _3, int _4);
 
-    // <remarks>  This is the function signature for Unicode character callback functions.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="codepoint">The Unicode code point of the character.</param>
+    /// <summary>  This is the function signature for Unicode character callback functions.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="codepoint">The Unicode code point of the character.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWcharfun(global::System.IntPtr _0, uint _1);
 
-    // <remarks>
-    // <para>  This is the function signature for Unicode character with modifiers callback</para>
-    // <para>  functions.  It is called for each input character, regardless of what</para>
-    // <para>  modifier keys are held down.</para>
-    // </remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="codepoint">The Unicode code point of the character.</param>
-    // <param name="mods">
-    // <para>Bit field describing which [modifier keys](</para>
-    // <para>held down.</para>
-    // </param>
+    /// <summary>
+    ///   This is the function signature for Unicode character with modifiers callback
+    ///   functions.  It is called for each input character, regardless of what
+    ///   modifier keys are held down.
+    /// </summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="codepoint">The Unicode code point of the character.</param>
+    /// <param name="mods">
+    /// Bit field describing which [modifier keys](
+    /// held down.
+    /// </param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWcharmodsfun(global::System.IntPtr _0, uint _1, int _2);
 
-    // <remarks>  This is the function signature for file drop callbacks.</remarks>
-    // <param name="window">The window that received the event.</param>
-    // <param name="count">The number of dropped files.</param>
-    // <param name="paths">The UTF-8 encoded file and/or directory path names.</param>
+    /// <summary>  This is the function signature for file drop callbacks.</summary>
+    /// <param name="window">The window that received the event.</param>
+    /// <param name="count">The number of dropped files.</param>
+    /// <param name="paths">The UTF-8 encoded file and/or directory path names.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWdropfun(global::System.IntPtr _0, int _1, sbyte** _2);
 
-    // <remarks>  This is the function signature for monitor configuration callback functions.</remarks>
-    // <param name="monitor">The monitor that was connected or disconnected.</param>
-    // <param name="event">One of `GLFW_CONNECTED` or `GLFW_DISCONNECTED`.</param>
+    /// <summary>  This is the function signature for monitor configuration callback functions.</summary>
+    /// <param name="monitor">The monitor that was connected or disconnected.</param>
+    /// <param name="event">One of `GLFW_CONNECTED` or `GLFW_DISCONNECTED`.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWmonitorfun(global::System.IntPtr _0, int _1);
 
-    // <remarks>
-    // <para>  This is the function signature for joystick configuration callback</para>
-    // <para>  functions.</para>
-    // </remarks>
-    // <param name="joy">The joystick that was connected or disconnected.</param>
-    // <param name="event">One of `GLFW_CONNECTED` or `GLFW_DISCONNECTED`.</param>
+    /// <summary>
+    ///   This is the function signature for joystick configuration callback
+    ///   functions.
+    /// </summary>
+    /// <param name="joy">The joystick that was connected or disconnected.</param>
+    /// <param name="event">One of `GLFW_CONNECTED` or `GLFW_DISCONNECTED`.</param>
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void GLFWjoystickfun(int _0, int _1);
 
@@ -625,7 +625,7 @@ namespace glfw3
         }
     }
 
-    // <remarks>  This describes a single video mode.</remarks>
+    /// <summary>  This describes a single video mode.</summary>
     public unsafe partial class GLFWvidmode : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 24)]
@@ -650,8 +650,8 @@ namespace glfw3
             internal int refreshRate;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="??0GLFWvidmode@@QEAA@AEBU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
+                EntryPoint="??0GLFWvidmode@@QAE@ABU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -804,27 +804,27 @@ namespace glfw3
         }
     }
 
-    // <remarks>  This describes the gamma ramp for a monitor.</remarks>
+    /// <summary>  This describes the gamma ramp for a monitor.</summary>
     public unsafe partial class GLFWgammaramp : IDisposable
     {
-        [StructLayout(LayoutKind.Explicit, Size = 32)]
+        [StructLayout(LayoutKind.Explicit, Size = 16)]
         public partial struct __Internal
         {
             [FieldOffset(0)]
             internal global::System.IntPtr red;
 
-            [FieldOffset(8)]
+            [FieldOffset(4)]
             internal global::System.IntPtr green;
 
-            [FieldOffset(16)]
+            [FieldOffset(8)]
             internal global::System.IntPtr blue;
 
-            [FieldOffset(24)]
+            [FieldOffset(12)]
             internal uint size;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="??0GLFWgammaramp@@QEAA@AEBU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
+                EntryPoint="??0GLFWgammaramp@@QAE@ABU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -954,7 +954,7 @@ namespace glfw3
 
     public unsafe partial class GLFWimage : IDisposable
     {
-        [StructLayout(LayoutKind.Explicit, Size = 16)]
+        [StructLayout(LayoutKind.Explicit, Size = 12)]
         public partial struct __Internal
         {
             [FieldOffset(0)]
@@ -967,8 +967,8 @@ namespace glfw3
             internal global::System.IntPtr pixels;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="??0GLFWimage@@QEAA@AEBU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
+                EntryPoint="??0GLFWimage@@QAE@ABU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -1088,8 +1088,8 @@ namespace glfw3
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="??0Test@@QEAA@AEBU0@@Z")]
+            [DllImport("glfw3", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.ThisCall,
+                EntryPoint="??0Test@@QAE@ABU0@@Z")]
             internal static extern global::System.IntPtr cctor_1(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
@@ -1634,49 +1634,49 @@ namespace glfw3
             internal static extern sbyte** GetRequiredInstanceExtensions_0(uint* count);
         }
 
-        // <remarks>
-        // <para>  This function initializes the GLFW library.  Before most GLFW functions can</para>
-        // <para>  be used, GLFW must be initialized, and before an application terminates GLFW</para>
-        // <para>  should be terminated in order to free any resources allocated during or</para>
-        // <para>  after initialization.</para>
-        // <para>  If this function fails, it calls </para>
-        // <para>  succeeds, you should call </para>
-        // <para>  Additional calls to this function after successful initialization but before</para>
-        // <para>  termination will return `GLFW_TRUE` immediately.</para>
-        // </remarks>
-        // <returns>
-        // <para>`GLFW_TRUE` if successful, or `GLFW_FALSE` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function initializes the GLFW library.  Before most GLFW functions can
+        ///   be used, GLFW must be initialized, and before an application terminates GLFW
+        ///   should be terminated in order to free any resources allocated during or
+        ///   after initialization.
+        ///   If this function fails, it calls 
+        ///   succeeds, you should call 
+        ///   Additional calls to this function after successful initialization but before
+        ///   termination will return `GLFW_TRUE` immediately.
+        /// </summary>
+        /// <returns>
+        /// `GLFW_TRUE` if successful, or `GLFW_FALSE` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static int Init()
         {
             var __ret = __Internal.Init_0();
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function destroys all remaining windows and cursors, restores any</para>
-        // <para>  modified gamma ramps and frees any other allocated resources.  Once this</para>
-        // <para>  function is called, you must again call </para>
-        // <para>  you will be able to use most GLFW functions.</para>
-        // <para>  If GLFW has been successfully initialized, this function should be called</para>
-        // <para>  before the application exits.  If initialization fails, there is no need to</para>
-        // <para>  call this function, as it is called by </para>
-        // <para>  failure.</para>
-        // <para>  </para>
-        // <para>Possible errors include </para>
-        // <para>  </para>
-        // <para>  </para>
-        // <para>  </para>
-        // <para>This function must not be called from a callback.</para>
-        // <para>  </para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </remarks>
+        /// <summary>
+        ///   This function destroys all remaining windows and cursors, restores any
+        ///   modified gamma ramps and frees any other allocated resources.  Once this
+        ///   function is called, you must again call 
+        ///   you will be able to use most GLFW functions.
+        ///   If GLFW has been successfully initialized, this function should be called
+        ///   before the application exits.  If initialization fails, there is no need to
+        ///   call this function, as it is called by 
+        ///   failure.
+        ///   
+        /// Possible errors include 
+        ///   
+        ///   
+        ///   
+        /// This function must not be called from a callback.
+        ///   
+        /// _safety This function must only be called from the main thread.
+        /// </summary>
         public static void Terminate()
         {
             __Internal.Terminate_0();
@@ -1693,22 +1693,22 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function retrieves the major, minor and revision numbers of the GLFW</para>
-        // <para>  library.  It is intended for when you are using GLFW as a shared library and</para>
-        // <para>  want to ensure that you are using the minimum required version.</para>
-        // <para>  Any or all of the version arguments may be `NULL`.</para>
-        // </remarks>
-        // <param name="major">Where to store the major version number, or `NULL`.</param>
-        // <param name="minor">Where to store the minor version number, or `NULL`.</param>
-        // <param name="rev">
-        // <para>Where to store the revision number, or `NULL`.</para>
-        // <para></para>
-        // <para>None.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function retrieves the major, minor and revision numbers of the GLFW
+        ///   library.  It is intended for when you are using GLFW as a shared library and
+        ///   want to ensure that you are using the minimum required version.
+        ///   Any or all of the version arguments may be `NULL`.
+        /// </summary>
+        /// <param name="major">Where to store the major version number, or `NULL`.</param>
+        /// <param name="minor">Where to store the minor version number, or `NULL`.</param>
+        /// <param name="rev">
+        /// Where to store the revision number, or `NULL`.
+        /// 
+        /// None.
+        /// 
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </param>
         public static void GetVersion(ref int major, ref int minor, ref int rev)
         {
             fixed (int* __refParamPtr0 = &major)
@@ -1726,56 +1726,56 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the compile-time generated</para>
-        // <para>  [version string](</para>
-        // <para>  describes the version, platform, compiler and any platform-specific</para>
-        // <para>  compile-time options.  It should not be confused with the OpenGL or OpenGL</para>
-        // <para>  ES version string, queried with `glGetString`.</para>
-        // <para>  __Do not use the version string__ to parse the GLFW library version.  The</para>
-        // <para>  </para>
-        // <para>  binary in numerical format.</para>
-        // </remarks>
-        // <returns>
-        // <para>The ASCII encoded GLFW version string.</para>
-        // <para></para>
-        // <para>None.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_lifetime The returned string is static and compile-time generated.</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the compile-time generated
+        ///   [version string](
+        ///   describes the version, platform, compiler and any platform-specific
+        ///   compile-time options.  It should not be confused with the OpenGL or OpenGL
+        ///   ES version string, queried with `glGetString`.
+        ///   __Do not use the version string__ to parse the GLFW library version.  The
+        ///   
+        ///   binary in numerical format.
+        /// </summary>
+        /// <returns>
+        /// The ASCII encoded GLFW version string.
+        /// 
+        /// None.
+        /// 
+        /// 
+        /// _lifetime The returned string is static and compile-time generated.
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static string GetVersionString()
         {
             var __ret = __Internal.GetVersionString_0();
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        // <remarks>
-        // <para>  This function sets the error callback, which is called with an error code</para>
-        // <para>  and a human-readable description each time a GLFW error occurs.</para>
-        // <para>  The error callback is called on the thread where the error occurred.  If you</para>
-        // <para>  are using GLFW from multiple threads, your error callback needs to be</para>
-        // <para>  written accordingly.</para>
-        // <para>  Because the description string may have been generated specifically for that</para>
-        // <para>  error, it is not guaranteed to be valid after the callback has returned.  If</para>
-        // <para>  you wish to use it after the callback returns, you need to make a copy.</para>
-        // <para>  Once set, the error callback remains set even after the library has been</para>
-        // <para>  terminated.</para>
-        // </remarks>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set.</para>
-        // <para></para>
-        // <para>None.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the error callback, which is called with an error code
+        ///   and a human-readable description each time a GLFW error occurs.
+        ///   The error callback is called on the thread where the error occurred.  If you
+        ///   are using GLFW from multiple threads, your error callback needs to be
+        ///   written accordingly.
+        ///   Because the description string may have been generated specifically for that
+        ///   error, it is not guaranteed to be valid after the callback has returned.  If
+        ///   you wish to use it after the callback returns, you need to make a copy.
+        ///   Once set, the error callback remains set even after the library has been
+        ///   terminated.
+        /// </summary>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set.
+        /// 
+        /// None.
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWerrorfun SetErrorCallback(global::glfw3.GLFWerrorfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
@@ -1784,27 +1784,27 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWerrorfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWerrorfun));
         }
 
-        // <remarks>
-        // <para>  This function returns an array of handles for all currently connected</para>
-        // <para>  monitors.  The primary monitor is always first in the returned array.  If no</para>
-        // <para>  monitors were found, this function returns `NULL`.</para>
-        // </remarks>
-        // <param name="count">
-        // <para>Where to store the number of monitors in the returned</para>
-        // <para>array.  This is set to zero if an error occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of monitor handles, or `NULL` if no monitors were found or</para>
-        // <para>if an [error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is guaranteed to be valid only until the</para>
-        // <para>monitor configuration changes or the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns an array of handles for all currently connected
+        ///   monitors.  The primary monitor is always first in the returned array.  If no
+        ///   monitors were found, this function returns `NULL`.
+        /// </summary>
+        /// <param name="count">
+        /// Where to store the number of monitors in the returned
+        /// array.  This is set to zero if an error occurred.
+        /// </param>
+        /// <returns>
+        /// An array of monitor handles, or `NULL` if no monitors were found or
+        /// if an [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is guaranteed to be valid only until the
+        /// monitor configuration changes or the library is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWmonitor GetMonitors(ref int count)
         {
             fixed (int* __refParamPtr0 = &count)
@@ -1820,20 +1820,20 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the primary monitor.  This is usually the monitor</para>
-        // <para>  where elements like the task bar or global menu bar are located.</para>
-        // </remarks>
-        // <returns>
-        // <para>The primary monitor, or `NULL` if no monitors were found or if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // <para></para>
-        // <para>glfwGetMonitors.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the primary monitor.  This is usually the monitor
+        ///   where elements like the task bar or global menu bar are located.
+        /// </summary>
+        /// <returns>
+        /// The primary monitor, or `NULL` if no monitors were found or if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// 
+        /// glfwGetMonitors.
+        /// </returns>
         public static global::glfw3.GLFWmonitor GetPrimaryMonitor()
         {
             var __ret = __Internal.GetPrimaryMonitor_0();
@@ -1845,22 +1845,22 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function returns the position, in screen coordinates, of the upper-left</para>
-        // <para>  corner of the specified monitor.</para>
-        // <para>  Any or all of the position arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` position arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <param name="xpos">Where to store the monitor x-coordinate, or `NULL`.</param>
-        // <param name="ypos">
-        // <para>Where to store the monitor y-coordinate, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function returns the position, in screen coordinates, of the upper-left
+        ///   corner of the specified monitor.
+        ///   Any or all of the position arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` position arguments will be set to zero.
+        /// </summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <param name="xpos">Where to store the monitor x-coordinate, or `NULL`.</param>
+        /// <param name="ypos">
+        /// Where to store the monitor y-coordinate, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetMonitorPos(global::glfw3.GLFWmonitor monitor, ref int xpos, ref int ypos)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -1875,30 +1875,30 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the size, in millimetres, of the display area of the</para>
-        // <para>  specified monitor.</para>
-        // <para>  Some systems do not provide accurate monitor size information, either</para>
-        // <para>  because the monitor</para>
-        // <para>  [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data)</para>
-        // <para>  data is incorrect or because the driver does not report it accurately.</para>
-        // <para>  Any or all of the size arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` size arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <param name="widthMM">
-        // <para>Where to store the width, in millimetres, of the</para>
-        // <para>monitor's display area, or `NULL`.</para>
-        // </param>
-        // <param name="heightMM">
-        // <para>Where to store the height, in millimetres, of the</para>
-        // <para>monitor's display area, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function returns the size, in millimetres, of the display area of the
+        ///   specified monitor.
+        ///   Some systems do not provide accurate monitor size information, either
+        ///   because the monitor
+        ///   [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data)
+        ///   data is incorrect or because the driver does not report it accurately.
+        ///   Any or all of the size arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` size arguments will be set to zero.
+        /// </summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <param name="widthMM">
+        /// Where to store the width, in millimetres, of the
+        /// monitor's display area, or `NULL`.
+        /// </param>
+        /// <param name="heightMM">
+        /// Where to store the height, in millimetres, of the
+        /// monitor's display area, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetMonitorPhysicalSize(global::glfw3.GLFWmonitor monitor, ref int widthMM, ref int heightMM)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -1913,24 +1913,24 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns a human-readable name, encoded as UTF-8, of the</para>
-        // <para>  specified monitor.  The name typically reflects the make and model of the</para>
-        // <para>  monitor and is not guaranteed to be unique among the connected monitors.</para>
-        // </remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <returns>
-        // <para>The UTF-8 encoded name of the monitor, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_lifetime The returned string is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified monitor is</para>
-        // <para>disconnected or the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns a human-readable name, encoded as UTF-8, of the
+        ///   specified monitor.  The name typically reflects the make and model of the
+        ///   monitor and is not guaranteed to be unique among the connected monitors.
+        /// </summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <returns>
+        /// The UTF-8 encoded name of the monitor, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _lifetime The returned string is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified monitor is
+        /// disconnected or the library is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static string GetMonitorName(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -1938,23 +1938,23 @@ namespace glfw3
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        // <remarks>
-        // <para>  This function sets the monitor configuration callback, or removes the</para>
-        // <para>  currently set callback.  This is called when a monitor is connected to or</para>
-        // <para>  disconnected from the system.</para>
-        // </remarks>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the monitor configuration callback, or removes the
+        ///   currently set callback.  This is called when a monitor is connected to or
+        ///   disconnected from the system.
+        /// </summary>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWmonitorfun SetMonitorCallback(global::glfw3.GLFWmonitorfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
@@ -1963,31 +1963,31 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWmonitorfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWmonitorfun));
         }
 
-        // <remarks>
-        // <para>  This function returns an array of all video modes supported by the specified</para>
-        // <para>  monitor.  The returned array is sorted in ascending order, first by color</para>
-        // <para>  bit depth (the sum of all channel depths) and then by resolution area (the</para>
-        // <para>  product of width and height).</para>
-        // </remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <param name="count">
-        // <para>Where to store the number of video modes in the returned</para>
-        // <para>array.  This is set to zero if an error occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of video modes, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified monitor is</para>
-        // <para>disconnected, this function is called again for that monitor or the library</para>
-        // <para>is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns an array of all video modes supported by the specified
+        ///   monitor.  The returned array is sorted in ascending order, first by color
+        ///   bit depth (the sum of all channel depths) and then by resolution area (the
+        ///   product of width and height).
+        /// </summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <param name="count">
+        /// Where to store the number of video modes in the returned
+        /// array.  This is set to zero if an error occurred.
+        /// </param>
+        /// <returns>
+        /// An array of video modes, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified monitor is
+        /// disconnected, this function is called again for that monitor or the library
+        /// is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWvidmode GetVideoModes(global::glfw3.GLFWmonitor monitor, ref int count)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -2004,25 +2004,25 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the current video mode of the specified monitor.  If</para>
-        // <para>  you have created a full screen window for that monitor, the return value</para>
-        // <para>  will depend on whether that window is iconified.</para>
-        // </remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <returns>
-        // <para>The current mode of the monitor, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified monitor is</para>
-        // <para>disconnected or the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the current video mode of the specified monitor.  If
+        ///   you have created a full screen window for that monitor, the return value
+        ///   will depend on whether that window is iconified.
+        /// </summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <returns>
+        /// The current mode of the monitor, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified monitor is
+        /// disconnected or the library is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWvidmode GetVideoMode(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -2035,42 +2035,42 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function generates a 256-element gamma ramp from the specified exponent</para>
-        // <para>  and then calls </para>
-        // <para>  number greater than zero.</para>
-        // </remarks>
-        // <param name="monitor">The monitor whose gamma ramp to set.</param>
-        // <param name="gamma">
-        // <para>The desired exponent.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_VALUE and</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function generates a 256-element gamma ramp from the specified exponent
+        ///   and then calls 
+        ///   number greater than zero.
+        /// </summary>
+        /// <param name="monitor">The monitor whose gamma ramp to set.</param>
+        /// <param name="gamma">
+        /// The desired exponent.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_VALUE and
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetGamma(global::glfw3.GLFWmonitor monitor, float gamma)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
             __Internal.SetGamma_0(__arg0, gamma);
         }
 
-        // <remarks>  This function returns the current gamma ramp of the specified monitor.</remarks>
-        // <param name="monitor">The monitor to query.</param>
-        // <returns>
-        // <para>The current gamma ramp, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The returned structure and its arrays are allocated and</para>
-        // <para>freed by GLFW.  You should not free them yourself.  They are valid until the</para>
-        // <para>specified monitor is disconnected, this function is called again for that</para>
-        // <para>monitor or the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>  This function returns the current gamma ramp of the specified monitor.</summary>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <returns>
+        /// The current gamma ramp, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The returned structure and its arrays are allocated and
+        /// freed by GLFW.  You should not free them yourself.  They are valid until the
+        /// specified monitor is disconnected, this function is called again for that
+        /// monitor or the library is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWgammaramp GetGammaRamp(global::glfw3.GLFWmonitor monitor)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -2083,25 +2083,25 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function sets the current gamma ramp for the specified monitor.  The</para>
-        // <para>  original gamma ramp for that monitor is saved by GLFW the first time this</para>
-        // <para>  function is called and is restored by </para>
-        // </remarks>
-        // <param name="monitor">The monitor whose gamma ramp to set.</param>
-        // <param name="ramp">
-        // <para>The gamma ramp to use.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para>_lifetime The specified gamma ramp is copied before this function</para>
-        // <para>returns.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the current gamma ramp for the specified monitor.  The
+        ///   original gamma ramp for that monitor is saved by GLFW the first time this
+        ///   function is called and is restored by 
+        /// </summary>
+        /// <param name="monitor">The monitor whose gamma ramp to set.</param>
+        /// <param name="ramp">
+        /// The gamma ramp to use.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// 
+        /// 
+        /// _lifetime The specified gamma ramp is copied before this function
+        /// returns.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetGammaRamp(global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWgammaramp ramp)
         {
             var __arg0 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -2109,121 +2109,121 @@ namespace glfw3
             __Internal.SetGammaRamp_0(__arg0, __arg1);
         }
 
-        // <remarks>
-        // <para>  This function resets all window hints to their</para>
-        // <para>  [default values](</para>
-        // <para>  </para>
-        // <para>Possible errors include </para>
-        // <para>  </para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </remarks>
+        /// <summary>
+        ///   This function resets all window hints to their
+        ///   [default values](
+        ///   
+        /// Possible errors include 
+        ///   
+        /// _safety This function must only be called from the main thread.
+        /// </summary>
         public static void DefaultWindowHints()
         {
             __Internal.DefaultWindowHints_0();
         }
 
-        // <remarks>
-        // <para>  This function sets hints for the next call to </para>
-        // <para>  hints, once set, retain their values until changed by a call to </para>
-        // <para>  glfwWindowHint or </para>
-        // <para>  terminated.</para>
-        // <para>  This function does not check whether the specified hint values are valid.</para>
-        // <para>  If you set hints to invalid values this will instead be reported by the next</para>
-        // <para>  call to </para>
-        // </remarks>
-        // <param name="hint">The [window hint](</param>
-        // <param name="value">
-        // <para>The new value of the window hint.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets hints for the next call to 
+        ///   hints, once set, retain their values until changed by a call to 
+        ///   glfwWindowHint or 
+        ///   terminated.
+        ///   This function does not check whether the specified hint values are valid.
+        ///   If you set hints to invalid values this will instead be reported by the next
+        ///   call to 
+        /// </summary>
+        /// <param name="hint">The [window hint](</param>
+        /// <param name="value">
+        /// The new value of the window hint.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void WindowHint(int hint, int value)
         {
             __Internal.WindowHint_0(hint, value);
         }
 
-        // <remarks>
-        // <para>  This function creates a window and its associated OpenGL or OpenGL ES</para>
-        // <para>  context.  Most of the options controlling how the window and its context</para>
-        // <para>  should be created are specified with [window hints](</para>
-        // <para>  Successful creation does not change which context is current.  Before you</para>
-        // <para>  can use the newly created context, you need to</para>
-        // <para>  [make it current](</para>
-        // <para>  parameter, see </para>
-        // <para>  The created window, framebuffer and context may differ from what you</para>
-        // <para>  requested, as not all parameters and hints are</para>
-        // <para>  [hard constraints](</para>
-        // <para>  window, especially for full screen windows.  To query the actual attributes</para>
-        // <para>  of the created window, framebuffer and context, see </para>
-        // <para>  glfwGetWindowAttrib, </para>
-        // <para>  To create a full screen window, you need to specify the monitor the window</para>
-        // <para>  will cover.  If no monitor is specified, the window will be windowed mode.</para>
-        // <para>  Unless you have a way for the user to choose a specific monitor, it is</para>
-        // <para>  recommended that you pick the primary monitor.  For more information on how</para>
-        // <para>  to query connected monitors, see </para>
-        // <para>  For full screen windows, the specified size becomes the resolution of the</para>
-        // <para>  window's _desired video mode_.  As long as a full screen window is not</para>
-        // <para>  iconified, the supported video mode most closely matching the desired video</para>
-        // <para>  mode is set for the specified monitor.  For more information about full</para>
-        // <para>  screen windows, including the creation of so called _windowed full screen_</para>
-        // <para>  or _borderless full screen_ windows, see </para>
-        // <para>  Once you have created the window, you can switch it between windowed and</para>
-        // <para>  full screen mode with </para>
-        // <para>  OpenGL or OpenGL ES context, it will be unaffected.</para>
-        // <para>  By default, newly created windows use the placement recommended by the</para>
-        // <para>  window system.  To create the window at a specific position, make it</para>
-        // <para>  initially invisible using the [GLFW_VISIBLE](</para>
-        // <para>  hint, set its [position](</para>
-        // <para>  it.</para>
-        // <para>  As long as at least one full screen window is not iconified, the screensaver</para>
-        // <para>  is prohibited from starting.</para>
-        // <para>  Window systems put limits on window sizes.  Very large or very small window</para>
-        // <para>  dimensions may be overridden by the window system on creation.  Check the</para>
-        // <para>  actual [size](</para>
-        // <para>  The [swap interval](</para>
-        // <para>  the initial value may vary depending on driver settings and defaults.</para>
-        // </remarks>
-        // <param name="width">
-        // <para>The desired width, in screen coordinates, of the window.</para>
-        // <para>This must be greater than zero.</para>
-        // </param>
-        // <param name="height">
-        // <para>The desired height, in screen coordinates, of the window.</para>
-        // <para>This must be greater than zero.</para>
-        // </param>
-        // <param name="title">The initial, UTF-8 encoded window title.</param>
-        // <param name="monitor">
-        // <para>The monitor to use for full screen mode, or `NULL` for</para>
-        // <para>windowed mode.</para>
-        // </param>
-        // <param name="share">
-        // <para>The window whose context to share resources with, or `NULL`</para>
-        // <para>to not share resources.</para>
-        // </param>
-        // <returns>
-        // <para>The handle of the created window, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM,</para>
-        // <para>GLFW_VERSION_UNAVAILABLE,</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function creates a window and its associated OpenGL or OpenGL ES
+        ///   context.  Most of the options controlling how the window and its context
+        ///   should be created are specified with [window hints](
+        ///   Successful creation does not change which context is current.  Before you
+        ///   can use the newly created context, you need to
+        ///   [make it current](
+        ///   parameter, see 
+        ///   The created window, framebuffer and context may differ from what you
+        ///   requested, as not all parameters and hints are
+        ///   [hard constraints](
+        ///   window, especially for full screen windows.  To query the actual attributes
+        ///   of the created window, framebuffer and context, see 
+        ///   glfwGetWindowAttrib, 
+        ///   To create a full screen window, you need to specify the monitor the window
+        ///   will cover.  If no monitor is specified, the window will be windowed mode.
+        ///   Unless you have a way for the user to choose a specific monitor, it is
+        ///   recommended that you pick the primary monitor.  For more information on how
+        ///   to query connected monitors, see 
+        ///   For full screen windows, the specified size becomes the resolution of the
+        ///   window's _desired video mode_.  As long as a full screen window is not
+        ///   iconified, the supported video mode most closely matching the desired video
+        ///   mode is set for the specified monitor.  For more information about full
+        ///   screen windows, including the creation of so called _windowed full screen_
+        ///   or _borderless full screen_ windows, see 
+        ///   Once you have created the window, you can switch it between windowed and
+        ///   full screen mode with 
+        ///   OpenGL or OpenGL ES context, it will be unaffected.
+        ///   By default, newly created windows use the placement recommended by the
+        ///   window system.  To create the window at a specific position, make it
+        ///   initially invisible using the [GLFW_VISIBLE](
+        ///   hint, set its [position](
+        ///   it.
+        ///   As long as at least one full screen window is not iconified, the screensaver
+        ///   is prohibited from starting.
+        ///   Window systems put limits on window sizes.  Very large or very small window
+        ///   dimensions may be overridden by the window system on creation.  Check the
+        ///   actual [size](
+        ///   The [swap interval](
+        ///   the initial value may vary depending on driver settings and defaults.
+        /// </summary>
+        /// <param name="width">
+        /// The desired width, in screen coordinates, of the window.
+        /// This must be greater than zero.
+        /// </param>
+        /// <param name="height">
+        /// The desired height, in screen coordinates, of the window.
+        /// This must be greater than zero.
+        /// </param>
+        /// <param name="title">The initial, UTF-8 encoded window title.</param>
+        /// <param name="monitor">
+        /// The monitor to use for full screen mode, or `NULL` for
+        /// windowed mode.
+        /// </param>
+        /// <param name="share">
+        /// The window whose context to share resources with, or `NULL`
+        /// to not share resources.
+        /// </param>
+        /// <returns>
+        /// The handle of the created window, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM,
+        /// GLFW_VERSION_UNAVAILABLE,
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindow CreateWindow(int width, int height, string title, global::glfw3.GLFWmonitor monitor, global::glfw3.GLFWwindow share)
         {
             var __arg3 = ReferenceEquals(monitor, null) ? global::System.IntPtr.Zero : monitor.__Instance;
@@ -2237,39 +2237,39 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function destroys the specified window and its context.  On calling</para>
-        // <para>  this function, no further callbacks will be called for that window.</para>
-        // <para>  If the context of the specified window is current on the main thread, it is</para>
-        // <para>  detached before being destroyed.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to destroy.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function destroys the specified window and its context.  On calling
+        ///   this function, no further callbacks will be called for that window.
+        ///   If the context of the specified window is current on the main thread, it is
+        ///   detached before being destroyed.
+        /// </summary>
+        /// <param name="window">
+        /// The window to destroy.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void DestroyWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.DestroyWindow_0(__arg0);
         }
 
-        // <remarks>  This function returns the value of the close flag of the specified window.</remarks>
-        // <param name="window">The window to query.</param>
-        // <returns>
-        // <para>The value of the close flag.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Access is not</para>
-        // <para>synchronized.</para>
-        // </returns>
+        /// <summary>  This function returns the value of the close flag of the specified window.</summary>
+        /// <param name="window">The window to query.</param>
+        /// <returns>
+        /// The value of the close flag.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.  Access is not
+        /// synchronized.
+        /// </returns>
         public static int WindowShouldClose(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2277,73 +2277,73 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function sets the value of the close flag of the specified window.</para>
-        // <para>  This can be used to override the user's attempt to close the window, or</para>
-        // <para>  to signal that it should be closed.</para>
-        // </remarks>
-        // <param name="window">The window whose flag to change.</param>
-        // <param name="value">
-        // <para>The new value.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Access is not</para>
-        // <para>synchronized.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the value of the close flag of the specified window.
+        ///   This can be used to override the user's attempt to close the window, or
+        ///   to signal that it should be closed.
+        /// </summary>
+        /// <param name="window">The window whose flag to change.</param>
+        /// <param name="value">
+        /// The new value.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.  Access is not
+        /// synchronized.
+        /// </param>
         public static void SetWindowShouldClose(global::glfw3.GLFWwindow window, int value)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowShouldClose_0(__arg0, value);
         }
 
-        // <remarks>
-        // <para>  This function sets the window title, encoded as UTF-8, of the specified</para>
-        // <para>  window.</para>
-        // </remarks>
-        // <param name="window">The window whose title to change.</param>
-        // <param name="title">
-        // <para>The UTF-8 encoded window title.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the window title, encoded as UTF-8, of the specified
+        ///   window.
+        /// </summary>
+        /// <param name="window">The window whose title to change.</param>
+        /// <param name="title">
+        /// The UTF-8 encoded window title.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowTitle(global::glfw3.GLFWwindow window, string title)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowTitle_0(__arg0, title);
         }
 
-        // <remarks>
-        // <para>  This function sets the icon of the specified window.  If passed an array of</para>
-        // <para>  candidate images, those of or closest to the sizes desired by the system are</para>
-        // <para>  selected.  If no images are specified, the window reverts to its default</para>
-        // <para>  icon.</para>
-        // <para>  The desired image sizes varies depending on platform and system settings.</para>
-        // <para>  The selected images will be rescaled as needed.  Good sizes include 16x16,</para>
-        // <para>  32x32 and 48x48.</para>
-        // </remarks>
-        // <param name="window">The window whose icon to set.</param>
-        // <param name="count">
-        // <para>The number of images in the specified array, or zero to</para>
-        // <para>revert to the default window icon.</para>
-        // </param>
-        // <param name="images">
-        // <para>The images to create the icon from.  This is ignored if</para>
-        // <para>count is zero.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The specified image data is copied before this function</para>
-        // <para>returns.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the icon of the specified window.  If passed an array of
+        ///   candidate images, those of or closest to the sizes desired by the system are
+        ///   selected.  If no images are specified, the window reverts to its default
+        ///   icon.
+        ///   The desired image sizes varies depending on platform and system settings.
+        ///   The selected images will be rescaled as needed.  Good sizes include 16x16,
+        ///   32x32 and 48x48.
+        /// </summary>
+        /// <param name="window">The window whose icon to set.</param>
+        /// <param name="count">
+        /// The number of images in the specified array, or zero to
+        /// revert to the default window icon.
+        /// </param>
+        /// <param name="images">
+        /// The images to create the icon from.  This is ignored if
+        /// count is zero.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The specified image data is copied before this function
+        /// returns.
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowIcon(global::glfw3.GLFWwindow window, int count, global::glfw3.GLFWimage images)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2351,26 +2351,26 @@ namespace glfw3
             __Internal.SetWindowIcon_0(__arg0, count, __arg2);
         }
 
-        // <remarks>
-        // <para>  This function retrieves the position, in screen coordinates, of the</para>
-        // <para>  upper-left corner of the client area of the specified window.</para>
-        // <para>  Any or all of the position arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` position arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="window">The window to query.</param>
-        // <param name="xpos">
-        // <para>Where to store the x-coordinate of the upper-left corner of</para>
-        // <para>the client area, or `NULL`.</para>
-        // </param>
-        // <param name="ypos">
-        // <para>Where to store the y-coordinate of the upper-left corner of</para>
-        // <para>the client area, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function retrieves the position, in screen coordinates, of the
+        ///   upper-left corner of the client area of the specified window.
+        ///   Any or all of the position arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` position arguments will be set to zero.
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="xpos">
+        /// Where to store the x-coordinate of the upper-left corner of
+        /// the client area, or `NULL`.
+        /// </param>
+        /// <param name="ypos">
+        /// Where to store the y-coordinate of the upper-left corner of
+        /// the client area, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetWindowPos(global::glfw3.GLFWwindow window, ref int xpos, ref int ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2385,52 +2385,52 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function sets the position, in screen coordinates, of the upper-left</para>
-        // <para>  corner of the client area of the specified windowed mode window.  If the</para>
-        // <para>  window is a full screen window, this function does nothing.</para>
-        // <para>  __Do not use this function__ to move an already visible window unless you</para>
-        // <para>  have very good reasons for doing so, as it will confuse and annoy the user.</para>
-        // <para>  The window manager may put limits on what positions are allowed.  GLFW</para>
-        // <para>  cannot and should not override these limits.</para>
-        // </remarks>
-        // <param name="window">The window to query.</param>
-        // <param name="xpos">The x-coordinate of the upper-left corner of the client area.</param>
-        // <param name="ypos">
-        // <para>The y-coordinate of the upper-left corner of the client area.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the position, in screen coordinates, of the upper-left
+        ///   corner of the client area of the specified windowed mode window.  If the
+        ///   window is a full screen window, this function does nothing.
+        ///   __Do not use this function__ to move an already visible window unless you
+        ///   have very good reasons for doing so, as it will confuse and annoy the user.
+        ///   The window manager may put limits on what positions are allowed.  GLFW
+        ///   cannot and should not override these limits.
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="xpos">The x-coordinate of the upper-left corner of the client area.</param>
+        /// <param name="ypos">
+        /// The y-coordinate of the upper-left corner of the client area.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowPos(global::glfw3.GLFWwindow window, int xpos, int ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowPos_0(__arg0, xpos, ypos);
         }
 
-        // <remarks>
-        // <para>  This function retrieves the size, in screen coordinates, of the client area</para>
-        // <para>  of the specified window.  If you wish to retrieve the size of the</para>
-        // <para>  framebuffer of the window in pixels, see </para>
-        // <para>  Any or all of the size arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` size arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="window">The window whose size to retrieve.</param>
-        // <param name="width">
-        // <para>Where to store the width, in screen coordinates, of the</para>
-        // <para>client area, or `NULL`.</para>
-        // </param>
-        // <param name="height">
-        // <para>Where to store the height, in screen coordinates, of the</para>
-        // <para>client area, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function retrieves the size, in screen coordinates, of the client area
+        ///   of the specified window.  If you wish to retrieve the size of the
+        ///   framebuffer of the window in pixels, see 
+        ///   Any or all of the size arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` size arguments will be set to zero.
+        /// </summary>
+        /// <param name="window">The window whose size to retrieve.</param>
+        /// <param name="width">
+        /// Where to store the width, in screen coordinates, of the
+        /// client area, or `NULL`.
+        /// </param>
+        /// <param name="height">
+        /// Where to store the height, in screen coordinates, of the
+        /// client area, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetWindowSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2445,132 +2445,132 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function sets the size limits of the client area of the specified</para>
-        // <para>  window.  If the window is full screen, the size limits only take effect</para>
-        // <para>  once it is made windowed.  If the window is not resizable, this function</para>
-        // <para>  does nothing.</para>
-        // <para>  The size limits are applied immediately to a windowed mode window and may</para>
-        // <para>  cause it to be resized.</para>
-        // <para>  The maximum dimensions must be greater than or equal to the minimum</para>
-        // <para>  dimensions and all must be greater than or equal to zero.</para>
-        // </remarks>
-        // <param name="window">The window to set limits for.</param>
-        // <param name="minwidth">
-        // <para>The minimum width, in screen coordinates, of the client</para>
-        // <para>area, or `GLFW_DONT_CARE`.</para>
-        // </param>
-        // <param name="minheight">
-        // <para>The minimum height, in screen coordinates, of the</para>
-        // <para>client area, or `GLFW_DONT_CARE`.</para>
-        // </param>
-        // <param name="maxwidth">
-        // <para>The maximum width, in screen coordinates, of the client</para>
-        // <para>area, or `GLFW_DONT_CARE`.</para>
-        // </param>
-        // <param name="maxheight">
-        // <para>The maximum height, in screen coordinates, of the</para>
-        // <para>client area, or `GLFW_DONT_CARE`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_VALUE and</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the size limits of the client area of the specified
+        ///   window.  If the window is full screen, the size limits only take effect
+        ///   once it is made windowed.  If the window is not resizable, this function
+        ///   does nothing.
+        ///   The size limits are applied immediately to a windowed mode window and may
+        ///   cause it to be resized.
+        ///   The maximum dimensions must be greater than or equal to the minimum
+        ///   dimensions and all must be greater than or equal to zero.
+        /// </summary>
+        /// <param name="window">The window to set limits for.</param>
+        /// <param name="minwidth">
+        /// The minimum width, in screen coordinates, of the client
+        /// area, or `GLFW_DONT_CARE`.
+        /// </param>
+        /// <param name="minheight">
+        /// The minimum height, in screen coordinates, of the
+        /// client area, or `GLFW_DONT_CARE`.
+        /// </param>
+        /// <param name="maxwidth">
+        /// The maximum width, in screen coordinates, of the client
+        /// area, or `GLFW_DONT_CARE`.
+        /// </param>
+        /// <param name="maxheight">
+        /// The maximum height, in screen coordinates, of the
+        /// client area, or `GLFW_DONT_CARE`.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_VALUE and
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowSizeLimits(global::glfw3.GLFWwindow window, int minwidth, int minheight, int maxwidth, int maxheight)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowSizeLimits_0(__arg0, minwidth, minheight, maxwidth, maxheight);
         }
 
-        // <remarks>
-        // <para>  This function sets the required aspect ratio of the client area of the</para>
-        // <para>  specified window.  If the window is full screen, the aspect ratio only takes</para>
-        // <para>  effect once it is made windowed.  If the window is not resizable, this</para>
-        // <para>  function does nothing.</para>
-        // <para>  The aspect ratio is specified as a numerator and a denominator and both</para>
-        // <para>  values must be greater than zero.  For example, the common 16:9 aspect ratio</para>
-        // <para>  is specified as 16 and 9, respectively.</para>
-        // <para>  If the numerator and denominator is set to `GLFW_DONT_CARE` then the aspect</para>
-        // <para>  ratio limit is disabled.</para>
-        // <para>  The aspect ratio is applied immediately to a windowed mode window and may</para>
-        // <para>  cause it to be resized.</para>
-        // </remarks>
-        // <param name="window">The window to set limits for.</param>
-        // <param name="numer">
-        // <para>The numerator of the desired aspect ratio, or</para>
-        // <para>`GLFW_DONT_CARE`.</para>
-        // </param>
-        // <param name="denom">
-        // <para>The denominator of the desired aspect ratio, or</para>
-        // <para>`GLFW_DONT_CARE`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_VALUE and</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the required aspect ratio of the client area of the
+        ///   specified window.  If the window is full screen, the aspect ratio only takes
+        ///   effect once it is made windowed.  If the window is not resizable, this
+        ///   function does nothing.
+        ///   The aspect ratio is specified as a numerator and a denominator and both
+        ///   values must be greater than zero.  For example, the common 16:9 aspect ratio
+        ///   is specified as 16 and 9, respectively.
+        ///   If the numerator and denominator is set to `GLFW_DONT_CARE` then the aspect
+        ///   ratio limit is disabled.
+        ///   The aspect ratio is applied immediately to a windowed mode window and may
+        ///   cause it to be resized.
+        /// </summary>
+        /// <param name="window">The window to set limits for.</param>
+        /// <param name="numer">
+        /// The numerator of the desired aspect ratio, or
+        /// `GLFW_DONT_CARE`.
+        /// </param>
+        /// <param name="denom">
+        /// The denominator of the desired aspect ratio, or
+        /// `GLFW_DONT_CARE`.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_VALUE and
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowAspectRatio(global::glfw3.GLFWwindow window, int numer, int denom)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowAspectRatio_0(__arg0, numer, denom);
         }
 
-        // <remarks>
-        // <para>  This function sets the size, in screen coordinates, of the client area of</para>
-        // <para>  the specified window.</para>
-        // <para>  For full screen windows, this function updates the resolution of its desired</para>
-        // <para>  video mode and switches to the video mode closest to it, without affecting</para>
-        // <para>  the window's context.  As the context is unaffected, the bit depths of the</para>
-        // <para>  framebuffer remain unchanged.</para>
-        // <para>  If you wish to update the refresh rate of the desired video mode in addition</para>
-        // <para>  to its resolution, see </para>
-        // <para>  The window manager may put limits on what sizes are allowed.  GLFW cannot</para>
-        // <para>  and should not override these limits.</para>
-        // </remarks>
-        // <param name="window">The window to resize.</param>
-        // <param name="width">
-        // <para>The desired width, in screen coordinates, of the window</para>
-        // <para>client area.</para>
-        // </param>
-        // <param name="height">
-        // <para>The desired height, in screen coordinates, of the window</para>
-        // <para>client area.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the size, in screen coordinates, of the client area of
+        ///   the specified window.
+        ///   For full screen windows, this function updates the resolution of its desired
+        ///   video mode and switches to the video mode closest to it, without affecting
+        ///   the window's context.  As the context is unaffected, the bit depths of the
+        ///   framebuffer remain unchanged.
+        ///   If you wish to update the refresh rate of the desired video mode in addition
+        ///   to its resolution, see 
+        ///   The window manager may put limits on what sizes are allowed.  GLFW cannot
+        ///   and should not override these limits.
+        /// </summary>
+        /// <param name="window">The window to resize.</param>
+        /// <param name="width">
+        /// The desired width, in screen coordinates, of the window
+        /// client area.
+        /// </param>
+        /// <param name="height">
+        /// The desired height, in screen coordinates, of the window
+        /// client area.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowSize(global::glfw3.GLFWwindow window, int width, int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowSize_0(__arg0, width, height);
         }
 
-        // <remarks>
-        // <para>  This function retrieves the size, in pixels, of the framebuffer of the</para>
-        // <para>  specified window.  If you wish to retrieve the size of the window in screen</para>
-        // <para>  coordinates, see </para>
-        // <para>  Any or all of the size arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` size arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="window">The window whose framebuffer to query.</param>
-        // <param name="width">
-        // <para>Where to store the width, in pixels, of the framebuffer,</para>
-        // <para>or `NULL`.</para>
-        // </param>
-        // <param name="height">
-        // <para>Where to store the height, in pixels, of the framebuffer,</para>
-        // <para>or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function retrieves the size, in pixels, of the framebuffer of the
+        ///   specified window.  If you wish to retrieve the size of the window in screen
+        ///   coordinates, see 
+        ///   Any or all of the size arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` size arguments will be set to zero.
+        /// </summary>
+        /// <param name="window">The window whose framebuffer to query.</param>
+        /// <param name="width">
+        /// Where to store the width, in pixels, of the framebuffer,
+        /// or `NULL`.
+        /// </param>
+        /// <param name="height">
+        /// Where to store the height, in pixels, of the framebuffer,
+        /// or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetFramebufferSize(global::glfw3.GLFWwindow window, ref int width, ref int height)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2585,39 +2585,39 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function retrieves the size, in screen coordinates, of each edge of the</para>
-        // <para>  frame of the specified window.  This size includes the title bar, if the</para>
-        // <para>  window has one.  The size of the frame may vary depending on the</para>
-        // <para>  [window-related hints](</para>
-        // <para>  Because this function retrieves the size of each window frame edge and not</para>
-        // <para>  the offset along a particular coordinate axis, the retrieved values will</para>
-        // <para>  always be zero or positive.</para>
-        // <para>  Any or all of the size arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` size arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="window">The window whose frame size to query.</param>
-        // <param name="left">
-        // <para>Where to store the size, in screen coordinates, of the left</para>
-        // <para>edge of the window frame, or `NULL`.</para>
-        // </param>
-        // <param name="top">
-        // <para>Where to store the size, in screen coordinates, of the top</para>
-        // <para>edge of the window frame, or `NULL`.</para>
-        // </param>
-        // <param name="right">
-        // <para>Where to store the size, in screen coordinates, of the</para>
-        // <para>right edge of the window frame, or `NULL`.</para>
-        // </param>
-        // <param name="bottom">
-        // <para>Where to store the size, in screen coordinates, of the</para>
-        // <para>bottom edge of the window frame, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function retrieves the size, in screen coordinates, of each edge of the
+        ///   frame of the specified window.  This size includes the title bar, if the
+        ///   window has one.  The size of the frame may vary depending on the
+        ///   [window-related hints](
+        ///   Because this function retrieves the size of each window frame edge and not
+        ///   the offset along a particular coordinate axis, the retrieved values will
+        ///   always be zero or positive.
+        ///   Any or all of the size arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` size arguments will be set to zero.
+        /// </summary>
+        /// <param name="window">The window whose frame size to query.</param>
+        /// <param name="left">
+        /// Where to store the size, in screen coordinates, of the left
+        /// edge of the window frame, or `NULL`.
+        /// </param>
+        /// <param name="top">
+        /// Where to store the size, in screen coordinates, of the top
+        /// edge of the window frame, or `NULL`.
+        /// </param>
+        /// <param name="right">
+        /// Where to store the size, in screen coordinates, of the
+        /// right edge of the window frame, or `NULL`.
+        /// </param>
+        /// <param name="bottom">
+        /// Where to store the size, in screen coordinates, of the
+        /// bottom edge of the window frame, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetWindowFrameSize(global::glfw3.GLFWwindow window, ref int left, ref int top, ref int right, ref int bottom)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2640,140 +2640,140 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function iconifies (minimizes) the specified window if it was</para>
-        // <para>  previously restored.  If the window is already iconified, this function does</para>
-        // <para>  nothing.</para>
-        // <para>  If the specified window is a full screen window, the original monitor</para>
-        // <para>  resolution is restored until the window is restored.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to iconify.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function iconifies (minimizes) the specified window if it was
+        ///   previously restored.  If the window is already iconified, this function does
+        ///   nothing.
+        ///   If the specified window is a full screen window, the original monitor
+        ///   resolution is restored until the window is restored.
+        /// </summary>
+        /// <param name="window">
+        /// The window to iconify.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void IconifyWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.IconifyWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function restores the specified window if it was previously iconified</para>
-        // <para>  (minimized) or maximized.  If the window is already restored, this function</para>
-        // <para>  does nothing.</para>
-        // <para>  If the specified window is a full screen window, the resolution chosen for</para>
-        // <para>  the window is restored on the selected monitor.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to restore.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function restores the specified window if it was previously iconified
+        ///   (minimized) or maximized.  If the window is already restored, this function
+        ///   does nothing.
+        ///   If the specified window is a full screen window, the resolution chosen for
+        ///   the window is restored on the selected monitor.
+        /// </summary>
+        /// <param name="window">
+        /// The window to restore.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void RestoreWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.RestoreWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function maximizes the specified window if it was previously not</para>
-        // <para>  maximized.  If the window is already maximized, this function does nothing.</para>
-        // <para>  If the specified window is a full screen window, this function does nothing.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to maximize.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // </param>
+        /// <summary>
+        ///   This function maximizes the specified window if it was previously not
+        ///   maximized.  If the window is already maximized, this function does nothing.
+        ///   If the specified window is a full screen window, this function does nothing.
+        /// </summary>
+        /// <param name="window">
+        /// The window to maximize.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// </param>
         public static void MaximizeWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.MaximizeWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function makes the specified window visible if it was previously</para>
-        // <para>  hidden.  If the window is already visible or is in full screen mode, this</para>
-        // <para>  function does nothing.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to make visible.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function makes the specified window visible if it was previously
+        ///   hidden.  If the window is already visible or is in full screen mode, this
+        ///   function does nothing.
+        /// </summary>
+        /// <param name="window">
+        /// The window to make visible.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void ShowWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.ShowWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function hides the specified window if it was previously visible.  If</para>
-        // <para>  the window is already hidden or is in full screen mode, this function does</para>
-        // <para>  nothing.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to hide.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function hides the specified window if it was previously visible.  If
+        ///   the window is already hidden or is in full screen mode, this function does
+        ///   nothing.
+        /// </summary>
+        /// <param name="window">
+        /// The window to hide.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void HideWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.HideWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function brings the specified window to front and sets input focus.</para>
-        // <para>  The window should already be visible and not iconified.</para>
-        // <para>  By default, both windowed and full screen mode windows are focused when</para>
-        // <para>  initially created.  Set the [GLFW_FOCUSED](</para>
-        // <para>  this behavior.</para>
-        // <para>  __Do not use this function__ to steal focus from other applications unless</para>
-        // <para>  you are certain that is what the user wants.  Focus stealing can be</para>
-        // <para>  extremely disruptive.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window to give input focus.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function brings the specified window to front and sets input focus.
+        ///   The window should already be visible and not iconified.
+        ///   By default, both windowed and full screen mode windows are focused when
+        ///   initially created.  Set the [GLFW_FOCUSED](
+        ///   this behavior.
+        ///   __Do not use this function__ to steal focus from other applications unless
+        ///   you are certain that is what the user wants.  Focus stealing can be
+        ///   extremely disruptive.
+        /// </summary>
+        /// <param name="window">
+        /// The window to give input focus.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void FocusWindow(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.FocusWindow_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function returns the handle of the monitor that the specified window is</para>
-        // <para>  in full screen on.</para>
-        // </remarks>
-        // <param name="window">The window to query.</param>
-        // <returns>
-        // <para>The monitor, or `NULL` if the window is in windowed mode or an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the handle of the monitor that the specified window is
+        ///   in full screen on.
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <returns>
+        /// The monitor, or `NULL` if the window is in windowed mode or an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWmonitor GetWindowMonitor(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2786,48 +2786,48 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function sets the monitor that the window uses for full screen mode or,</para>
-        // <para>  if the monitor is `NULL`, makes it windowed mode.</para>
-        // <para>  When setting a monitor, this function updates the width, height and refresh</para>
-        // <para>  rate of the desired video mode and switches to the video mode closest to it.</para>
-        // <para>  The window position is ignored when setting a monitor.</para>
-        // <para>  When the monitor is `NULL`, the position, width and height are used to</para>
-        // <para>  place the window client area.  The refresh rate is ignored when no monitor</para>
-        // <para>  is specified.</para>
-        // <para>  If you only wish to update the resolution of a full screen window or the</para>
-        // <para>  size of a windowed mode window, see </para>
-        // <para>  When a window transitions from full screen to windowed mode, this function</para>
-        // <para>  restores any previous window settings such as whether it is decorated,</para>
-        // <para>  floating, resizable, has size or aspect ratio limits, etc..</para>
-        // </remarks>
-        // <param name="window">The window whose monitor, size or video mode to set.</param>
-        // <param name="monitor">The desired monitor, or `NULL` to set windowed mode.</param>
-        // <param name="xpos">
-        // <para>The desired x-coordinate of the upper-left corner of the</para>
-        // <para>client area.</para>
-        // </param>
-        // <param name="ypos">
-        // <para>The desired y-coordinate of the upper-left corner of the</para>
-        // <para>client area.</para>
-        // </param>
-        // <param name="width">
-        // <para>The desired with, in screen coordinates, of the client area</para>
-        // <para>or video mode.</para>
-        // </param>
-        // <param name="height">
-        // <para>The desired height, in screen coordinates, of the client</para>
-        // <para>area or video mode.</para>
-        // </param>
-        // <param name="refreshRate">
-        // <para>The desired refresh rate, in Hz, of the video mode,</para>
-        // <para>or `GLFW_DONT_CARE`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the monitor that the window uses for full screen mode or,
+        ///   if the monitor is `NULL`, makes it windowed mode.
+        ///   When setting a monitor, this function updates the width, height and refresh
+        ///   rate of the desired video mode and switches to the video mode closest to it.
+        ///   The window position is ignored when setting a monitor.
+        ///   When the monitor is `NULL`, the position, width and height are used to
+        ///   place the window client area.  The refresh rate is ignored when no monitor
+        ///   is specified.
+        ///   If you only wish to update the resolution of a full screen window or the
+        ///   size of a windowed mode window, see 
+        ///   When a window transitions from full screen to windowed mode, this function
+        ///   restores any previous window settings such as whether it is decorated,
+        ///   floating, resizable, has size or aspect ratio limits, etc..
+        /// </summary>
+        /// <param name="window">The window whose monitor, size or video mode to set.</param>
+        /// <param name="monitor">The desired monitor, or `NULL` to set windowed mode.</param>
+        /// <param name="xpos">
+        /// The desired x-coordinate of the upper-left corner of the
+        /// client area.
+        /// </param>
+        /// <param name="ypos">
+        /// The desired y-coordinate of the upper-left corner of the
+        /// client area.
+        /// </param>
+        /// <param name="width">
+        /// The desired with, in screen coordinates, of the client area
+        /// or video mode.
+        /// </param>
+        /// <param name="height">
+        /// The desired height, in screen coordinates, of the client
+        /// area or video mode.
+        /// </param>
+        /// <param name="refreshRate">
+        /// The desired refresh rate, in Hz, of the video mode,
+        /// or `GLFW_DONT_CARE`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetWindowMonitor(global::glfw3.GLFWwindow window, global::glfw3.GLFWmonitor monitor, int xpos, int ypos, int width, int height, int refreshRate)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2835,27 +2835,27 @@ namespace glfw3
             __Internal.SetWindowMonitor_0(__arg0, __arg1, xpos, ypos, width, height, refreshRate);
         }
 
-        // <remarks>
-        // <para>  This function returns the value of an attribute of the specified window or</para>
-        // <para>  its OpenGL or OpenGL ES context.</para>
-        // </remarks>
-        // <param name="window">The window to query.</param>
-        // <param name="attrib">
-        // <para>The [window attribute](</para>
-        // <para>return.</para>
-        // </param>
-        // <returns>
-        // <para>The value of the attribute, or zero if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>window_attribs_fb for more information.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the value of an attribute of the specified window or
+        ///   its OpenGL or OpenGL ES context.
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="attrib">
+        /// The [window attribute](
+        /// return.
+        /// </param>
+        /// <returns>
+        /// The value of the attribute, or zero if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// window_attribs_fb for more information.
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static int GetWindowAttrib(global::glfw3.GLFWwindow window, int attrib)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2863,38 +2863,38 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function sets the user-defined pointer of the specified window.  The</para>
-        // <para>  current value is retained until the window is destroyed.  The initial value</para>
-        // <para>  is `NULL`.</para>
-        // </remarks>
-        // <param name="window">The window whose pointer to set.</param>
-        // <param name="pointer">
-        // <para>The new value.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Access is not</para>
-        // <para>synchronized.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the user-defined pointer of the specified window.  The
+        ///   current value is retained until the window is destroyed.  The initial value
+        ///   is `NULL`.
+        /// </summary>
+        /// <param name="window">The window whose pointer to set.</param>
+        /// <param name="pointer">
+        /// The new value.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.  Access is not
+        /// synchronized.
+        /// </param>
         public static void SetWindowUserPointer(global::glfw3.GLFWwindow window, global::System.IntPtr pointer)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetWindowUserPointer_0(__arg0, pointer);
         }
 
-        // <remarks>
-        // <para>  This function returns the current value of the user-defined pointer of the</para>
-        // <para>  specified window.  The initial value is `NULL`.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window whose pointer to return.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Access is not</para>
-        // <para>synchronized.</para>
-        // </param>
+        /// <summary>
+        ///   This function returns the current value of the user-defined pointer of the
+        ///   specified window.  The initial value is `NULL`.
+        /// </summary>
+        /// <param name="window">
+        /// The window whose pointer to return.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.  Access is not
+        /// synchronized.
+        /// </param>
         public static global::System.IntPtr GetWindowUserPointer(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2902,24 +2902,24 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function sets the position callback of the specified window, which is</para>
-        // <para>  called when the window is moved.  The callback is provided with the screen</para>
-        // <para>  position of the upper-left corner of the client area of the window.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the position callback of the specified window, which is
+        ///   called when the window is moved.  The callback is provided with the screen
+        ///   position of the upper-left corner of the client area of the window.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowposfun SetWindowPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowposfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2929,24 +2929,24 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowposfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowposfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the size callback of the specified window, which is</para>
-        // <para>  called when the window is resized.  The callback is provided with the size,</para>
-        // <para>  in screen coordinates, of the client area of the window.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the size callback of the specified window, which is
+        ///   called when the window is resized.  The callback is provided with the size,
+        ///   in screen coordinates, of the client area of the window.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowsizefun SetWindowSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowsizefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2956,28 +2956,28 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowsizefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowsizefun));
         }
 
-        // <remarks>
-        // <para>  This function sets the close callback of the specified window, which is</para>
-        // <para>  called when the user attempts to close the window, for example by clicking</para>
-        // <para>  the close widget in the title bar.</para>
-        // <para>  The close flag is set before this callback is called, but you can modify it</para>
-        // <para>  at any time with </para>
-        // <para>  The close callback is not triggered by </para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the close callback of the specified window, which is
+        ///   called when the user attempts to close the window, for example by clicking
+        ///   the close widget in the title bar.
+        ///   The close flag is set before this callback is called, but you can modify it
+        ///   at any time with 
+        ///   The close callback is not triggered by 
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowclosefun SetWindowCloseCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowclosefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -2987,27 +2987,27 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowclosefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowclosefun));
         }
 
-        // <remarks>
-        // <para>  This function sets the refresh callback of the specified window, which is</para>
-        // <para>  called when the client area of the window needs to be redrawn, for example</para>
-        // <para>  if the window has been exposed after having been covered by another window.</para>
-        // <para>  On compositing window systems such as Aero, Compiz or Aqua, where the window</para>
-        // <para>  contents are saved off-screen, this callback may be called only very</para>
-        // <para>  infrequently or never at all.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the refresh callback of the specified window, which is
+        ///   called when the client area of the window needs to be redrawn, for example
+        ///   if the window has been exposed after having been covered by another window.
+        ///   On compositing window systems such as Aero, Compiz or Aqua, where the window
+        ///   contents are saved off-screen, this callback may be called only very
+        ///   infrequently or never at all.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowrefreshfun SetWindowRefreshCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowrefreshfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3017,27 +3017,27 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowrefreshfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowrefreshfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the focus callback of the specified window, which is</para>
-        // <para>  called when the window gains or loses input focus.</para>
-        // <para>  After the focus callback is called for a window that lost input focus,</para>
-        // <para>  synthetic key and mouse button release events will be generated for all such</para>
-        // <para>  that had been pressed.  For more information, see </para>
-        // <para>  and </para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the focus callback of the specified window, which is
+        ///   called when the window gains or loses input focus.
+        ///   After the focus callback is called for a window that lost input focus,
+        ///   synthetic key and mouse button release events will be generated for all such
+        ///   that had been pressed.  For more information, see 
+        ///   and 
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowfocusfun SetWindowFocusCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowfocusfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3047,23 +3047,23 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowfocusfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowfocusfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the iconification callback of the specified window, which</para>
-        // <para>  is called when the window is iconified or restored.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the iconification callback of the specified window, which
+        ///   is called when the window is iconified or restored.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWwindowiconifyfun SetWindowIconifyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWwindowiconifyfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3073,23 +3073,23 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWwindowiconifyfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWwindowiconifyfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the framebuffer resize callback of the specified window,</para>
-        // <para>  which is called when the framebuffer of the specified window is resized.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the framebuffer resize callback of the specified window,
+        ///   which is called when the framebuffer of the specified window is resized.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWframebuffersizefun SetFramebufferSizeCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWframebuffersizefun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3099,133 +3099,133 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWframebuffersizefun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWframebuffersizefun));
         }
 
-        // <remarks>
-        // <para>  This function processes only those events that are already in the event</para>
-        // <para>  queue and then returns immediately.  Processing events will cause the window</para>
-        // <para>  and input callbacks associated with those events to be called.</para>
-        // <para>  On some platforms, a window move, resize or menu operation will cause event</para>
-        // <para>  processing to block.  This is due to how event processing is designed on</para>
-        // <para>  those platforms.  You can use the</para>
-        // <para>  [window refresh callback](</para>
-        // <para>  your window when necessary during such operations.</para>
-        // <para>  On some platforms, certain events are sent directly to the application</para>
-        // <para>  without going through the event queue, causing callbacks to be called</para>
-        // <para>  outside of a call to one of the event processing functions.</para>
-        // <para>  Event processing is not required for joystick input to work.</para>
-        // <para>  </para>
-        // <para>Possible errors include </para>
-        // <para>  GLFW_PLATFORM_ERROR.</para>
-        // <para>  </para>
-        // <para>This function must not be called from a callback.</para>
-        // <para>  </para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </remarks>
+        /// <summary>
+        ///   This function processes only those events that are already in the event
+        ///   queue and then returns immediately.  Processing events will cause the window
+        ///   and input callbacks associated with those events to be called.
+        ///   On some platforms, a window move, resize or menu operation will cause event
+        ///   processing to block.  This is due to how event processing is designed on
+        ///   those platforms.  You can use the
+        ///   [window refresh callback](
+        ///   your window when necessary during such operations.
+        ///   On some platforms, certain events are sent directly to the application
+        ///   without going through the event queue, causing callbacks to be called
+        ///   outside of a call to one of the event processing functions.
+        ///   Event processing is not required for joystick input to work.
+        ///   
+        /// Possible errors include 
+        ///   GLFW_PLATFORM_ERROR.
+        ///   
+        /// This function must not be called from a callback.
+        ///   
+        /// _safety This function must only be called from the main thread.
+        /// </summary>
         public static void PollEvents()
         {
             __Internal.PollEvents_0();
         }
 
-        // <remarks>
-        // <para>  This function puts the calling thread to sleep until at least one event is</para>
-        // <para>  available in the event queue.  Once one or more events are available,</para>
-        // <para>  it behaves exactly like </para>
-        // <para>  are processed and the function then returns immediately.  Processing events</para>
-        // <para>  will cause the window and input callbacks associated with those events to be</para>
-        // <para>  called.</para>
-        // <para>  Since not all events are associated with callbacks, this function may return</para>
-        // <para>  without a callback having been called even if you are monitoring all</para>
-        // <para>  callbacks.</para>
-        // <para>  On some platforms, a window move, resize or menu operation will cause event</para>
-        // <para>  processing to block.  This is due to how event processing is designed on</para>
-        // <para>  those platforms.  You can use the</para>
-        // <para>  [window refresh callback](</para>
-        // <para>  your window when necessary during such operations.</para>
-        // <para>  On some platforms, certain callbacks may be called outside of a call to one</para>
-        // <para>  of the event processing functions.</para>
-        // <para>  If no windows exist, this function returns immediately.  For synchronization</para>
-        // <para>  of threads in applications that do not create windows, use your threading</para>
-        // <para>  library of choice.</para>
-        // <para>  Event processing is not required for joystick input to work.</para>
-        // <para>  </para>
-        // <para>Possible errors include </para>
-        // <para>  GLFW_PLATFORM_ERROR.</para>
-        // <para>  </para>
-        // <para>This function must not be called from a callback.</para>
-        // <para>  </para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </remarks>
+        /// <summary>
+        ///   This function puts the calling thread to sleep until at least one event is
+        ///   available in the event queue.  Once one or more events are available,
+        ///   it behaves exactly like 
+        ///   are processed and the function then returns immediately.  Processing events
+        ///   will cause the window and input callbacks associated with those events to be
+        ///   called.
+        ///   Since not all events are associated with callbacks, this function may return
+        ///   without a callback having been called even if you are monitoring all
+        ///   callbacks.
+        ///   On some platforms, a window move, resize or menu operation will cause event
+        ///   processing to block.  This is due to how event processing is designed on
+        ///   those platforms.  You can use the
+        ///   [window refresh callback](
+        ///   your window when necessary during such operations.
+        ///   On some platforms, certain callbacks may be called outside of a call to one
+        ///   of the event processing functions.
+        ///   If no windows exist, this function returns immediately.  For synchronization
+        ///   of threads in applications that do not create windows, use your threading
+        ///   library of choice.
+        ///   Event processing is not required for joystick input to work.
+        ///   
+        /// Possible errors include 
+        ///   GLFW_PLATFORM_ERROR.
+        ///   
+        /// This function must not be called from a callback.
+        ///   
+        /// _safety This function must only be called from the main thread.
+        /// </summary>
         public static void WaitEvents()
         {
             __Internal.WaitEvents_0();
         }
 
-        // <remarks>
-        // <para>  This function puts the calling thread to sleep until at least one event is</para>
-        // <para>  available in the event queue, or until the specified timeout is reached.  If</para>
-        // <para>  one or more events are available, it behaves exactly like </para>
-        // <para>  glfwPollEvents, i.e. the events in the queue are processed and the function</para>
-        // <para>  then returns immediately.  Processing events will cause the window and input</para>
-        // <para>  callbacks associated with those events to be called.</para>
-        // <para>  The timeout value must be a positive finite number.</para>
-        // <para>  Since not all events are associated with callbacks, this function may return</para>
-        // <para>  without a callback having been called even if you are monitoring all</para>
-        // <para>  callbacks.</para>
-        // <para>  On some platforms, a window move, resize or menu operation will cause event</para>
-        // <para>  processing to block.  This is due to how event processing is designed on</para>
-        // <para>  those platforms.  You can use the</para>
-        // <para>  [window refresh callback](</para>
-        // <para>  your window when necessary during such operations.</para>
-        // <para>  On some platforms, certain callbacks may be called outside of a call to one</para>
-        // <para>  of the event processing functions.</para>
-        // <para>  If no windows exist, this function returns immediately.  For synchronization</para>
-        // <para>  of threads in applications that do not create windows, use your threading</para>
-        // <para>  library of choice.</para>
-        // <para>  Event processing is not required for joystick input to work.</para>
-        // </remarks>
-        // <param name="timeout">
-        // <para>The maximum amount of time, in seconds, to wait.</para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function puts the calling thread to sleep until at least one event is
+        ///   available in the event queue, or until the specified timeout is reached.  If
+        ///   one or more events are available, it behaves exactly like 
+        ///   glfwPollEvents, i.e. the events in the queue are processed and the function
+        ///   then returns immediately.  Processing events will cause the window and input
+        ///   callbacks associated with those events to be called.
+        ///   The timeout value must be a positive finite number.
+        ///   Since not all events are associated with callbacks, this function may return
+        ///   without a callback having been called even if you are monitoring all
+        ///   callbacks.
+        ///   On some platforms, a window move, resize or menu operation will cause event
+        ///   processing to block.  This is due to how event processing is designed on
+        ///   those platforms.  You can use the
+        ///   [window refresh callback](
+        ///   your window when necessary during such operations.
+        ///   On some platforms, certain callbacks may be called outside of a call to one
+        ///   of the event processing functions.
+        ///   If no windows exist, this function returns immediately.  For synchronization
+        ///   of threads in applications that do not create windows, use your threading
+        ///   library of choice.
+        ///   Event processing is not required for joystick input to work.
+        /// </summary>
+        /// <param name="timeout">
+        /// The maximum amount of time, in seconds, to wait.
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void WaitEventsTimeout(double timeout)
         {
             __Internal.WaitEventsTimeout_0(timeout);
         }
 
-        // <remarks>
-        // <para>  This function posts an empty event from the current thread to the event</para>
-        // <para>  queue, causing </para>
-        // <para>  If no windows exist, this function returns immediately.  For synchronization</para>
-        // <para>  of threads in applications that do not create windows, use your threading</para>
-        // <para>  library of choice.</para>
-        // <para>  </para>
-        // <para>Possible errors include </para>
-        // <para>  GLFW_PLATFORM_ERROR.</para>
-        // <para>  </para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </remarks>
+        /// <summary>
+        ///   This function posts an empty event from the current thread to the event
+        ///   queue, causing 
+        ///   If no windows exist, this function returns immediately.  For synchronization
+        ///   of threads in applications that do not create windows, use your threading
+        ///   library of choice.
+        ///   
+        /// Possible errors include 
+        ///   GLFW_PLATFORM_ERROR.
+        ///   
+        /// _safety This function may be called from any thread.
+        /// </summary>
         public static void PostEmptyEvent()
         {
             __Internal.PostEmptyEvent_0();
         }
 
-        // <remarks>
-        // <para>  This function returns the value of an input option for the specified window.</para>
-        // <para>  The mode must be one of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or</para>
-        // <para>  `GLFW_STICKY_MOUSE_BUTTONS`.</para>
-        // </remarks>
-        // <param name="window">The window to query.</param>
-        // <param name="mode">
-        // <para>One of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or</para>
-        // <para>`GLFW_STICKY_MOUSE_BUTTONS`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function returns the value of an input option for the specified window.
+        ///   The mode must be one of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or
+        ///   `GLFW_STICKY_MOUSE_BUTTONS`.
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="mode">
+        /// One of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or
+        /// `GLFW_STICKY_MOUSE_BUTTONS`.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static int GetInputMode(global::glfw3.GLFWwindow window, int mode)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3233,131 +3233,131 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function sets an input mode option for the specified window.  The mode</para>
-        // <para>  must be one of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or</para>
-        // <para>  `GLFW_STICKY_MOUSE_BUTTONS`.</para>
-        // <para>  If the mode is `GLFW_CURSOR`, the value must be one of the following cursor</para>
-        // <para>  modes:</para>
-        // <para>  - `GLFW_CURSOR_NORMAL` makes the cursor visible and behaving normally.</para>
-        // <para>  - `GLFW_CURSOR_HIDDEN` makes the cursor invisible when it is over the client</para>
-        // <para>    area of the window but does not restrict the cursor from leaving.</para>
-        // <para>  - `GLFW_CURSOR_DISABLED` hides and grabs the cursor, providing virtual</para>
-        // <para>    and unlimited cursor movement.  This is useful for implementing for</para>
-        // <para>    example 3D camera controls.</para>
-        // <para>  If the mode is `GLFW_STICKY_KEYS`, the value must be either `GLFW_TRUE` to</para>
-        // <para>  enable sticky keys, or `GLFW_FALSE` to disable it.  If sticky keys are</para>
-        // <para>  enabled, a key press will ensure that </para>
-        // <para>  the next time it is called even if the key had been released before the</para>
-        // <para>  call.  This is useful when you are only interested in whether keys have been</para>
-        // <para>  pressed but not when or in which order.</para>
-        // <para>  If the mode is `GLFW_STICKY_MOUSE_BUTTONS`, the value must be either</para>
-        // <para>  `GLFW_TRUE` to enable sticky mouse buttons, or `GLFW_FALSE` to disable it.</para>
-        // <para>  If sticky mouse buttons are enabled, a mouse button press will ensure that</para>
-        // <para>  </para>
-        // <para>  if the mouse button had been released before the call.  This is useful when</para>
-        // <para>  you are only interested in whether mouse buttons have been pressed but not</para>
-        // <para>  when or in which order.</para>
-        // </remarks>
-        // <param name="window">The window whose input mode to set.</param>
-        // <param name="mode">
-        // <para>One of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or</para>
-        // <para>`GLFW_STICKY_MOUSE_BUTTONS`.</para>
-        // </param>
-        // <param name="value">
-        // <para>The new value of the specified input mode.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets an input mode option for the specified window.  The mode
+        ///   must be one of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or
+        ///   `GLFW_STICKY_MOUSE_BUTTONS`.
+        ///   If the mode is `GLFW_CURSOR`, the value must be one of the following cursor
+        ///   modes:
+        ///   - `GLFW_CURSOR_NORMAL` makes the cursor visible and behaving normally.
+        ///   - `GLFW_CURSOR_HIDDEN` makes the cursor invisible when it is over the client
+        ///     area of the window but does not restrict the cursor from leaving.
+        ///   - `GLFW_CURSOR_DISABLED` hides and grabs the cursor, providing virtual
+        ///     and unlimited cursor movement.  This is useful for implementing for
+        ///     example 3D camera controls.
+        ///   If the mode is `GLFW_STICKY_KEYS`, the value must be either `GLFW_TRUE` to
+        ///   enable sticky keys, or `GLFW_FALSE` to disable it.  If sticky keys are
+        ///   enabled, a key press will ensure that 
+        ///   the next time it is called even if the key had been released before the
+        ///   call.  This is useful when you are only interested in whether keys have been
+        ///   pressed but not when or in which order.
+        ///   If the mode is `GLFW_STICKY_MOUSE_BUTTONS`, the value must be either
+        ///   `GLFW_TRUE` to enable sticky mouse buttons, or `GLFW_FALSE` to disable it.
+        ///   If sticky mouse buttons are enabled, a mouse button press will ensure that
+        ///   
+        ///   if the mouse button had been released before the call.  This is useful when
+        ///   you are only interested in whether mouse buttons have been pressed but not
+        ///   when or in which order.
+        /// </summary>
+        /// <param name="window">The window whose input mode to set.</param>
+        /// <param name="mode">
+        /// One of `GLFW_CURSOR`, `GLFW_STICKY_KEYS` or
+        /// `GLFW_STICKY_MOUSE_BUTTONS`.
+        /// </param>
+        /// <param name="value">
+        /// The new value of the specified input mode.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetInputMode(global::glfw3.GLFWwindow window, int mode, int value)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetInputMode_0(__arg0, mode, value);
         }
 
-        // <remarks>
-        // <para>  This function returns the localized name of the specified printable key.</para>
-        // <para>  This is intended for displaying key bindings to the user.</para>
-        // <para>  If the key is `GLFW_KEY_UNKNOWN`, the scancode is used instead, otherwise</para>
-        // <para>  the scancode is ignored.  If a non-printable key or (if the key is</para>
-        // <para>  `GLFW_KEY_UNKNOWN`) a scancode that maps to a non-printable key is</para>
-        // <para>  specified, this function returns `NULL`.          </para>
-        // <para>  This behavior allows you to pass in the arguments passed to the</para>
-        // <para>  [key callback](</para>
-        // <para>  The printable keys are:</para>
-        // <para>  - `GLFW_KEY_APOSTROPHE`</para>
-        // <para>  - `GLFW_KEY_COMMA`</para>
-        // <para>  - `GLFW_KEY_MINUS`</para>
-        // <para>  - `GLFW_KEY_PERIOD`</para>
-        // <para>  - `GLFW_KEY_SLASH`</para>
-        // <para>  - `GLFW_KEY_SEMICOLON`</para>
-        // <para>  - `GLFW_KEY_EQUAL`</para>
-        // <para>  - `GLFW_KEY_LEFT_BRACKET`</para>
-        // <para>  - `GLFW_KEY_RIGHT_BRACKET`</para>
-        // <para>  - `GLFW_KEY_BACKSLASH`</para>
-        // <para>  - `GLFW_KEY_WORLD_1`</para>
-        // <para>  - `GLFW_KEY_WORLD_2`</para>
-        // <para>  - `GLFW_KEY_0` to `GLFW_KEY_9`</para>
-        // <para>  - `GLFW_KEY_A` to `GLFW_KEY_Z`</para>
-        // <para>  - `GLFW_KEY_KP_0` to `GLFW_KEY_KP_9`</para>
-        // <para>  - `GLFW_KEY_KP_DECIMAL`</para>
-        // <para>  - `GLFW_KEY_KP_DIVIDE`</para>
-        // <para>  - `GLFW_KEY_KP_MULTIPLY`</para>
-        // <para>  - `GLFW_KEY_KP_SUBTRACT`</para>
-        // <para>  - `GLFW_KEY_KP_ADD`</para>
-        // <para>  - `GLFW_KEY_KP_EQUAL`</para>
-        // </remarks>
-        // <param name="key">The key to query, or `GLFW_KEY_UNKNOWN`.</param>
-        // <param name="scancode">The scancode of the key to query.</param>
-        // <returns>
-        // <para>The localized name of the key, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The returned string is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the next call to</para>
-        // <para>glfwGetKeyName, or until the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the localized name of the specified printable key.
+        ///   This is intended for displaying key bindings to the user.
+        ///   If the key is `GLFW_KEY_UNKNOWN`, the scancode is used instead, otherwise
+        ///   the scancode is ignored.  If a non-printable key or (if the key is
+        ///   `GLFW_KEY_UNKNOWN`) a scancode that maps to a non-printable key is
+        ///   specified, this function returns `NULL`.          
+        ///   This behavior allows you to pass in the arguments passed to the
+        ///   [key callback](
+        ///   The printable keys are:
+        ///   - `GLFW_KEY_APOSTROPHE`
+        ///   - `GLFW_KEY_COMMA`
+        ///   - `GLFW_KEY_MINUS`
+        ///   - `GLFW_KEY_PERIOD`
+        ///   - `GLFW_KEY_SLASH`
+        ///   - `GLFW_KEY_SEMICOLON`
+        ///   - `GLFW_KEY_EQUAL`
+        ///   - `GLFW_KEY_LEFT_BRACKET`
+        ///   - `GLFW_KEY_RIGHT_BRACKET`
+        ///   - `GLFW_KEY_BACKSLASH`
+        ///   - `GLFW_KEY_WORLD_1`
+        ///   - `GLFW_KEY_WORLD_2`
+        ///   - `GLFW_KEY_0` to `GLFW_KEY_9`
+        ///   - `GLFW_KEY_A` to `GLFW_KEY_Z`
+        ///   - `GLFW_KEY_KP_0` to `GLFW_KEY_KP_9`
+        ///   - `GLFW_KEY_KP_DECIMAL`
+        ///   - `GLFW_KEY_KP_DIVIDE`
+        ///   - `GLFW_KEY_KP_MULTIPLY`
+        ///   - `GLFW_KEY_KP_SUBTRACT`
+        ///   - `GLFW_KEY_KP_ADD`
+        ///   - `GLFW_KEY_KP_EQUAL`
+        /// </summary>
+        /// <param name="key">The key to query, or `GLFW_KEY_UNKNOWN`.</param>
+        /// <param name="scancode">The scancode of the key to query.</param>
+        /// <returns>
+        /// The localized name of the key, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The returned string is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the next call to
+        /// glfwGetKeyName, or until the library is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static string GetKeyName(int key, int scancode)
         {
             var __ret = __Internal.GetKeyName_0(key, scancode);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        // <remarks>
-        // <para>  This function returns the last state reported for the specified key to the</para>
-        // <para>  specified window.  The returned state is one of `GLFW_PRESS` or</para>
-        // <para>  `GLFW_RELEASE`.  The higher-level action `GLFW_REPEAT` is only reported to</para>
-        // <para>  the key callback.</para>
-        // <para>  If the `GLFW_STICKY_KEYS` input mode is enabled, this function returns</para>
-        // <para>  `GLFW_PRESS` the first time you call it for a key that was pressed, even if</para>
-        // <para>  that key has already been released.</para>
-        // <para>  The key functions deal with physical keys, with [key tokens](</para>
-        // <para>  named after their use on the standard US keyboard layout.  If you want to</para>
-        // <para>  input text, use the Unicode character callback instead.</para>
-        // <para>  The [modifier key bit masks](</para>
-        // <para>  used with this function.</para>
-        // <para>  __Do not use this function__ to implement [text input](</para>
-        // </remarks>
-        // <param name="window">The desired window.</param>
-        // <param name="key">
-        // <para>The desired [keyboard key](</para>
-        // <para>not a valid key for this function.</para>
-        // </param>
-        // <returns>
-        // <para>One of `GLFW_PRESS` or `GLFW_RELEASE`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the last state reported for the specified key to the
+        ///   specified window.  The returned state is one of `GLFW_PRESS` or
+        ///   `GLFW_RELEASE`.  The higher-level action `GLFW_REPEAT` is only reported to
+        ///   the key callback.
+        ///   If the `GLFW_STICKY_KEYS` input mode is enabled, this function returns
+        ///   `GLFW_PRESS` the first time you call it for a key that was pressed, even if
+        ///   that key has already been released.
+        ///   The key functions deal with physical keys, with [key tokens](
+        ///   named after their use on the standard US keyboard layout.  If you want to
+        ///   input text, use the Unicode character callback instead.
+        ///   The [modifier key bit masks](
+        ///   used with this function.
+        ///   __Do not use this function__ to implement [text input](
+        /// </summary>
+        /// <param name="window">The desired window.</param>
+        /// <param name="key">
+        /// The desired [keyboard key](
+        /// not a valid key for this function.
+        /// </param>
+        /// <returns>
+        /// One of `GLFW_PRESS` or `GLFW_RELEASE`.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static int GetKey(global::glfw3.GLFWwindow window, int key)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3365,24 +3365,24 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function returns the last state reported for the specified mouse button</para>
-        // <para>  to the specified window.  The returned state is one of `GLFW_PRESS` or</para>
-        // <para>  `GLFW_RELEASE`.</para>
-        // <para>  If the `GLFW_STICKY_MOUSE_BUTTONS` input mode is enabled, this function</para>
-        // <para>  `GLFW_PRESS` the first time you call it for a mouse button that was pressed,</para>
-        // <para>  even if that mouse button has already been released.</para>
-        // </remarks>
-        // <param name="window">The desired window.</param>
-        // <param name="button">The desired [mouse button](</param>
-        // <returns>
-        // <para>One of `GLFW_PRESS` or `GLFW_RELEASE`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the last state reported for the specified mouse button
+        ///   to the specified window.  The returned state is one of `GLFW_PRESS` or
+        ///   `GLFW_RELEASE`.
+        ///   If the `GLFW_STICKY_MOUSE_BUTTONS` input mode is enabled, this function
+        ///   `GLFW_PRESS` the first time you call it for a mouse button that was pressed,
+        ///   even if that mouse button has already been released.
+        /// </summary>
+        /// <param name="window">The desired window.</param>
+        /// <param name="button">The desired [mouse button](</param>
+        /// <returns>
+        /// One of `GLFW_PRESS` or `GLFW_RELEASE`.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static int GetMouseButton(global::glfw3.GLFWwindow window, int button)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3390,33 +3390,33 @@ namespace glfw3
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function returns the position of the cursor, in screen coordinates,</para>
-        // <para>  relative to the upper-left corner of the client area of the specified</para>
-        // <para>  window.</para>
-        // <para>  If the cursor is disabled (with `GLFW_CURSOR_DISABLED`) then the cursor</para>
-        // <para>  position is unbounded and limited only by the minimum and maximum values of</para>
-        // <para>  a `double`.</para>
-        // <para>  The coordinate can be converted to their integer equivalents with the</para>
-        // <para>  `floor` function.  Casting directly to an integer type works for positive</para>
-        // <para>  coordinates, but fails for negative ones.</para>
-        // <para>  Any or all of the position arguments may be `NULL`.  If an error occurs, all</para>
-        // <para>  non-`NULL` position arguments will be set to zero.</para>
-        // </remarks>
-        // <param name="window">The desired window.</param>
-        // <param name="xpos">
-        // <para>Where to store the cursor x-coordinate, relative to the</para>
-        // <para>left edge of the client area, or `NULL`.</para>
-        // </param>
-        // <param name="ypos">
-        // <para>Where to store the cursor y-coordinate, relative to the to</para>
-        // <para>top edge of the client area, or `NULL`.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function returns the position of the cursor, in screen coordinates,
+        ///   relative to the upper-left corner of the client area of the specified
+        ///   window.
+        ///   If the cursor is disabled (with `GLFW_CURSOR_DISABLED`) then the cursor
+        ///   position is unbounded and limited only by the minimum and maximum values of
+        ///   a `double`.
+        ///   The coordinate can be converted to their integer equivalents with the
+        ///   `floor` function.  Casting directly to an integer type works for positive
+        ///   coordinates, but fails for negative ones.
+        ///   Any or all of the position arguments may be `NULL`.  If an error occurs, all
+        ///   non-`NULL` position arguments will be set to zero.
+        /// </summary>
+        /// <param name="window">The desired window.</param>
+        /// <param name="xpos">
+        /// Where to store the cursor x-coordinate, relative to the
+        /// left edge of the client area, or `NULL`.
+        /// </param>
+        /// <param name="ypos">
+        /// Where to store the cursor y-coordinate, relative to the to
+        /// top edge of the client area, or `NULL`.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void GetCursorPos(global::glfw3.GLFWwindow window, ref double xpos, ref double ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3431,67 +3431,67 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function sets the position, in screen coordinates, of the cursor</para>
-        // <para>  relative to the upper-left corner of the client area of the specified</para>
-        // <para>  window.  The window must have input focus.  If the window does not have</para>
-        // <para>  input focus when this function is called, it fails silently.</para>
-        // <para>  __Do not use this function__ to implement things like camera controls.  GLFW</para>
-        // <para>  already provides the `GLFW_CURSOR_DISABLED` cursor mode that hides the</para>
-        // <para>  cursor, transparently re-centers it and provides unconstrained cursor</para>
-        // <para>  motion.  See </para>
-        // <para>  If the cursor mode is `GLFW_CURSOR_DISABLED` then the cursor position is</para>
-        // <para>  unconstrained and limited only by the minimum and maximum values of</para>
-        // <para>  a `double`.</para>
-        // </remarks>
-        // <param name="window">The desired window.</param>
-        // <param name="xpos">
-        // <para>The desired x-coordinate, relative to the left edge of the</para>
-        // <para>client area.</para>
-        // </param>
-        // <param name="ypos">
-        // <para>The desired y-coordinate, relative to the top edge of the</para>
-        // <para>client area.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the position, in screen coordinates, of the cursor
+        ///   relative to the upper-left corner of the client area of the specified
+        ///   window.  The window must have input focus.  If the window does not have
+        ///   input focus when this function is called, it fails silently.
+        ///   __Do not use this function__ to implement things like camera controls.  GLFW
+        ///   already provides the `GLFW_CURSOR_DISABLED` cursor mode that hides the
+        ///   cursor, transparently re-centers it and provides unconstrained cursor
+        ///   motion.  See 
+        ///   If the cursor mode is `GLFW_CURSOR_DISABLED` then the cursor position is
+        ///   unconstrained and limited only by the minimum and maximum values of
+        ///   a `double`.
+        /// </summary>
+        /// <param name="window">The desired window.</param>
+        /// <param name="xpos">
+        /// The desired x-coordinate, relative to the left edge of the
+        /// client area.
+        /// </param>
+        /// <param name="ypos">
+        /// The desired y-coordinate, relative to the top edge of the
+        /// client area.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetCursorPos(global::glfw3.GLFWwindow window, double xpos, double ypos)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetCursorPos_0(__arg0, xpos, ypos);
         }
 
-        // <remarks>
-        // <para>  Creates a new custom cursor image that can be set for a window with </para>
-        // <para>  glfwSetCursor.  The cursor can be destroyed with </para>
-        // <para>  Any remaining cursors are destroyed by </para>
-        // <para>  The pixels are 32-bit, little-endian, non-premultiplied RGBA, i.e. eight</para>
-        // <para>  bits per channel.  They are arranged canonically as packed sequential rows,</para>
-        // <para>  starting from the top-left corner.</para>
-        // <para>  The cursor hotspot is specified in pixels, relative to the upper-left corner</para>
-        // <para>  of the cursor image.  Like all other coordinate systems in GLFW, the X-axis</para>
-        // <para>  points to the right and the Y-axis points down.</para>
-        // </remarks>
-        // <param name="image">The desired cursor image.</param>
-        // <param name="xhot">The desired x-coordinate, in pixels, of the cursor hotspot.</param>
-        // <param name="yhot">The desired y-coordinate, in pixels, of the cursor hotspot.</param>
-        // <returns>
-        // <para>The handle of the created cursor, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The specified image data is copied before this function</para>
-        // <para>returns.</para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   Creates a new custom cursor image that can be set for a window with 
+        ///   glfwSetCursor.  The cursor can be destroyed with 
+        ///   Any remaining cursors are destroyed by 
+        ///   The pixels are 32-bit, little-endian, non-premultiplied RGBA, i.e. eight
+        ///   bits per channel.  They are arranged canonically as packed sequential rows,
+        ///   starting from the top-left corner.
+        ///   The cursor hotspot is specified in pixels, relative to the upper-left corner
+        ///   of the cursor image.  Like all other coordinate systems in GLFW, the X-axis
+        ///   points to the right and the Y-axis points down.
+        /// </summary>
+        /// <param name="image">The desired cursor image.</param>
+        /// <param name="xhot">The desired x-coordinate, in pixels, of the cursor hotspot.</param>
+        /// <param name="yhot">The desired y-coordinate, in pixels, of the cursor hotspot.</param>
+        /// <returns>
+        /// The handle of the created cursor, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The specified image data is copied before this function
+        /// returns.
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcursor CreateCursor(global::glfw3.GLFWimage image, int xhot, int yhot)
         {
             var __arg0 = ReferenceEquals(image, null) ? global::System.IntPtr.Zero : image.__Instance;
@@ -3504,22 +3504,22 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  Returns a cursor with a [standard shape](</para>
-        // <para>  a window with </para>
-        // </remarks>
-        // <param name="shape">One of the [standard shapes](</param>
-        // <returns>
-        // <para>A new cursor ready to use or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   Returns a cursor with a [standard shape](
+        ///   a window with 
+        /// </summary>
+        /// <param name="shape">One of the [standard shapes](</param>
+        /// <returns>
+        /// A new cursor ready to use or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcursor CreateStandardCursor(int shape)
         {
             var __ret = __Internal.CreateStandardCursor_0(shape);
@@ -3531,45 +3531,45 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function destroys a cursor previously created with </para>
-        // <para>  glfwCreateCursor.  Any remaining cursors will be destroyed by </para>
-        // <para>  glfwTerminate.</para>
-        // </remarks>
-        // <param name="cursor">
-        // <para>The cursor object to destroy.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>This function must not be called from a callback.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function destroys a cursor previously created with 
+        ///   glfwCreateCursor.  Any remaining cursors will be destroyed by 
+        ///   glfwTerminate.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor object to destroy.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// This function must not be called from a callback.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void DestroyCursor(global::glfw3.GLFWcursor cursor)
         {
             var __arg0 = ReferenceEquals(cursor, null) ? global::System.IntPtr.Zero : cursor.__Instance;
             __Internal.DestroyCursor_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function sets the cursor image to be used when the cursor is over the</para>
-        // <para>  client area of the specified window.  The set cursor will only be visible</para>
-        // <para>  when the [cursor mode](</para>
-        // <para>  `GLFW_CURSOR_NORMAL`.</para>
-        // <para>  On some platforms, the set cursor may not be visible unless the window also</para>
-        // <para>  has input focus.</para>
-        // </remarks>
-        // <param name="window">The window to set the cursor for.</param>
-        // <param name="cursor">
-        // <para>The cursor to set, or `NULL` to switch back to the default</para>
-        // <para>arrow cursor.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the cursor image to be used when the cursor is over the
+        ///   client area of the specified window.  The set cursor will only be visible
+        ///   when the [cursor mode](
+        ///   `GLFW_CURSOR_NORMAL`.
+        ///   On some platforms, the set cursor may not be visible unless the window also
+        ///   has input focus.
+        /// </summary>
+        /// <param name="window">The window to set the cursor for.</param>
+        /// <param name="cursor">
+        /// The cursor to set, or `NULL` to switch back to the default
+        /// arrow cursor.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetCursor(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursor cursor)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3577,38 +3577,38 @@ namespace glfw3
             __Internal.SetCursor_0(__arg0, __arg1);
         }
 
-        // <remarks>
-        // <para>  This function sets the key callback of the specified window, which is called</para>
-        // <para>  when a key is pressed, repeated or released.</para>
-        // <para>  The key functions deal with physical keys, with layout independent</para>
-        // <para>  [key tokens](</para>
-        // <para>  layout.  If you want to input text, use the</para>
-        // <para>  [character callback](</para>
-        // <para>  When a window loses input focus, it will generate synthetic key release</para>
-        // <para>  events for all pressed keys.  You can tell these events from user-generated</para>
-        // <para>  events by the fact that the synthetic ones are generated after the focus</para>
-        // <para>  loss event has been processed, i.e. after the</para>
-        // <para>  [window focus callback](</para>
-        // <para>  The scancode of a key is specific to that platform or sometimes even to that</para>
-        // <para>  machine.  Scancodes are intended to allow users to bind keys that don't have</para>
-        // <para>  a GLFW key token.  Such keys have `key` set to `GLFW_KEY_UNKNOWN`, their</para>
-        // <para>  state is not saved and so it cannot be queried with </para>
-        // <para>  Sometimes GLFW needs to generate synthetic key events, in which case the</para>
-        // <para>  scancode may be zero.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new key callback, or `NULL` to remove the currently</para>
-        // <para>set callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the key callback of the specified window, which is called
+        ///   when a key is pressed, repeated or released.
+        ///   The key functions deal with physical keys, with layout independent
+        ///   [key tokens](
+        ///   layout.  If you want to input text, use the
+        ///   [character callback](
+        ///   When a window loses input focus, it will generate synthetic key release
+        ///   events for all pressed keys.  You can tell these events from user-generated
+        ///   events by the fact that the synthetic ones are generated after the focus
+        ///   loss event has been processed, i.e. after the
+        ///   [window focus callback](
+        ///   The scancode of a key is specific to that platform or sometimes even to that
+        ///   machine.  Scancodes are intended to allow users to bind keys that don't have
+        ///   a GLFW key token.  Such keys have `key` set to `GLFW_KEY_UNKNOWN`, their
+        ///   state is not saved and so it cannot be queried with 
+        ///   Sometimes GLFW needs to generate synthetic key events, in which case the
+        ///   scancode may be zero.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new key callback, or `NULL` to remove the currently
+        /// set callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWkeyfun SetKeyCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWkeyfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3618,35 +3618,35 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWkeyfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWkeyfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the character callback of the specified window, which is</para>
-        // <para>  called when a Unicode character is input.</para>
-        // <para>  The character callback is intended for Unicode text input.  As it deals with</para>
-        // <para>  characters, it is keyboard layout dependent, whereas the</para>
-        // <para>  [key callback](</para>
-        // <para>  to physical keys, as a key may produce zero, one or more characters.  If you</para>
-        // <para>  want to know whether a specific physical key was pressed or released, see</para>
-        // <para>  the key callback instead.</para>
-        // <para>  The character callback behaves as system text input normally does and will</para>
-        // <para>  not be called if modifier keys are held down that would prevent normal text</para>
-        // <para>  input on that platform, for example a Super (Command) key on OS X or Alt key</para>
-        // <para>  on Windows.  There is a</para>
-        // <para>  [character with modifiers callback](</para>
-        // <para>  receives these events.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the character callback of the specified window, which is
+        ///   called when a Unicode character is input.
+        ///   The character callback is intended for Unicode text input.  As it deals with
+        ///   characters, it is keyboard layout dependent, whereas the
+        ///   [key callback](
+        ///   to physical keys, as a key may produce zero, one or more characters.  If you
+        ///   want to know whether a specific physical key was pressed or released, see
+        ///   the key callback instead.
+        ///   The character callback behaves as system text input normally does and will
+        ///   not be called if modifier keys are held down that would prevent normal text
+        ///   input on that platform, for example a Super (Command) key on OS X or Alt key
+        ///   on Windows.  There is a
+        ///   [character with modifiers callback](
+        ///   receives these events.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcharfun SetCharCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3656,32 +3656,32 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcharfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcharfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the character with modifiers callback of the specified</para>
-        // <para>  window, which is called when a Unicode character is input regardless of what</para>
-        // <para>  modifier keys are used.</para>
-        // <para>  The character with modifiers callback is intended for implementing custom</para>
-        // <para>  Unicode character input.  For regular Unicode text input, see the</para>
-        // <para>  [character callback](</para>
-        // <para>  callback, the character with modifiers callback deals with characters and is</para>
-        // <para>  keyboard layout dependent.  Characters do not map 1:1 to physical keys, as</para>
-        // <para>  a key may produce zero, one or more characters.  If you want to know whether</para>
-        // <para>  a specific physical key was pressed or released, see the</para>
-        // <para>  [key callback](</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the character with modifiers callback of the specified
+        ///   window, which is called when a Unicode character is input regardless of what
+        ///   modifier keys are used.
+        ///   The character with modifiers callback is intended for implementing custom
+        ///   Unicode character input.  For regular Unicode text input, see the
+        ///   [character callback](
+        ///   callback, the character with modifiers callback deals with characters and is
+        ///   keyboard layout dependent.  Characters do not map 1:1 to physical keys, as
+        ///   a key may produce zero, one or more characters.  If you want to know whether
+        ///   a specific physical key was pressed or released, see the
+        ///   [key callback](
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcharmodsfun SetCharModsCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcharmodsfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3691,28 +3691,28 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcharmodsfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcharmodsfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the mouse button callback of the specified window, which</para>
-        // <para>  is called when a mouse button is pressed or released.</para>
-        // <para>  When a window loses input focus, it will generate synthetic mouse button</para>
-        // <para>  release events for all pressed mouse buttons.  You can tell these events</para>
-        // <para>  from user-generated events by the fact that the synthetic ones are generated</para>
-        // <para>  after the focus loss event has been processed, i.e. after the</para>
-        // <para>  [window focus callback](</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the mouse button callback of the specified window, which
+        ///   is called when a mouse button is pressed or released.
+        ///   When a window loses input focus, it will generate synthetic mouse button
+        ///   release events for all pressed mouse buttons.  You can tell these events
+        ///   from user-generated events by the fact that the synthetic ones are generated
+        ///   after the focus loss event has been processed, i.e. after the
+        ///   [window focus callback](
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWmousebuttonfun SetMouseButtonCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWmousebuttonfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3722,25 +3722,25 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWmousebuttonfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWmousebuttonfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the cursor position callback of the specified window,</para>
-        // <para>  which is called when the cursor is moved.  The callback is provided with the</para>
-        // <para>  position, in screen coordinates, relative to the upper-left corner of the</para>
-        // <para>  client area of the window.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the cursor position callback of the specified window,
+        ///   which is called when the cursor is moved.  The callback is provided with the
+        ///   position, in screen coordinates, relative to the upper-left corner of the
+        ///   client area of the window.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcursorposfun SetCursorPosCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorposfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3750,24 +3750,24 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcursorposfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcursorposfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the cursor boundary crossing callback of the specified</para>
-        // <para>  window, which is called when the cursor enters or leaves the client area of</para>
-        // <para>  the window.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the cursor boundary crossing callback of the specified
+        ///   window, which is called when the cursor enters or leaves the client area of
+        ///   the window.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWcursorenterfun SetCursorEnterCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWcursorenterfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3777,26 +3777,26 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWcursorenterfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWcursorenterfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the scroll callback of the specified window, which is</para>
-        // <para>  called when a scrolling device is used, such as a mouse wheel or scrolling</para>
-        // <para>  area of a touchpad.</para>
-        // <para>  The scroll callback receives all scrolling input, like that from a mouse</para>
-        // <para>  wheel or a touchpad scrolling area.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new scroll callback, or `NULL` to remove the currently</para>
-        // <para>set callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the scroll callback of the specified window, which is
+        ///   called when a scrolling device is used, such as a mouse wheel or scrolling
+        ///   area of a touchpad.
+        ///   The scroll callback receives all scrolling input, like that from a mouse
+        ///   wheel or a touchpad scrolling area.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new scroll callback, or `NULL` to remove the currently
+        /// set callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWscrollfun SetScrollCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWscrollfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3806,27 +3806,27 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWscrollfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWscrollfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the file drop callback of the specified window, which is</para>
-        // <para>  called when one or more dragged files are dropped on the window.</para>
-        // <para>  Because the path array and its strings may have been generated specifically</para>
-        // <para>  for that event, they are not guaranteed to be valid after the callback has</para>
-        // <para>  returned.  If you wish to use them after the callback returns, you need to</para>
-        // <para>  make a deep copy.</para>
-        // </remarks>
-        // <param name="window">The window whose callback to set.</param>
-        // <param name="cbfun">
-        // <para>The new file drop callback, or `NULL` to remove the</para>
-        // <para>currently set callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the file drop callback of the specified window, which is
+        ///   called when one or more dragged files are dropped on the window.
+        ///   Because the path array and its strings may have been generated specifically
+        ///   for that event, they are not guaranteed to be valid after the callback has
+        ///   returned.  If you wish to use them after the callback returns, you need to
+        ///   make a deep copy.
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="cbfun">
+        /// The new file drop callback, or `NULL` to remove the
+        /// currently set callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWdropfun SetDropCallback(global::glfw3.GLFWwindow window, global::glfw3.GLFWdropfun cbfun)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -3836,49 +3836,49 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWdropfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWdropfun));
         }
 
-        // <remarks>  This function returns whether the specified joystick is present.</remarks>
-        // <param name="joy">The [joystick](</param>
-        // <returns>
-        // <para>`GLFW_TRUE` if the joystick is present, or `GLFW_FALSE` otherwise.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>  This function returns whether the specified joystick is present.</summary>
+        /// <param name="joy">The [joystick](</param>
+        /// <returns>
+        /// `GLFW_TRUE` if the joystick is present, or `GLFW_FALSE` otherwise.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static int JoystickPresent(int joy)
         {
             var __ret = __Internal.JoystickPresent_0(joy);
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function returns the values of all axes of the specified joystick.</para>
-        // <para>  Each element in the array is a value between -1.0 and 1.0.</para>
-        // <para>  Querying a joystick slot with no device present is not an error, but will</para>
-        // <para>  cause this function to return `NULL`.  Call </para>
-        // <para>  check device presence.</para>
-        // </remarks>
-        // <param name="joy">The [joystick](</param>
-        // <param name="count">
-        // <para>Where to store the number of axis values in the returned</para>
-        // <para>array.  This is set to zero if the joystick is not present or an error</para>
-        // <para>occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of axis values, or `NULL` if the joystick is not present or</para>
-        // <para>an [error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified joystick is</para>
-        // <para>disconnected, this function is called again for that joystick or the library</para>
-        // <para>is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the values of all axes of the specified joystick.
+        ///   Each element in the array is a value between -1.0 and 1.0.
+        ///   Querying a joystick slot with no device present is not an error, but will
+        ///   cause this function to return `NULL`.  Call 
+        ///   check device presence.
+        /// </summary>
+        /// <param name="joy">The [joystick](</param>
+        /// <param name="count">
+        /// Where to store the number of axis values in the returned
+        /// array.  This is set to zero if the joystick is not present or an error
+        /// occurred.
+        /// </param>
+        /// <returns>
+        /// An array of axis values, or `NULL` if the joystick is not present or
+        /// an [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified joystick is
+        /// disconnected, this function is called again for that joystick or the library
+        /// is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static float* GetJoystickAxes(int joy, ref int count)
         {
             fixed (int* __refParamPtr1 = &count)
@@ -3889,33 +3889,33 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the state of all buttons of the specified joystick.</para>
-        // <para>  Each element in the array is either `GLFW_PRESS` or `GLFW_RELEASE`.</para>
-        // <para>  Querying a joystick slot with no device present is not an error, but will</para>
-        // <para>  cause this function to return `NULL`.  Call </para>
-        // <para>  check device presence.</para>
-        // </remarks>
-        // <param name="joy">The [joystick](</param>
-        // <param name="count">
-        // <para>Where to store the number of button states in the returned</para>
-        // <para>array.  This is set to zero if the joystick is not present or an error</para>
-        // <para>occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of button states, or `NULL` if the joystick is not present</para>
-        // <para>or an [error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified joystick is</para>
-        // <para>disconnected, this function is called again for that joystick or the library</para>
-        // <para>is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the state of all buttons of the specified joystick.
+        ///   Each element in the array is either `GLFW_PRESS` or `GLFW_RELEASE`.
+        ///   Querying a joystick slot with no device present is not an error, but will
+        ///   cause this function to return `NULL`.  Call 
+        ///   check device presence.
+        /// </summary>
+        /// <param name="joy">The [joystick](</param>
+        /// <param name="count">
+        /// Where to store the number of button states in the returned
+        /// array.  This is set to zero if the joystick is not present or an error
+        /// occurred.
+        /// </param>
+        /// <returns>
+        /// An array of button states, or `NULL` if the joystick is not present
+        /// or an [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified joystick is
+        /// disconnected, this function is called again for that joystick or the library
+        /// is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static byte* GetJoystickButtons(int joy, ref int count)
         {
             fixed (int* __refParamPtr1 = &count)
@@ -3926,52 +3926,52 @@ namespace glfw3
             }
         }
 
-        // <remarks>
-        // <para>  This function returns the name, encoded as UTF-8, of the specified joystick.</para>
-        // <para>  The returned string is allocated and freed by GLFW.  You should not free it</para>
-        // <para>  yourself.</para>
-        // <para>  Querying a joystick slot with no device present is not an error, but will</para>
-        // <para>  cause this function to return `NULL`.  Call </para>
-        // <para>  check device presence.</para>
-        // </remarks>
-        // <param name="joy">The [joystick](</param>
-        // <returns>
-        // <para>The UTF-8 encoded name of the joystick, or `NULL` if the joystick</para>
-        // <para>is not present or an [error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_ENUM and</para>
-        // <para></para>
-        // <para>_lifetime The returned string is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the specified joystick is</para>
-        // <para>disconnected, this function is called again for that joystick or the library</para>
-        // <para>is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the name, encoded as UTF-8, of the specified joystick.
+        ///   The returned string is allocated and freed by GLFW.  You should not free it
+        ///   yourself.
+        ///   Querying a joystick slot with no device present is not an error, but will
+        ///   cause this function to return `NULL`.  Call 
+        ///   check device presence.
+        /// </summary>
+        /// <param name="joy">The [joystick](</param>
+        /// <returns>
+        /// The UTF-8 encoded name of the joystick, or `NULL` if the joystick
+        /// is not present or an [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_ENUM and
+        /// 
+        /// _lifetime The returned string is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the specified joystick is
+        /// disconnected, this function is called again for that joystick or the library
+        /// is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static string GetJoystickName(int joy)
         {
             var __ret = __Internal.GetJoystickName_0(joy);
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        // <remarks>
-        // <para>  This function sets the joystick configuration callback, or removes the</para>
-        // <para>  currently set callback.  This is called when a joystick is connected to or</para>
-        // <para>  disconnected from the system.</para>
-        // </remarks>
-        // <param name="cbfun">
-        // <para>The new callback, or `NULL` to remove the currently set</para>
-        // <para>callback.</para>
-        // </param>
-        // <returns>
-        // <para>The previously set callback, or `NULL` if no callback was set or the</para>
-        // <para>library had not been [initialized](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function sets the joystick configuration callback, or removes the
+        ///   currently set callback.  This is called when a joystick is connected to or
+        ///   disconnected from the system.
+        /// </summary>
+        /// <param name="cbfun">
+        /// The new callback, or `NULL` to remove the currently set
+        /// callback.
+        /// </param>
+        /// <returns>
+        /// The previously set callback, or `NULL` if no callback was set or the
+        /// library had not been [initialized](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static global::glfw3.GLFWjoystickfun SetJoystickCallback(global::glfw3.GLFWjoystickfun cbfun)
         {
             var __arg0 = cbfun == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cbfun);
@@ -3980,49 +3980,49 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWjoystickfun)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWjoystickfun));
         }
 
-        // <remarks>
-        // <para>  This function sets the system clipboard to the specified, UTF-8 encoded</para>
-        // <para>  string.</para>
-        // </remarks>
-        // <param name="window">The window that will own the clipboard contents.</param>
-        // <param name="string">
-        // <para>A UTF-8 encoded string.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The specified string is copied before this function</para>
-        // <para>returns.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the system clipboard to the specified, UTF-8 encoded
+        ///   string.
+        /// </summary>
+        /// <param name="window">The window that will own the clipboard contents.</param>
+        /// <param name="string">
+        /// A UTF-8 encoded string.
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The specified string is copied before this function
+        /// returns.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </param>
         public static void SetClipboardString(global::glfw3.GLFWwindow window, string @string)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SetClipboardString_0(__arg0, @string);
         }
 
-        // <remarks>
-        // <para>  This function returns the contents of the system clipboard, if it contains</para>
-        // <para>  or is convertible to a UTF-8 encoded string.  If the clipboard is empty or</para>
-        // <para>  if its contents cannot be converted, `NULL` is returned and a </para>
-        // <para>  GLFW_FORMAT_UNAVAILABLE error is generated.</para>
-        // </remarks>
-        // <param name="window">The window that will request the clipboard contents.</param>
-        // <returns>
-        // <para>The contents of the clipboard as a UTF-8 encoded string, or `NULL`</para>
-        // <para>if an [error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_lifetime The returned string is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is valid until the next call to</para>
-        // <para>glfwGetClipboardString or</para>
-        // <para>is terminated.</para>
-        // <para></para>
-        // <para>_safety This function must only be called from the main thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the contents of the system clipboard, if it contains
+        ///   or is convertible to a UTF-8 encoded string.  If the clipboard is empty or
+        ///   if its contents cannot be converted, `NULL` is returned and a 
+        ///   GLFW_FORMAT_UNAVAILABLE error is generated.
+        /// </summary>
+        /// <param name="window">The window that will request the clipboard contents.</param>
+        /// <returns>
+        /// The contents of the clipboard as a UTF-8 encoded string, or `NULL`
+        /// if an [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _lifetime The returned string is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is valid until the next call to
+        /// glfwGetClipboardString or
+        /// is terminated.
+        /// 
+        /// _safety This function must only be called from the main thread.
+        /// </returns>
         public static string GetClipboardString(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
@@ -4030,129 +4030,129 @@ namespace glfw3
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        // <remarks>
-        // <para>  This function returns the value of the GLFW timer.  Unless the timer has</para>
-        // <para>  been set using </para>
-        // <para>  was initialized.</para>
-        // <para>  The resolution of the timer is system dependent, but is usually on the order</para>
-        // <para>  of a few micro- or nanoseconds.  It uses the highest-resolution monotonic</para>
-        // <para>  time source on each supported platform.</para>
-        // </remarks>
-        // <returns>
-        // <para>The current value, in seconds, or zero if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Reading and</para>
-        // <para>writing of the internal timer offset is not atomic, so it needs to be</para>
-        // <para>externally synchronized with calls to</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the value of the GLFW timer.  Unless the timer has
+        ///   been set using 
+        ///   was initialized.
+        ///   The resolution of the timer is system dependent, but is usually on the order
+        ///   of a few micro- or nanoseconds.  It uses the highest-resolution monotonic
+        ///   time source on each supported platform.
+        /// </summary>
+        /// <returns>
+        /// The current value, in seconds, or zero if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.  Reading and
+        /// writing of the internal timer offset is not atomic, so it needs to be
+        /// externally synchronized with calls to
+        /// </returns>
         public static double GetTime()
         {
             var __ret = __Internal.GetTime_0();
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function sets the value of the GLFW timer.  It then continues to count</para>
-        // <para>  up from that value.  The value must be a positive finite number less than</para>
-        // <para>  or equal to 18446744073.0, which is approximately 584.5 years.</para>
-        // </remarks>
-        // <param name="time">
-        // <para>The new value, in seconds.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_INVALID_VALUE.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.  Reading and</para>
-        // <para>writing of the internal timer offset is not atomic, so it needs to be</para>
-        // <para>externally synchronized with calls to</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the value of the GLFW timer.  It then continues to count
+        ///   up from that value.  The value must be a positive finite number less than
+        ///   or equal to 18446744073.0, which is approximately 584.5 years.
+        /// </summary>
+        /// <param name="time">
+        /// The new value, in seconds.
+        /// 
+        /// Possible errors include
+        /// GLFW_INVALID_VALUE.
+        /// 
+        /// 
+        /// _safety This function may be called from any thread.  Reading and
+        /// writing of the internal timer offset is not atomic, so it needs to be
+        /// externally synchronized with calls to
+        /// </param>
         public static void SetTime(double time)
         {
             __Internal.SetTime_0(time);
         }
 
-        // <remarks>
-        // <para>  This function returns the current value of the raw timer, measured in</para>
-        // <para>  1</para>
-        // <para>&#194;&#160;</para>
-        // <para>/</para>
-        // <para>&#194;&#160;</para>
-        // <para>frequency seconds.  To get the frequency, call </para>
-        // <para>  glfwGetTimerFrequency.</para>
-        // </remarks>
-        // <returns>
-        // <para>The value of the timer, or zero if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the current value of the raw timer, measured in
+        ///   1
+        /// &#160;
+        /// /
+        /// &#160;
+        /// frequency seconds.  To get the frequency, call 
+        ///   glfwGetTimerFrequency.
+        /// </summary>
+        /// <returns>
+        /// The value of the timer, or zero if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static ulong GetTimerValue()
         {
             var __ret = __Internal.GetTimerValue_0();
             return __ret;
         }
 
-        // <remarks>  This function returns the frequency, in Hz, of the raw timer.</remarks>
-        // <returns>
-        // <para>The frequency of the timer, in Hz, or zero if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>  This function returns the frequency, in Hz, of the raw timer.</summary>
+        /// <returns>
+        /// The frequency of the timer, in Hz, or zero if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static ulong GetTimerFrequency()
         {
             var __ret = __Internal.GetTimerFrequency_0();
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function makes the OpenGL or OpenGL ES context of the specified window</para>
-        // <para>  current on the calling thread.  A context can only be made current on</para>
-        // <para>  a single thread at a time and each thread can have only a single current</para>
-        // <para>  context at a time.</para>
-        // <para>  By default, making a context non-current implicitly forces a pipeline flush.</para>
-        // <para>  On machines that support `GL_KHR_context_flush_control`, you can control</para>
-        // <para>  whether a context performs this flush by setting the</para>
-        // <para>  [GLFW_CONTEXT_RELEASE_BEHAVIOR](</para>
-        // <para>  The specified window must have an OpenGL or OpenGL ES context.  Specifying</para>
-        // <para>  a window without a context will generate a </para>
-        // <para>  error.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window whose context to make current, or `NULL` to</para>
-        // <para>detach the current context.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_NO_WINDOW_CONTEXT and</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function makes the OpenGL or OpenGL ES context of the specified window
+        ///   current on the calling thread.  A context can only be made current on
+        ///   a single thread at a time and each thread can have only a single current
+        ///   context at a time.
+        ///   By default, making a context non-current implicitly forces a pipeline flush.
+        ///   On machines that support `GL_KHR_context_flush_control`, you can control
+        ///   whether a context performs this flush by setting the
+        ///   [GLFW_CONTEXT_RELEASE_BEHAVIOR](
+        ///   The specified window must have an OpenGL or OpenGL ES context.  Specifying
+        ///   a window without a context will generate a 
+        ///   error.
+        /// </summary>
+        /// <param name="window">
+        /// The window whose context to make current, or `NULL` to
+        /// detach the current context.
+        /// 
+        /// Possible errors include
+        /// GLFW_NO_WINDOW_CONTEXT and
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </param>
         public static void MakeContextCurrent(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.MakeContextCurrent_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function returns the window whose OpenGL or OpenGL ES context is</para>
-        // <para>  current on the calling thread.</para>
-        // </remarks>
-        // <returns>
-        // <para>The window whose context is current, or `NULL` if no window's</para>
-        // <para>context is current.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the window whose OpenGL or OpenGL ES context is
+        ///   current on the calling thread.
+        /// </summary>
+        /// <returns>
+        /// The window whose context is current, or `NULL` if no window's
+        /// context is current.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static global::glfw3.GLFWwindow GetCurrentContext()
         {
             var __ret = __Internal.GetCurrentContext_0();
@@ -4164,122 +4164,122 @@ namespace glfw3
             return __result0;
         }
 
-        // <remarks>
-        // <para>  This function swaps the front and back buffers of the specified window when</para>
-        // <para>  rendering with OpenGL or OpenGL ES.  If the swap interval is greater than</para>
-        // <para>  zero, the GPU driver waits the specified number of screen updates before</para>
-        // <para>  swapping the buffers.</para>
-        // <para>  The specified window must have an OpenGL or OpenGL ES context.  Specifying</para>
-        // <para>  a window without a context will generate a </para>
-        // <para>  error.</para>
-        // <para>  This function does not apply to Vulkan.  If you are rendering with Vulkan,</para>
-        // <para>  see `vkQueuePresentKHR` instead.</para>
-        // </remarks>
-        // <param name="window">
-        // <para>The window whose buffers to swap.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_NO_WINDOW_CONTEXT and</para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function swaps the front and back buffers of the specified window when
+        ///   rendering with OpenGL or OpenGL ES.  If the swap interval is greater than
+        ///   zero, the GPU driver waits the specified number of screen updates before
+        ///   swapping the buffers.
+        ///   The specified window must have an OpenGL or OpenGL ES context.  Specifying
+        ///   a window without a context will generate a 
+        ///   error.
+        ///   This function does not apply to Vulkan.  If you are rendering with Vulkan,
+        ///   see `vkQueuePresentKHR` instead.
+        /// </summary>
+        /// <param name="window">
+        /// The window whose buffers to swap.
+        /// 
+        /// Possible errors include
+        /// GLFW_NO_WINDOW_CONTEXT and
+        /// 
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </param>
         public static void SwapBuffers(global::glfw3.GLFWwindow window)
         {
             var __arg0 = ReferenceEquals(window, null) ? global::System.IntPtr.Zero : window.__Instance;
             __Internal.SwapBuffers_0(__arg0);
         }
 
-        // <remarks>
-        // <para>  This function sets the swap interval for the current OpenGL or OpenGL ES</para>
-        // <para>  context, i.e. the number of screen updates to wait from the time </para>
-        // <para>  glfwSwapBuffers was called before swapping the buffers and returning.  This</para>
-        // <para>  is sometimes called _vertical synchronization_, _vertical retrace</para>
-        // <para>  synchronization_ or just _vsync_.</para>
-        // <para>  Contexts that support either of the `WGL_EXT_swap_control_tear` and</para>
-        // <para>  `GLX_EXT_swap_control_tear` extensions also accept negative swap intervals,</para>
-        // <para>  which allow the driver to swap even if a frame arrives a little bit late.</para>
-        // <para>  You can check for the presence of these extensions using </para>
-        // <para>  glfwExtensionSupported.  For more information about swap tearing, see the</para>
-        // <para>  extension specifications.</para>
-        // <para>  A context must be current on the calling thread.  Calling this function</para>
-        // <para>  without a current context will cause a </para>
-        // <para>  This function does not apply to Vulkan.  If you are rendering with Vulkan,</para>
-        // <para>  see the present mode of your swapchain instead.</para>
-        // </remarks>
-        // <param name="interval">
-        // <para>The minimum number of screen updates to wait for</para>
-        // <para>until the buffers are swapped by</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_NO_CURRENT_CONTEXT and</para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </param>
+        /// <summary>
+        ///   This function sets the swap interval for the current OpenGL or OpenGL ES
+        ///   context, i.e. the number of screen updates to wait from the time 
+        ///   glfwSwapBuffers was called before swapping the buffers and returning.  This
+        ///   is sometimes called _vertical synchronization_, _vertical retrace
+        ///   synchronization_ or just _vsync_.
+        ///   Contexts that support either of the `WGL_EXT_swap_control_tear` and
+        ///   `GLX_EXT_swap_control_tear` extensions also accept negative swap intervals,
+        ///   which allow the driver to swap even if a frame arrives a little bit late.
+        ///   You can check for the presence of these extensions using 
+        ///   glfwExtensionSupported.  For more information about swap tearing, see the
+        ///   extension specifications.
+        ///   A context must be current on the calling thread.  Calling this function
+        ///   without a current context will cause a 
+        ///   This function does not apply to Vulkan.  If you are rendering with Vulkan,
+        ///   see the present mode of your swapchain instead.
+        /// </summary>
+        /// <param name="interval">
+        /// The minimum number of screen updates to wait for
+        /// until the buffers are swapped by
+        /// 
+        /// Possible errors include
+        /// GLFW_NO_CURRENT_CONTEXT and
+        /// 
+        /// 
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </param>
         public static void SwapInterval(int interval)
         {
             __Internal.SwapInterval_0(interval);
         }
 
-        // <remarks>
-        // <para>  This function returns whether the specified</para>
-        // <para>  [API extension](</para>
-        // <para>  OpenGL ES context.  It searches both for client API extension and context</para>
-        // <para>  creation API extensions.</para>
-        // <para>  A context must be current on the calling thread.  Calling this function</para>
-        // <para>  without a current context will cause a </para>
-        // <para>  As this functions retrieves and searches one or more extension strings each</para>
-        // <para>  call, it is recommended that you cache its results if it is going to be used</para>
-        // <para>  frequently.  The extension strings will not change during the lifetime of</para>
-        // <para>  a context, so there is no danger in doing this.</para>
-        // <para>  This function does not apply to Vulkan.  If you are using Vulkan, see </para>
-        // <para>  glfwGetRequiredInstanceExtensions, `vkEnumerateInstanceExtensionProperties`</para>
-        // <para>  and `vkEnumerateDeviceExtensionProperties` instead.</para>
-        // </remarks>
-        // <param name="extension">The ASCII encoded name of the extension.</param>
-        // <returns>
-        // <para>`GLFW_TRUE` if the extension is available, or `GLFW_FALSE`</para>
-        // <para>otherwise.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_NO_CURRENT_CONTEXT,</para>
-        // <para>GLFW_PLATFORM_ERROR.</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns whether the specified
+        ///   [API extension](
+        ///   OpenGL ES context.  It searches both for client API extension and context
+        ///   creation API extensions.
+        ///   A context must be current on the calling thread.  Calling this function
+        ///   without a current context will cause a 
+        ///   As this functions retrieves and searches one or more extension strings each
+        ///   call, it is recommended that you cache its results if it is going to be used
+        ///   frequently.  The extension strings will not change during the lifetime of
+        ///   a context, so there is no danger in doing this.
+        ///   This function does not apply to Vulkan.  If you are using Vulkan, see 
+        ///   glfwGetRequiredInstanceExtensions, `vkEnumerateInstanceExtensionProperties`
+        ///   and `vkEnumerateDeviceExtensionProperties` instead.
+        /// </summary>
+        /// <param name="extension">The ASCII encoded name of the extension.</param>
+        /// <returns>
+        /// `GLFW_TRUE` if the extension is available, or `GLFW_FALSE`
+        /// otherwise.
+        /// 
+        /// Possible errors include
+        /// GLFW_NO_CURRENT_CONTEXT,
+        /// GLFW_PLATFORM_ERROR.
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static int ExtensionSupported(string extension)
         {
             var __ret = __Internal.ExtensionSupported_0(extension);
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function returns the address of the specified OpenGL or OpenGL ES</para>
-        // <para>  [core or extension function](</para>
-        // <para>  by the current context.</para>
-        // <para>  A context must be current on the calling thread.  Calling this function</para>
-        // <para>  without a current context will cause a </para>
-        // <para>  This function does not apply to Vulkan.  If you are rendering with Vulkan,</para>
-        // <para>  see </para>
-        // <para>  `vkGetDeviceProcAddr` instead.</para>
-        // </remarks>
-        // <param name="procname">The ASCII encoded name of the function.</param>
-        // <returns>
-        // <para>The address of the function, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_NO_CURRENT_CONTEXT and</para>
-        // <para></para>
-        // <para></para>
-        // <para></para>
-        // <para>_lifetime The returned function pointer is valid until the context</para>
-        // <para>is destroyed or the library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns the address of the specified OpenGL or OpenGL ES
+        ///   [core or extension function](
+        ///   by the current context.
+        ///   A context must be current on the calling thread.  Calling this function
+        ///   without a current context will cause a 
+        ///   This function does not apply to Vulkan.  If you are rendering with Vulkan,
+        ///   see 
+        ///   `vkGetDeviceProcAddr` instead.
+        /// </summary>
+        /// <param name="procname">The ASCII encoded name of the function.</param>
+        /// <returns>
+        /// The address of the function, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_NO_CURRENT_CONTEXT and
+        /// 
+        /// 
+        /// 
+        /// _lifetime The returned function pointer is valid until the context
+        /// is destroyed or the library is terminated.
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static global::glfw3.GLFWglproc GetProcAddress(string procname)
         {
             var __ret = __Internal.GetProcAddress_0(procname);
@@ -4287,60 +4287,60 @@ namespace glfw3
             return __ptr0 == IntPtr.Zero? null : (global::glfw3.GLFWglproc)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::glfw3.GLFWglproc));
         }
 
-        // <remarks>
-        // <para>  This function returns whether the Vulkan loader has been found.  This check</para>
-        // <para>  is performed by </para>
-        // <para>  The availability of a Vulkan loader does not by itself guarantee that window</para>
-        // <para>  surface creation or even device creation is possible.  Call </para>
-        // <para>  glfwGetRequiredInstanceExtensions to check whether the extensions necessary</para>
-        // <para>  for Vulkan surface creation are available and </para>
-        // <para>  glfwGetPhysicalDevicePresentationSupport to check whether a queue family of</para>
-        // <para>  a physical device supports image presentation.</para>
-        // </remarks>
-        // <returns>
-        // <para>`GLFW_TRUE` if Vulkan is available, or `GLFW_FALSE` otherwise.</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns whether the Vulkan loader has been found.  This check
+        ///   is performed by 
+        ///   The availability of a Vulkan loader does not by itself guarantee that window
+        ///   surface creation or even device creation is possible.  Call 
+        ///   glfwGetRequiredInstanceExtensions to check whether the extensions necessary
+        ///   for Vulkan surface creation are available and 
+        ///   glfwGetPhysicalDevicePresentationSupport to check whether a queue family of
+        ///   a physical device supports image presentation.
+        /// </summary>
+        /// <returns>
+        /// `GLFW_TRUE` if Vulkan is available, or `GLFW_FALSE` otherwise.
+        /// 
+        /// Possible errors include
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static int VulkanSupported()
         {
             var __ret = __Internal.VulkanSupported_0();
             return __ret;
         }
 
-        // <remarks>
-        // <para>  This function returns an array of names of Vulkan instance extensions required</para>
-        // <para>  by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the</para>
-        // <para>  list will always contains `VK_KHR_surface`, so if you don't require any</para>
-        // <para>  additional extensions you can pass this list directly to the</para>
-        // <para>  `VkInstanceCreateInfo` struct.</para>
-        // <para>  If Vulkan is not available on the machine, this function returns `NULL` and</para>
-        // <para>  generates a </para>
-        // <para>  to check whether Vulkan is available.</para>
-        // <para>  If Vulkan is available but no set of extensions allowing window surface</para>
-        // <para>  creation was found, this function returns `NULL`.  You may still use Vulkan</para>
-        // <para>  for off-screen rendering and compute work.</para>
-        // </remarks>
-        // <param name="count">
-        // <para>Where to store the number of extensions in the returned</para>
-        // <para>array.  This is set to zero if an error occurred.</para>
-        // </param>
-        // <returns>
-        // <para>An array of ASCII encoded extension names, or `NULL` if an</para>
-        // <para>[error](</para>
-        // <para></para>
-        // <para>Possible errors include</para>
-        // <para>GLFW_API_UNAVAILABLE.</para>
-        // <para></para>
-        // <para></para>
-        // <para>_lifetime The returned array is allocated and freed by GLFW.  You</para>
-        // <para>should not free it yourself.  It is guaranteed to be valid only until the</para>
-        // <para>library is terminated.</para>
-        // <para></para>
-        // <para>_safety This function may be called from any thread.</para>
-        // </returns>
+        /// <summary>
+        ///   This function returns an array of names of Vulkan instance extensions required
+        ///   by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the
+        ///   list will always contains `VK_KHR_surface`, so if you don't require any
+        ///   additional extensions you can pass this list directly to the
+        ///   `VkInstanceCreateInfo` struct.
+        ///   If Vulkan is not available on the machine, this function returns `NULL` and
+        ///   generates a 
+        ///   to check whether Vulkan is available.
+        ///   If Vulkan is available but no set of extensions allowing window surface
+        ///   creation was found, this function returns `NULL`.  You may still use Vulkan
+        ///   for off-screen rendering and compute work.
+        /// </summary>
+        /// <param name="count">
+        /// Where to store the number of extensions in the returned
+        /// array.  This is set to zero if an error occurred.
+        /// </param>
+        /// <returns>
+        /// An array of ASCII encoded extension names, or `NULL` if an
+        /// [error](
+        /// 
+        /// Possible errors include
+        /// GLFW_API_UNAVAILABLE.
+        /// 
+        /// 
+        /// _lifetime The returned array is allocated and freed by GLFW.  You
+        /// should not free it yourself.  It is guaranteed to be valid only until the
+        /// library is terminated.
+        /// 
+        /// _safety This function may be called from any thread.
+        /// </returns>
         public static sbyte** GetRequiredInstanceExtensions(ref uint count)
         {
             fixed (uint* __refParamPtr0 = &count)
